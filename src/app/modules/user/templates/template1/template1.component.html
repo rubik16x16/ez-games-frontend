@@ -1,0 +1,18 @@
+<div fxLayout="column" [style.height]="'100%'" fxLayoutAlign="space-between center">
+	<mat-toolbar color="primary" class="app-toolbar">
+		<button mat-icon-button (click)="opened = !opened"><mat-icon>menu</mat-icon></button>
+		<h1 class="example-app-name">EZ-BATTLES</h1>
+		<span fxFlex="1 1 auto"></span>
+		<a mat-stroked-button routerLink="/login">Login</a>
+	</mat-toolbar>
+	<mat-sidenav-container [style.width]="'100%'" [style.height]="'100%'">
+		<mat-sidenav [(opened)]="opened" [style.min-width]="'250px'">
+			<mat-nav-list>
+				<a mat-list-item routerLink=".">Item 1</a>
+			</mat-nav-list>
+		</mat-sidenav>
+		<mat-sidenav-content [style.padding]="'20px'">
+			<router-outlet></router-outlet>
+		</mat-sidenav-content>
+	</mat-sidenav-container>
+</div>
