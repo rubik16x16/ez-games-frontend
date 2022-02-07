@@ -12,8 +12,10 @@
 				<a mat-list-item routerLink=".">Item 1</a>
 			</mat-nav-list>
 		</mat-sidenav>
-		<mat-sidenav-content [style.padding]="'20px'">
-			<router-outlet></router-outlet>
+		<mat-sidenav-content>
+			<div class="wrapper" [style.padding]="'20px'">
+				<router-outlet></router-outlet>
+			</div>
 		</mat-sidenav-content>
 	</mat-sidenav-container>
 </div>

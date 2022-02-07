@@ -1,26 +1,64 @@
-<mat-card [style.max-width]="'600px'">
-  <mat-card-title>Register</mat-card-title>
-	<form [formGroup]="registerForm" (submit)="register()" [style.width]="'100%'">
-		<mat-card-content fxLayout="column">
-			<mat-form-field [style.width]="'100%'" appearance="fill">
-				<mat-label>Email</mat-label>
-				<input formControlName="email" matInput>
-			</mat-form-field>
-			<div fxLayout="row" fxLayoutAlign="space-between center">
-				<mat-form-field [style.width]="'80%'" appearance="fill">
-					<mat-label>Username</mat-label>
+<div class="register-wrapper" fxLayout="row" fxLayoutAlign="center center">
+	<mat-card fxFlex.lg="40" fxFlex.md="40" fxFlex.sm="60" fxFlex.xs="80">
+		<mat-card-title>Register</mat-card-title>
+		<form [formGroup]="registerForm" (submit)="register()" [style.width]="'100%'">
+			<mat-card-content fxLayout="column">
+				<mat-form-field [style.width]="'100%'" appearance="fill">
+					<mat-label>Email</mat-label>
 					<input formControlName="email" matInput>
 				</mat-form-field>
-				<button mat-raised-button color="primary">Check</button>
-			</div>
-			<mat-form-field [style.width]="'100%'" appearance="fill">
-				<mat-label>Password</mat-label>
-				<input formControlName="password" matInput type="password">
-			</mat-form-field>
-		</mat-card-content>
-		<mat-card-actions>
-			<button type="submit" mat-button>Register</button>
-			<a routerLink="/login" mat-button>Login</a>
-		</mat-card-actions>
-	</form>
-</mat-card>
+				<div fxLayout="row" fxLayoutAlign="space-between center">
+					<mat-form-field [style.width]="'80%'" appearance="fill">
+						<mat-label>Nickname</mat-label>
+						<input formControlName="nickname" matInput>
+					</mat-form-field>
+					<button mat-raised-button color="primary" (click)="checkNickname()">Check</button>
+				</div>
+				<mat-grid-list cols="2">
+					<mat-grid-tile>
+						<img [style.width]="'100%'" [style.border-radius]="'30px'" [src]="userStats.avatarUrl" alt="Photo of a Shiba Inu">
+					</mat-grid-tile>
+					<mat-grid-tile>
+						<mat-card>
+							<mat-card-content>
+								<table>
+									<thead>
+										<tr>
+											<th colspan="2"><h2>Stats</h2></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Kills</td>
+											<td>{{ userStats.kills }}</td>
+										</tr>
+										<tr>
+											<td>Deaths</td>
+											<td>{{ userStats.deaths }}</td>
+										</tr>
+										<tr>
+											<td>KDRatio</td>
+											<td>{{ userStats.kdRatio }}</td>
+										</tr>
+										<tr>
+											<td>Win ratio</td>
+											<td>{{ userStats.winRatio }}</td>
+										</tr>
+									</tbody>
+								</table>
+							</mat-card-content>
+						</mat-card>
+					</mat-grid-tile>
+				</mat-grid-list>
+				<mat-form-field [style.width]="'100%'" appearance="fill">
+					<mat-label>Password</mat-label>
+					<input formControlName="password" matInput type="password">
+				</mat-form-field>
+			</mat-card-content>
+			<mat-card-actions>
+				<button type="submit" mat-button>Register</button>
+				<a routerLink="/login" mat-button>Login</a>
+			</mat-card-actions>
+		</form>
+	</mat-card>
+</div>
