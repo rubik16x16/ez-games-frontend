@@ -9,13 +9,17 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoginComponent } from './pages/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './pages/register/register.component';
+import { TeamsComponent } from './pages/teams/teams.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     IndexComponent,
     Template1Component,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    TeamsComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,

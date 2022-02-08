@@ -1,0 +1,84 @@
+<div fxLayout="row" fxLayoutAlign="space-around center">
+	<div fxFlex="60">
+		<mat-card [style.margin]="'10px'">
+			<mat-card-title>My team: Tokyo revengers</mat-card-title>
+			<mat-card-actions>
+				<button mat-button color="warn">Leave</button>
+				<button mat-button color="primary">Create new team</button>
+			</mat-card-actions>
+		</mat-card>
+		<mat-card [style.margin]="'10px'">
+			<mat-card-title>Players</mat-card-title>
+			<mat-card-content>
+				<table [style.width]="'100%'" class="mat-table">
+					<thead>
+						<tr>
+							<th>nickname</th>
+							<th>Kills</th>
+							<th>Deaths</th>
+							<th>KdRatio</th>
+							<th>WinRatio</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody [style.text-align]="'center'">
+						<tr>
+							<td>player1</td>
+							<td>10</td>
+							<td>10</td>
+							<td>10</td>
+							<td>10%</td>
+							<td>
+								<button mat-button color="warn"><mat-icon>delete</mat-icon></button>
+							</td>
+						</tr>
+						<tr>
+							<td>player2</td>
+							<td>10</td>
+							<td>10</td>
+							<td>10</td>
+							<td>10%</td>
+							<td>
+								<button mat-button color="warn"><mat-icon>delete</mat-icon></button>
+							</td>
+						</tr>
+						<tr>
+							<td>player3</td>
+							<td>10</td>
+							<td>10</td>
+							<td>10</td>
+							<td>10%</td>
+							<td>
+								<button mat-button color="warn"><mat-icon>delete</mat-icon></button>
+							</td>
+						</tr>
+						<tr>
+							<td>player4</td>
+							<td>10</td>
+							<td>10</td>
+							<td>10</td>
+							<td>10%</td>
+							<td>
+								<button mat-button color="warn"><mat-icon>delete</mat-icon></button>
+							</td>
+						</tr>
+						<tr>
+							<td>player5</td>
+							<td>10</td>
+							<td>10</td>
+							<td>10</td>
+							<td>10%</td>
+							<td>
+								<button mat-button color="warn"><mat-icon>delete</mat-icon></button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</mat-card-content>
+			<mat-card-actions>
+				<button mat-button color="primary">Invite</button>
+			</mat-card-actions>
+		</mat-card>
+	</div>
+</div>
+
