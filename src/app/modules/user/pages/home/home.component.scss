@@ -58,8 +58,9 @@ body{
 .block-2{
 
 	background: green;
-	height: 700px;
 	position: relative;
+	padding-top: 220px;
+	padding-bottom: 1px;
 }
 
 .block-3{
@@ -70,7 +71,7 @@ body{
 	top: -60px;
 	left: 50%;
 	transform: translate(-50%, 0);
-	border-radius: 30px;
+	border-radius: 12px;
 }
 
 .main-text{
@@ -85,6 +86,20 @@ body{
 
 	background: red;
 	font-size: 18px;
+}
+
+.slider{
+
+	height: 200px;
+	background: orange;
+	margin: 70px 0;
+}
+
+.clearfix{
+
+	content: "";
+	display: block;
+	clear: both;
 }
 
 @media (max-width: 600px) {
