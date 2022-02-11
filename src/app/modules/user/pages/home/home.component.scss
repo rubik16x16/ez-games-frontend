@@ -1,16 +1,27 @@
-body{
+@font-face {
+  font-family: lato;
+  src: url('/assets/fonts/ChakraPetch-Regular.ttf') format("opentype");
+}
 
-	background: red;
+.body-wrapper{
+
+	width: 100%;
 	overflow: hidden;
+}
+
+.body-wrapper * {
+
+	font-family: lato;
 }
 
 .home-toolbar-wrapper{
 
 	position: fixed;
 	left: 0;
-	background: black;
+	background: #00003E;
 	width: 100%;
 	z-index: 999;
+	box-shadow: 0px 3px 10px 0px rgb(0 0 0 / 30%);
 }
 
 .container{
@@ -21,7 +32,9 @@ body{
 
 .home-toolbar{
 
+	background: none;
 	height: 100px;
+	font-weight: 900;
 }
 
 .toolbar-logo{
@@ -43,55 +56,61 @@ body{
 	font-size: 18px;
 	padding: 16px 22px 12px 22px;
 	margin: 0 10px;
-	border-bottom: 4px solid blue;
+	border-bottom: 4px solid #57049a;
 	border-radius: 25px;
 	font-weight: bold;
+	cursor: pointer;
+	background: #7400D3;
+	color: white;
 }
 
 .block-1{
 
-	background: blue;
+	background: #280B70;
 	height: 750px;
 	padding-top: 100px;
 }
 
 .block-2{
 
-	background: green;
+	background: #00003E;
 	position: relative;
 	padding-top: 220px;
 	padding-bottom: 1px;
+	color: white;
 }
 
 .block-3{
 
-	background: grey;
+	background: #0D0D59;
 	width: 1080px;
 	position: absolute;
 	top: -60px;
 	left: 50%;
 	transform: translate(-50%, 0);
 	border-radius: 12px;
+	color: white;
 }
 
 .main-text{
 
-	background: yellow;
 	font-size: 76px;
 	line-height: 91.2px;
 	margin-top: 90px;
+	font-weight: 600;
+	color: white;
 }
 
 .main-subtext{
 
-	background: red;
 	font-size: 18px;
+	color: white;
 }
 
 .slider{
 
 	height: 200px;
-	background: orange;
+	background: black;
 	margin: 70px 0;
 }
 
@@ -104,20 +123,29 @@ body{
 
 .block-4{
 
-	background: blue;
+	background: #0D0D48;
 	padding: 120px 0;
+	color: white;
 }
 
 .block-5{
 
-	background: pink;
-	padding: 120px 0;
+	background: #00003E;
+	padding-top: 120px;
+	padding-bottom: 340px;
+	color: white;
 }
 
 .box-6{
 
-	background: blue;
-	margin: 200px 0;
+	margin: 160px 0;
+}
+
+.box-8{
+
+	background: #280B70;
+	padding: 1px;
+	height: 400px;
 }
 
 @media (max-width: 600px) {
