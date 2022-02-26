@@ -10,7 +10,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './pages/register/register.component';
 import { TeamsComponent } from './pages/teams/teams.component';
-import { HomeComponent } from './pages/home/home.component';
+import { GanioComponent } from './templates/ganio/ganio.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { HomeComponent } from './pages/home/home.component';
     LoginComponent,
     RegisterComponent,
     TeamsComponent,
-    HomeComponent
+		GanioComponent
   ],
   imports: [
     CommonModule,
