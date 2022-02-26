@@ -11,6 +11,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './pages/register/register.component';
 import { TeamsComponent } from './pages/teams/teams.component';
 import { GanioComponent } from './templates/ganio/ganio.component';
+import { TournamentsComponent } from './pages/tournaments/tournaments.component';
+import { LoginModalComponent } from './components/login-modal/login-modal.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { GanioComponent } from './templates/ganio/ganio.component';
     LoginComponent,
     RegisterComponent,
     TeamsComponent,
-		GanioComponent
+		GanioComponent,
+  TournamentsComponent,
+  LoginModalComponent,
+  ProfileComponent
   ],
   imports: [
     CommonModule,

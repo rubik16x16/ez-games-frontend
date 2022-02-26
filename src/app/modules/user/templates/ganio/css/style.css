@@ -1925,7 +1925,7 @@ input[type="checkbox"]:checked + label{
     padding-right: 20px;
     margin-top: 10px;
     content: '';
-    background-image: url(/src/assets/home/images/arrow-right.png);
+    background-image: url('/assets/home/images/arrow-right.png');
     background-repeat: no-repeat;
 }
 

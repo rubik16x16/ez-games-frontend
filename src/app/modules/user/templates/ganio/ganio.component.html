@@ -23,41 +23,25 @@
 									<nav class="navbar navbar-expand-lg p-0">
 											<div class="navbar-collapse collapse" id="navbarSupportedContent">
 													<ul class="navbar-nav main-menu ml-auto">
-															<li class="menu_has_children"><a href="#0" class="active">Home</a>
-																	<ul class="sub-menu">
-																			<li><a href="index.html">Home 1</a></li>
-																			<li><a href="index-2.html">Home 2</a></li>
-																	</ul>
-															</li>
-															<li class="menu_has_children"><a href="#0">Games</a>
-																	<ul class="sub-menu">
-																			<li><a href="games.html">Games 1</a></li>
-																			<li><a href="games-2.html">Games 2</a></li>
-																	</ul>
-															</li>
-															<li class="menu_has_children"><a href="#0">Tournaments</a>
-																	<ul class="sub-menu">
-																			<li><a href="tournaments.html">Tournaments</a></li>
-																			<li><a href="tournaments-details.html">Tournaments Details</a></li>
-																	</ul>
-															</li>
-															<li class="menu_has_children"><a href="#0">Pages</a>
-																	<ul class="sub-menu">
-																			<li><a href="about-us.html">About Us</a></li>
-																			<li><a href="winners.html">Winners</a></li>
-																			<li><a href="faq.html">Faq</a></li>
-																	</ul>
-															</li>
+															<li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+															<li><a routerLink="tournaments" routerLinkActive="active">Tournaments</a></li>
 													</ul>
-													<div class="right-area header-action d-flex align-items-center">
+													<div *ngIf="!user" class="right-area header-action d-flex align-items-center">
 															<button type="button" class="cmn-btn-alt cmn-btn" data-toggle="modal"
 																	data-target="#signUpModalLong">
 																	Register
 															</button>
-															<button type="button" class="cmn-btn" data-toggle="modal"
+															<button type="button" (click)="openDialog()" class="cmn-btn" data-toggle="modal"
 																	data-target="#signInModalLong">
 																	Sign In
 															</button>
+													</div>
+													<div *ngIf="user" class="right-area header-action d-flex align-items-center">
+														<button mat-button [matMenuTriggerFor]="menu">{{ user.email }}</button>
+														<mat-menu #menu="matMenu">
+															<button mat-menu-item (click)="logout()">Logout</button>
+															<a mat-menu-item routerLink="profile" routerLinkActive="active">My profile</a>
+														</mat-menu>
 													</div>
 											</div>
 									</nav>
@@ -135,15 +119,6 @@
 															<p>Copyright © Gainio | Designed by
 																	<a href="https://themeforest.net/user/pixelaxis">Pixelasis</a>. ALL RIGHTS RESERVED
 															</p>
-													</div>
-											</div>
-											<div class="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-end justify-cen">
-													<div class="right-area">
-															<select name="lang" style="display: none;">
-																	<option value="en">English</option>
-																	<option value="bn">Bangla</option>
-																	<option value="hn">Hindi</option>
-															</select><div class="nice-select" tabindex="0"><span class="current">English</span><ul class="list"><li data-value="en" class="option selected">English</li><li data-value="bn" class="option">Bangla</li><li data-value="hn" class="option">Hindi</li></ul></div>
 													</div>
 											</div>
 									</div>
