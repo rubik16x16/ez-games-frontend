@@ -1,13 +1,8 @@
 
 <div class="home-wrapper">
-	<!-- start preloader -->
-	<div class="preloader" id="preloader"></div>
-	<!-- end preloader -->
-
-	<a href="javascript:void(0)" class="scrollToTop"><i class="fas fa-angle-double-up"></i></a>
 
 	<!-- header-section start -->
-	<header id="header-section">
+	<header id="header-section" class="header-fixed">
 			<div class="overlay">
 					<div class="container">
 							<div class="row d-flex header-area">
@@ -23,10 +18,14 @@
 									<nav class="navbar navbar-expand-lg p-0">
 											<div class="navbar-collapse collapse" id="navbarSupportedContent">
 													<ul class="navbar-nav main-menu ml-auto">
-															<li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
-															<li><a routerLink="tournaments" routerLinkActive="active">Tournaments</a></li>
+														<!-- <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li> -->
+															<li><a (click)="goTo('banner-section')">Home</a></li>
+															<li><a (click)="goTo('features-section')">Roadmap</a></li>
+															<li><a (click)="goTo('level-up-section')">Utilities</a></li>
+															<li><a (click)="goTo('team-member')">Team</a></li>
+															<li><a (click)="goTo('footer-section')">Contact</a></li>
 													</ul>
-													<div *ngIf="!user" class="right-area header-action d-flex align-items-center">
+													<!-- <div *ngIf="!user" class="right-area header-action d-flex align-items-center">
 															<button type="button" class="cmn-btn-alt cmn-btn" data-toggle="modal"
 																	data-target="#signUpModalLong">
 																	Register
@@ -42,7 +41,7 @@
 															<button mat-menu-item (click)="logout()">Logout</button>
 															<a mat-menu-item routerLink="profile" routerLinkActive="active">My profile</a>
 														</mat-menu>
-													</div>
+													</div> -->
 											</div>
 									</nav>
 							</div>
@@ -76,10 +75,31 @@
 																			<p>To Get Exclusive Benefits</p>
 																	</div>
 																	<form action="#">
-																			<div class="subscribe">
-																					<input type="email" placeholder="Enter Your Email Address">
-																					<button class="btn">Subscribe</button>
+																		<div class="row">
+																			<div class="col-md-6">
+																				<div class="form-group">
+																					<label for="Name">Name <span style="color: red">*</span></label>
+																					<input type="text" class="form-control ganio-input">
+																					<span>first</span>
+																				</div>
 																			</div>
+																			<div class="col-md-6">
+																				<div class="form-group">
+																					<label for="Name">Name <span style="color: red">*</span></label>
+																					<input type="text" class="form-control ganio-input">
+																					<span>second</span>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="form-group">
+																			<label for="Name">Email <span style="color: red">*</span></label>
+																			<input type="text" class="form-control ganio-input">
+																		</div>
+																		<div class="form-group">
+																			<label for="Name">Email <span style="color: red">*</span></label>
+																			<textarea class="form-control ganio-input" cols="30" rows="10"></textarea>
+																		</div>
+																		<button class="cmn-btn">Submit</button>
 																	</form>
 															</div>
 													</div>

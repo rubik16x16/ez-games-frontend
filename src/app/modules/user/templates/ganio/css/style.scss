@@ -6,6 +6,16 @@ $body-font: 'Roboto', sans-serif;
 $body-color:  rgb(255, 255, 255);
 $body-bg: #00003E;
 
+.ganio-input{
+
+	background: #181868;
+	color: $body-color;
+	padding: 10px 20px;
+	border: 1px solid #4450B8;
+	border-radius: 28px;
+	padding: 25px;
+}
+
 .home-wrapper{
 
 	scroll-behavior: smooth;

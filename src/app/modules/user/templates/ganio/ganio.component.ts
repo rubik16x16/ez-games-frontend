@@ -52,4 +52,12 @@ export class GanioComponent implements OnInit {
 		localStorage.removeItem('user');
 		this.user = null;
 	}
+
+	goTo(section: string){
+
+		var element = document.querySelector(`#${section}`);
+		element!.scrollIntoView({
+			behavior: 'smooth'
+		});
+	}
 }
