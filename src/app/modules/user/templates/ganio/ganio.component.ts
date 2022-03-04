@@ -26,8 +26,6 @@ export class GanioComponent implements OnInit {
 
 			this.user = JSON.parse(user);
 		}
-
-		console.log(this.user);
   }
 
 	openDialog(): void {

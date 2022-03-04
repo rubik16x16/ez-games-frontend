@@ -3,14 +3,12 @@
 		<button mat-icon-button (click)="opened = !opened"><mat-icon>menu</mat-icon></button>
 		<h1 class="example-app-name">EZ-BATTLES</h1>
 		<span fxFlex="1 1 auto"></span>
-		<a mat-stroked-button routerLink="/login">Login</a>
-		<a mat-stroked-button routerLink="/register">Register</a>
 	</mat-toolbar>
 	<mat-sidenav-container [style.width]="'100%'" [style.height]="'100%'">
 		<mat-sidenav [(opened)]="opened" [style.min-width]="'250px'">
 			<mat-nav-list>
 				<a mat-list-item routerLink="teams">Teams</a>
-				<a mat-list-item routerLink=".">Tournaments</a>
+				<a mat-list-item routerLink="tournaments" routerLinkActive="active">Tournaments</a>
 			</mat-nav-list>
 		</mat-sidenav>
 		<mat-sidenav-content>

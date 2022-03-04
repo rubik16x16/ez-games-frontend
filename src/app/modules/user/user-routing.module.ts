@@ -7,7 +7,6 @@ import { RegisterComponent } from './pages/register/register.component';
 import { TeamsComponent } from './pages/teams/teams.component';
 import { TournamentsComponent } from './pages/tournaments/tournaments.component';
 import { GanioComponent } from './templates/ganio/ganio.component';
-import { Template1Component } from './templates/template1/template1.component';
 
 const routes: Routes = [
   {
@@ -25,6 +24,10 @@ const routes: Routes = [
 			{
 				path: 'profile',
 				component: ProfileComponent
+			},
+			{
+				path: 'login',
+				component: LoginComponent
 			}
     ]
   }

@@ -25,7 +25,7 @@
 															<li><a (click)="goTo('team-member')">Team</a></li>
 															<li><a (click)="goTo('footer-section')">Contact</a></li>
 													</ul>
-													<!-- <div *ngIf="!user" class="right-area header-action d-flex align-items-center">
+													<div *ngIf="!user" class="right-area header-action d-flex align-items-center">
 															<button type="button" class="cmn-btn-alt cmn-btn" data-toggle="modal"
 																	data-target="#signUpModalLong">
 																	Register
@@ -38,10 +38,10 @@
 													<div *ngIf="user" class="right-area header-action d-flex align-items-center">
 														<button mat-button [matMenuTriggerFor]="menu">{{ user.email }}</button>
 														<mat-menu #menu="matMenu">
-															<button mat-menu-item (click)="logout()">Logout</button>
 															<a mat-menu-item routerLink="profile" routerLinkActive="active">My profile</a>
+															<button mat-menu-item (click)="logout()">Logout</button>
 														</mat-menu>
-													</div> -->
+													</div>
 											</div>
 									</nav>
 							</div>

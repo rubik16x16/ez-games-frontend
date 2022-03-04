@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
 import { IndexComponent } from './pages/index/index.component';
-import { Template1Component } from './templates/template1/template1.component';
 import { MaterialModule } from 'src/app/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoginComponent } from './pages/login/login.component';
@@ -16,23 +15,22 @@ import { LoginModalComponent } from './components/login-modal/login-modal.compon
 import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
-  declarations: [
-    IndexComponent,
-    Template1Component,
-    LoginComponent,
-    RegisterComponent,
-    TeamsComponent,
+	declarations: [
+		IndexComponent,
+		LoginComponent,
+		RegisterComponent,
+		TeamsComponent,
 		GanioComponent,
-  TournamentsComponent,
-  LoginModalComponent,
-  ProfileComponent
-  ],
-  imports: [
-    CommonModule,
-    UserRoutingModule,
+		TournamentsComponent,
+		LoginModalComponent,
+		ProfileComponent
+	],
+	imports: [
+		CommonModule,
+		UserRoutingModule,
 		MaterialModule,
 		FlexLayoutModule,
 		ReactiveFormsModule
-  ]
+	]
 })
 export class UserModule { }
