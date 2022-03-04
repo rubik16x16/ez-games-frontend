@@ -23,12 +23,13 @@
 					<td>{{ tournament.end }}</td>
 					<td>
 						<button type="button" mat-button color="warn" (click)="delTournament(i)">Delete</button>
+						<button type="button" mat-button color="secondary" (click)="editTournament(i)">Edit</button>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</mat-card-content>
 	<mat-card-actions>
-		<button mat-button color="primary">Add</button>
+		<button mat-button color="primary" (click)="createTournament()">Add</button>
 	</mat-card-actions>
 </mat-card>

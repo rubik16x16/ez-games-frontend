@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CreateComponent } from './create/create.component';
+import { EditComponent } from './edit/edit.component';
 
 const DATA_SOURCE: any[] = [
 	{
@@ -30,7 +33,9 @@ export class TournamentsComponent implements OnInit {
 
 	dataSource: any[] = DATA_SOURCE;
 
-	constructor() { }
+	constructor(
+		public dialog: MatDialog
+	) { }
 
 	ngOnInit(): void {
 
@@ -39,5 +44,32 @@ export class TournamentsComponent implements OnInit {
 	delTournament(index){
 
 		this.dataSource.splice(index, 1);
+	}
+
+	createTournament(){
+
+		const dialogRef = this.dialog.open(CreateComponent, {
+      width: '450px'
+    });
+
+		dialogRef.afterClosed().subscribe(result => {
+
+			if(result){
+
+				this.dataSource.push(result);
+				console.log(result);
+			}
+    });
+	}
+
+	editTournament(index){
+
+		const dialogRef = this.dialog.open(EditComponent, {
+      width: '450px'
+    });
+
+		dialogRef.afterClosed().subscribe(result => {
+
+    });
 	}
 }
