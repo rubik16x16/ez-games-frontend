@@ -9,7 +9,7 @@ import { MaterialModule } from 'src/app/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TournamentsComponent } from './pages/tournaments/tournaments.component';
 import { CreateComponent as CreateTournament } from './pages/tournaments/create/create.component';
-import { EditComponent } from './pages/tournaments/edit/edit.component';
+import { EditComponent as EditTournament } from './pages/tournaments/edit/edit.component';
 
 @NgModule({
 	declarations: [
@@ -17,7 +17,7 @@ import { EditComponent } from './pages/tournaments/edit/edit.component';
 		Template1Component,
 		TournamentsComponent,
 		CreateTournament,
-	  EditComponent,
+	  EditTournament,
 
 	],
 	imports: [

@@ -7,14 +7,23 @@ const DATA_SOURCE: any[] = [
 	{
 		id: 1,
 		name: 'test1',
-		teams: 'teams test',
+		teams: [
+			{
+				name: 'team1',
+				members: []
+			},
+			{
+				name: 'team2',
+				members: []
+			}
+		],
 		start: 'start',
 		end: 'end'
 	},
 	{
 		id: 2,
 		name: 'test2',
-		teams: 'teams test',
+		teams: [],
 		start: 'start',
 		end: 'end'
 	}
@@ -39,6 +48,8 @@ export class TournamentsComponent implements OnInit {
 
 	ngOnInit(): void {
 
+		let test = this.dataSource[0].teams.map(team => team.name).join(', ');
+		console.log(test);
 	}
 
 	delTournament(index){
@@ -65,11 +76,21 @@ export class TournamentsComponent implements OnInit {
 	editTournament(index){
 
 		const dialogRef = this.dialog.open(EditComponent, {
-      width: '450px'
+      width: '450px',
+      data: this.dataSource[index]
     });
 
 		dialogRef.afterClosed().subscribe(result => {
+			if(result){
 
+				this.dataSource.splice(index, 1, result);
+				console.log(result);
+			}
     });
+	}
+
+	getTournamentTeams(tournament){
+
+		return tournament.teams.map(team => team.name).join(', ');
 	}
 }
