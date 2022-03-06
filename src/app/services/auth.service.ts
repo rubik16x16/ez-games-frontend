@@ -16,12 +16,12 @@ export class AuthService {
 
 	checkNickname(nickname: string): Observable<UserInfo>{
 
-		return this.http.get<UserInfo>(`${environment.api}/api/check-nickname?nickname=${nickname.replace('#', '%23')}`);
+		return this.http.get<UserInfo>(`${environment.api}/check-nickname?nickname=${nickname.replace('#', '%23')}`);
 	}
 
 	login(email: string, password: string): Observable<any>{
 
-		return this.http.post<any>(`${environment.api}/api/login`, {
+		return this.http.post<any>(`${environment.api}/login`, {
 			email,
 			password
 		});
@@ -29,6 +29,6 @@ export class AuthService {
 
 	getData(): Observable<any>{
 
-		return this.http.get<any>(`${environment.api}/api/user`);
+		return this.http.get<any>(`${environment.api}/user`);
 	}
 }

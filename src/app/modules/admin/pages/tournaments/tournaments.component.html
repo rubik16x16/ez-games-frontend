@@ -15,7 +15,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr *ngFor="let tournament of dataSource; let i = index;">
+				<tr *ngFor="let tournament of tournaments; let i = index;">
 					<td>{{ tournament.id }}</td>
 					<td>{{ tournament.name }}</td>
 					<td>{{ getTournamentTeams(tournament) }}</td>

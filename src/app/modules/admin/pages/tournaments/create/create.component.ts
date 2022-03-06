@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Team } from 'src/app/models/team';
+import { TournamentsService } from 'src/app/services/tournaments.service';
 
 @Component({
 	selector: 'app-create',
@@ -16,10 +17,11 @@ export class CreateComponent implements OnInit {
 		end: new FormControl('')
 	});
 
-	teams: Team[];
+	teams: Team[] = [];
 
 	constructor(
 		public dialogRef: MatDialogRef<CreateComponent>,
+		private tournamentsService: TournamentsService
 	) { }
 
 	ngOnInit(): void {
@@ -27,6 +29,13 @@ export class CreateComponent implements OnInit {
 
 	save(){
 
-		this.dialogRef.close(this.createForm.value);
+		this.tournamentsService.store(this.createForm.value).subscribe(res => {
+
+			this.dialogRef.close({
+				...res,
+				teams: this.teams
+			});
+		});
+
 	}
 }

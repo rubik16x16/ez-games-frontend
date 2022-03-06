@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Tournament } from 'src/app/models/tournament';
+import { TournamentsService } from 'src/app/services/tournaments.service';
 
 @Component({
   selector: 'app-edit',
@@ -17,18 +18,22 @@ export class EditComponent implements OnInit {
 	});
 
   constructor(
-  	public dialogRef: MatDialogRef<EditComponent>,
   	@Inject(MAT_DIALOG_DATA) public tournament: Tournament,
+  	public dialogRef: MatDialogRef<EditComponent>,
+  	private tournamentsService: TournamentsService
   ) { }
 
   ngOnInit(): void {
 
-  	console.log(this.tournament);
   	this.editForm.patchValue(this.tournament);
   }
 
   save(){
 
-		this.dialogRef.close(this.editForm.value);
+  	let newTournament = Object.assign(this.tournament, this.editForm.value);
+  	this.tournamentsService.update(newTournament).subscribe(res => {
+
+  		this.dialogRef.close(res);
+  	});
 	}
 }

@@ -2,32 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
-
-const DATA_SOURCE: any[] = [
-	{
-		id: 1,
-		name: 'test1',
-		teams: [
-			{
-				name: 'team1',
-				members: []
-			},
-			{
-				name: 'team2',
-				members: []
-			}
-		],
-		start: 'start',
-		end: 'end'
-	},
-	{
-		id: 2,
-		name: 'test2',
-		teams: [],
-		start: 'start',
-		end: 'end'
-	}
-]
+import { TournamentsService } from 'src/app/services/tournaments.service';
+import { Tournament } from 'src/app/models/tournament';
 
 @Component({
 	selector: 'app-tournaments',
@@ -40,21 +16,26 @@ export class TournamentsComponent implements OnInit {
 		'id', 'name', 'teams', 'start', 'end'
 	];
 
-	dataSource: any[] = DATA_SOURCE;
+	tournaments: Tournament[] = [];
 
 	constructor(
-		public dialog: MatDialog
+		public dialog: MatDialog,
+		private tournamentsService: TournamentsService
 	) { }
 
 	ngOnInit(): void {
 
-		let test = this.dataSource[0].teams.map(team => team.name).join(', ');
-		console.log(test);
+		this.tournamentsService.list().subscribe(res => {
+
+			this.tournaments = res;
+		});
 	}
 
 	delTournament(index){
 
-		this.dataSource.splice(index, 1);
+		let tournament = this.tournaments[index];
+		let res = this.tournamentsService.delete(tournament).subscribe();
+		this.tournaments.splice(index, 1);
 	}
 
 	createTournament(){
@@ -67,7 +48,7 @@ export class TournamentsComponent implements OnInit {
 
 			if(result){
 
-				this.dataSource.push(result);
+				this.tournaments.push(result);
 				console.log(result);
 			}
     });
@@ -77,13 +58,13 @@ export class TournamentsComponent implements OnInit {
 
 		const dialogRef = this.dialog.open(EditComponent, {
       width: '450px',
-      data: this.dataSource[index]
+      data: this.tournaments[index]
     });
 
 		dialogRef.afterClosed().subscribe(result => {
 			if(result){
 
-				this.dataSource.splice(index, 1, result);
+				this.tournaments.splice(index, 1, result);
 				console.log(result);
 			}
     });
