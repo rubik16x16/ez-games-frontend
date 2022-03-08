@@ -37,9 +37,9 @@ export class RegisterComponent implements OnInit {
 
 	checkNickname(){
 
-		this.authService.checkNickname(this.registerForm.value.nickname).subscribe(stats => {
+		// this.authService.checkNickname(this.registerForm.value.nickname).subscribe(stats => {
 
-			this.userStats = stats;
-		});
+		// 	this.userStats = stats;
+		// });
 	}
 }

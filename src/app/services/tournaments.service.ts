@@ -10,26 +10,26 @@ import { Tournament } from 'src/app/models/tournament';
 export class TournamentsService {
 
 	constructor(
-		private httpClient: HttpClient
+		private http: HttpClient
 	) { }
 
 	list(): Observable<Tournament[]>{
 
-		return this.httpClient.get<Tournament[]>(`${environment.api}/tournaments`);
+		return this.http.get<Tournament[]>(`${environment.api}/tournaments`);
 	}
 
 	store(tournament: Tournament): Observable<Tournament>{
 
-		return this.httpClient.post<Tournament>(`${environment.api}/tournaments`, tournament);
+		return this.http.post<Tournament>(`${environment.api}/tournaments`, tournament);
 	}
 
 	update(tournament: Tournament): Observable<Tournament>{
 
-		return this.httpClient.put<Tournament>(`${environment.api}/tournaments/${tournament.id}`, tournament);
+		return this.http.put<Tournament>(`${environment.api}/tournaments/${tournament.id}`, tournament);
 	}
 
 	delete(tournament: Tournament): Observable<any>{
 
-		return this.httpClient.delete<any>(`${environment.api}/tournaments/${tournament.id}`);
+		return this.http.delete<any>(`${environment.api}/tournaments/${tournament.id}`);
 	}
 }

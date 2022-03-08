@@ -1,4 +1,4 @@
-export interface UserInfo {
+export interface CodUser {
 	avatarUrl: string
 	kills: number,
 	deaths: number,
