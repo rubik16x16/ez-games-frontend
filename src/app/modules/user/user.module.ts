@@ -13,6 +13,7 @@ import { GanioComponent } from './templates/ganio/ganio.component';
 import { TournamentsComponent } from './pages/tournaments/tournaments.component';
 import { LoginModalComponent } from './components/login-modal/login-modal.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { ShowComponent } from './pages/tournaments/show/show.component';
 
 @NgModule({
 	declarations: [
@@ -23,7 +24,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 		GanioComponent,
 		TournamentsComponent,
 		LoginModalComponent,
-		ProfileComponent
+		ProfileComponent,
+  ShowComponent
 	],
 	imports: [
 		CommonModule,

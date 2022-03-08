@@ -39,6 +39,7 @@
 														<button mat-button [matMenuTriggerFor]="menu">{{ user.email }}</button>
 														<mat-menu #menu="matMenu">
 															<a mat-menu-item routerLink="profile" routerLinkActive="active">My profile</a>
+															<a mat-menu-item routerLink="tournaments" routerLinkActive="active">Tournaments</a>
 															<button mat-menu-item (click)="logout()">Logout</button>
 														</mat-menu>
 													</div>

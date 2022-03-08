@@ -1,0 +1,24 @@
+<mat-card class="example-card">
+	<mat-card-header>
+		<mat-card-title>Tournament: {{ tournament.name }}</mat-card-title>
+	</mat-card-header>
+	<form>
+		<mat-card-content fxLayout="column">
+			<mat-form-field class="example-full-width" appearance="fill">
+				<mat-label>Team name</mat-label>
+				<input matInput>
+			</mat-form-field>
+			<mat-form-field appearance="fill">
+		    <mat-label>Team Members</mat-label>
+		    <input type="text" [matAutocomplete]="auto" matInput>
+		    <mat-autocomplete (optionSelected)="test()" classList="test" panelWidth="600px" #auto="matAutocomplete">
+		      <mat-option [value]="'test'">Test</mat-option>
+		      <mat-option [value]="'test2'">Test2</mat-option>
+		    </mat-autocomplete>
+		  </mat-form-field>
+		</mat-card-content>
+		<mat-card-actions>
+			<button mat-button type="submit">Save</button>
+		</mat-card-actions>
+	</form>
+</mat-card>

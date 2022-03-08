@@ -33,7 +33,7 @@ export class EditComponent implements OnInit {
   	let newTournament = Object.assign(this.tournament, this.editForm.value);
   	this.tournamentsService.update(newTournament).subscribe(res => {
 
-  		this.dialogRef.close(res);
+  		this.dialogRef.close(newTournament);
   	});
 	}
 }

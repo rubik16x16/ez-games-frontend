@@ -49,7 +49,6 @@ export class TournamentsComponent implements OnInit {
 			if(result){
 
 				this.tournaments.push(result);
-				console.log(result);
 			}
     });
 	}
@@ -65,7 +64,6 @@ export class TournamentsComponent implements OnInit {
 			if(result){
 
 				this.tournaments.splice(index, 1, result);
-				console.log(result);
 			}
     });
 	}
