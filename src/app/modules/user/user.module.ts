@@ -14,6 +14,9 @@ import { TournamentsComponent } from './pages/tournaments/tournaments.component'
 import { LoginModalComponent } from './components/login-modal/login-modal.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ShowComponent } from './pages/tournaments/show/show.component';
+import { OurCompanyComponent } from './pages/our-company/our-company.component';
+import { OurNftComponent } from './pages/our-nft/our-nft.component';
+import { MockTournamentsComponent } from './pages/mock-tournaments/mock-tournaments.component';
 
 @NgModule({
 	declarations: [
@@ -25,14 +28,17 @@ import { ShowComponent } from './pages/tournaments/show/show.component';
 		TournamentsComponent,
 		LoginModalComponent,
 		ProfileComponent,
-  ShowComponent
+	  ShowComponent,
+   OurCompanyComponent,
+   OurNftComponent,
+   MockTournamentsComponent
 	],
 	imports: [
 		CommonModule,
 		UserRoutingModule,
 		MaterialModule,
 		FlexLayoutModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
 	]
 })
 export class UserModule { }

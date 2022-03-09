@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+require('slick-carousel');
+require('jquery');
 
 @Component({
   selector: 'app-index',

@@ -1142,6 +1142,7 @@ input[type="checkbox"]:checked + label{
 
 /* Todays winner  */
 #todays-winner-section{
+		background-image: url(/assets/home/images/todays-winner-bg.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
@@ -2225,7 +2226,7 @@ input[type="checkbox"]:checked + label{
     justify-content: space-between;
 }
 #tournaments-games .tab-content .single-item{
-    flex: 0 0 calc(100% / 2 - 15px);
+    flex: 0 0 calc(100% / 3 - 15px);
     -ms-flex: 0 0 calc(100% / 2 - 15px);
     max-width: calc(100% / 2 - 15px);
     padding: 30px 20px;
@@ -2256,7 +2257,8 @@ input[type="checkbox"]:checked + label{
     top: 10%;
 }
 #tournaments-games .tab-content .single-item .content-area{
-    display: flex;
+    display: grid;
+    justify-content: center;
 }
 #tournaments-games .tab-content .single-item.list .grid-style{
     text-align: start;
@@ -2705,7 +2707,7 @@ input[type="checkbox"]:checked + label{
     margin-bottom: 7px;
 }
 #team-member .single-item .img-area{
-    background: #03D6F9;
+    // background: #03D6F9;
     width: 140px;
     height: 140px;
     border-radius: 50%;

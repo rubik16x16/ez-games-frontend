@@ -18,11 +18,14 @@
 									<nav class="navbar navbar-expand-lg p-0">
 											<div class="navbar-collapse collapse" id="navbarSupportedContent">
 													<ul class="navbar-nav main-menu ml-auto">
-														<!-- <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li> -->
-															<li><a (click)="goTo('banner-section')">Home</a></li>
-															<li><a (click)="goTo('features-section')">Roadmap</a></li>
-															<li><a (click)="goTo('level-up-section')">Utilities</a></li>
-															<li><a (click)="goTo('team-member')">Team</a></li>
+															<li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+															<li class="menu_has_children"><a href="#0">About</a>
+																<ul class="sub-menu">
+																	<li><a routerLink="our-company" routerLinkActive="active">Our mission</a></li>
+																	<li><a routerLink="our-nft" routerLinkActive="active">EZ Apes NFT</a></li>
+																</ul>
+															</li>
+															<li><a routerLink="tournaments" routerLinkActive="active">Tournament</a></li>
 															<li><a (click)="goTo('footer-section')">Contact</a></li>
 													</ul>
 													<div *ngIf="!user" class="right-area header-action d-flex align-items-center">
@@ -51,100 +54,4 @@
 	</header>
 
 	<router-outlet></router-outlet>
-
-	<!-- Footer Section start -->
-	<footer id="footer-section">
-			<div class="overlay">
-					<div class="container">
-							<div class="row">
-									<div class="col-lg-12">
-											<div class="footer-top pt-120 pb-120">
-													<div class="side-contant">
-															<div class="left">
-																	<img class="bg" src="assets/home/images/footer-left-bg.png" alt="image">
-																	<img class="bg circle" src="assets/home/images/footer-left-circle.png" alt="image">
-																	<img class="top" src="assets/home/images/footer-left-top.png" alt="image">
-															</div>
-															<div class="right">
-																	<img src="assets/home/images/footer-right.png" alt="image">
-															</div>
-													</div>
-													<div class="row justify-content-center">
-															<div class="col-lg-6 col-md-6 col-sm-10">
-																	<div class="section-header text-center">
-																			<h4 class="title">Want gaming &amp; esports news straight to your inbox?</h4>
-																			<p>To Get Exclusive Benefits</p>
-																	</div>
-																	<form action="#">
-																		<div class="row">
-																			<div class="col-md-6">
-																				<div class="form-group">
-																					<label for="Name">Name <span style="color: red">*</span></label>
-																					<input type="text" class="form-control ganio-input">
-																					<span>first</span>
-																				</div>
-																			</div>
-																			<div class="col-md-6">
-																				<div class="form-group">
-																					<label for="Name">Name <span style="color: red">*</span></label>
-																					<input type="text" class="form-control ganio-input">
-																					<span>second</span>
-																				</div>
-																			</div>
-																		</div>
-																		<div class="form-group">
-																			<label for="Name">Email <span style="color: red">*</span></label>
-																			<input type="text" class="form-control ganio-input">
-																		</div>
-																		<div class="form-group">
-																			<label for="Name">Email <span style="color: red">*</span></label>
-																			<textarea class="form-control ganio-input" cols="30" rows="10"></textarea>
-																		</div>
-																		<button class="cmn-btn">Submit</button>
-																	</form>
-															</div>
-													</div>
-											</div>
-									</div>
-							</div>
-							<div class="bottom-area pt-120">
-									<div class="row d-flex header-area">
-											<div class="col-lg-8 col-md-8 d-flex justify-content-md-between justify-content-center align-items-center">
-													<div class="logo-section">
-															<a class="site-logo site-title" href="index.html"><img src="assets/home/images/ez-logo.png" alt="site-logo"></a>
-													</div>
-													<ul class="navbar-nav main-menu d-flex align-items-center">
-															<li><a href="index.html" class="active">Home</a></li>
-															<li><a href="games.html">Games</a></li>
-															<li><a href="tournaments.html">Tournaments</a></li>
-													</ul>
-											</div>
-											<div class="col-lg-4 col-md-4 d-flex align-items-center justify-content-center justify-content-md-end">
-													<div class="social-area d-flex">
-															<a href="javascript:void(0)"><img src="assets/home/images/twitter.png" alt="image"></a>
-															<a href="javascript:void(0)"><img src="assets/home/images/facebook.png" alt="image"></a>
-															<a href="javascript:void(0)"><img src="assets/home/images/linkedin.png" alt="image"></a>
-															<a href="javascript:void(0)"><img src="assets/home/images/google.png" alt="image"></a>
-													</div>
-											</div>
-									</div>
-							</div>
-					</div>
-			</div>
-			<div class="footer-bottom">
-					<div class="container">
-							<div class="main-content">
-									<div class="row d-flex justify-content-center">
-											<div class="col-lg-8 col-md-8 col-sm-12 d-flex justify-content-start align-items-center justify-cen order-pro">
-													<div class="left-area">
-															<p>Copyright © Gainio | Designed by
-																	<a href="https://themeforest.net/user/pixelaxis">Pixelasis</a>. ALL RIGHTS RESERVED
-															</p>
-													</div>
-											</div>
-									</div>
-							</div>
-					</div>
-			</div>
-	</footer>
 </div>

@@ -7,6 +7,9 @@ import { RegisterComponent } from './pages/register/register.component';
 import { TeamsComponent } from './pages/teams/teams.component';
 import { TournamentsComponent } from './pages/tournaments/tournaments.component';
 import { GanioComponent } from './templates/ganio/ganio.component';
+import { OurCompanyComponent } from './pages/our-company/our-company.component';
+import { OurNftComponent } from './pages/our-nft/our-nft.component';
+import { MockTournamentsComponent } from './pages/mock-tournaments/mock-tournaments.component';
 
 const routes: Routes = [
   {
@@ -19,7 +22,7 @@ const routes: Routes = [
       },
 			{
 				path: 'tournaments',
-				component: TournamentsComponent
+				component: MockTournamentsComponent
 			},
 			{
 				path: 'profile',
@@ -28,6 +31,14 @@ const routes: Routes = [
 			{
 				path: 'login',
 				component: LoginComponent
+			},
+			{
+				path: 'our-company',
+				component: OurCompanyComponent
+			},
+			{
+				path: 'our-nft',
+				component: OurNftComponent
 			}
     ]
   }
