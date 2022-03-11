@@ -29,6 +29,52 @@ $body-bg: #00003E;
 	font-weight: 400;
 }
 
+.my-carousel {
+
+    // background: yellow;
+    width: 100%;
+    position: relative;
+    // overflow: hidden;
+    height: 171px;
+}
+
+.my-carousel .frame{
+
+	position: absolute;
+	// background: red;
+	left: 0px;
+	transition: left 1.5s;
+}
+
+.my-carousel .item{
+
+  float: left;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.my-carousel .item img{
+
+	width: 100%;
+	padding: 0 10px;
+}
+
+#tournaments-games .tab-content .single-item{
+
+	background: #4e01ce;
+}
+
+#tournaments-games .tab-content .single-item .cmn-btn-second{
+
+	background: #42F8FF;
+	color: black;
+}
+
+.social-area {
+
+	justify-content: center;
+}
+
 h1,h2,h3,h4,h5,h6 {
     padding: 0;
     margin: 0;
@@ -205,13 +251,13 @@ iframe {
 }
 @media (max-width: 991px) {
     .section-title{
-        font-size: 40px;
+        font-size: 40px !important;
     }
 }
 @media (max-width: 575px) {
     .sub-title,
     .sub-title-alt{
-        font-size: 12px;
+        font-size: 12px !important;
     }
 }
 .section-title span{
@@ -243,11 +289,13 @@ iframe {
 .pt-120 {
     padding-top: 120px;
 }
+
 @media (max-width: 991px) {
     .pt-120 {
         padding-top: 60px;
     }
 }
+
 @media (max-width: 575px) {
     .pt-120 {
         padding-top: 50px;
@@ -1024,8 +1072,8 @@ input[type="checkbox"]:checked + label{
     color: #00FEDF;
     font-family: inherit;
     font-weight: inherit;
-    font-size: inherit;
-    line-height: inherit;
+    font-size: inherit !important;
+    line-height: inherit !important;
 }
 #banner-section .main-content .cmn-btn{
     margin-top: 35px;
@@ -1177,8 +1225,8 @@ input[type="checkbox"]:checked + label{
     left: -55px;
     z-index: 1;
     text-transform: uppercase;
-    font-size: 14px;
-    line-height: 14px;
+    font-size: 14px !important;
+    line-height: 14px !important;
     background: #1B5E42;
     color: #fff;
     transform: rotate(315deg);
@@ -1202,8 +1250,8 @@ input[type="checkbox"]:checked + label{
 }
 #todays-winner-section .winner-chart .single-item .name-area h6{
     text-transform: uppercase;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 14px !important;
+    line-height: 20px !important;
 }
 #todays-winner-section .winner-chart .single-item .win-price{
     background: #160D96;
@@ -1230,7 +1278,7 @@ input[type="checkbox"]:checked + label{
     position: absolute;
     top: 30px;
     right: -50px;
-    font-size: 20px;
+    font-size: 20px !important;
     color: rgb(255, 255, 255);
     z-index: 2;
     overflow: hidden;
@@ -1343,14 +1391,14 @@ input[type="checkbox"]:checked + label{
 }
 #latest-activites-section .table th a{
     font-weight: bold;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 14px !important;
+    line-height: 20px !important;
 }
 #latest-activites-section .table th,
 #latest-activites-section .table td{
     font-weight: bold;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 14px !important;
+    line-height: 20px !important;
     color: #E7EAFF;
     width: 0%;
     padding: 15px 10px;
@@ -1460,8 +1508,8 @@ input[type="checkbox"]:checked + label{
     padding: 15px 30px 20px;
 }
 #faq-section .overlay .card-body p{
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 14px !important;
+    line-height: 20px !important;
 }
 #faq-section .overlay .card-header .btn-link{
     position: relative;
@@ -1471,7 +1519,7 @@ input[type="checkbox"]:checked + label{
     text-decoration: none;
     color: inherit;
     font-weight: inherit;
-    font-size: inherit;
+    font-size: inherit !important;
     text-transform: uppercase;
 }
 #faq-section .overlay .card-header .btn-link::before {
@@ -1518,8 +1566,8 @@ input[type="checkbox"]:checked + label{
 }
 #available-game-section.winners .tab-content .single-item span{
     font-weight: 700;
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 18px !important;
+    line-height: 24px !important;
     padding: 10px 25px;
     background: #4E01CE;
     border-radius: 14px;
@@ -1539,8 +1587,8 @@ input[type="checkbox"]:checked + label{
 }
 #footer-section .section-header p{
     font-weight: 700;
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 20px !important;
+    line-height: 28px !important;
 }
 #footer-section .footer-top{
     background-color: #310E9E;
@@ -1564,8 +1612,8 @@ input[type="checkbox"]:checked + label{
     background: #4E01CE;
     border-radius: 28px;
     font-weight: bold;
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 13px !important;
+    line-height: 18px !important;
     text-transform: uppercase;
     color: $body-color;
     margin-right: 5px;
@@ -1605,13 +1653,13 @@ input[type="checkbox"]:checked + label{
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 #footer-section .footer-bottom .left-area p{
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 16px !important;
+    line-height: 22px !important;
     text-transform: uppercase;
 }
 #footer-section .footer-bottom .left-area a{
-    font-size: inherit;
-    line-height: inherit;
+    font-size: inherit !important;
+    line-height: inherit !important;
     text-transform: uppercase;
 }
 #footer-section .footer-bottom .left-area a{
@@ -1706,7 +1754,7 @@ input[type="checkbox"]:checked + label{
 }
 .bottom-item .single-item span{
     font-weight: 700;
-    font-size: 14px;
+    font-size: 14px !important;
     line-height: 20px;
     padding: 2px 8px;
     background: #4E01CE;
@@ -1725,7 +1773,7 @@ input[type="checkbox"]:checked + label{
     text-transform: uppercase;
     color: #00FEDF;
     font-weight: inherit;
-    font-size: inherit;
+    font-size: inherit !important;
     line-height: inherit;
     background: #191961;
     border-radius: 5px;
@@ -1789,7 +1837,7 @@ input[type="checkbox"]:checked + label{
     text-transform: uppercase;
     color: #00FEDF;
     font-weight: inherit;
-    font-size: inherit;
+    font-size: inherit !important;
     line-height: inherit;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
@@ -1924,7 +1972,7 @@ input[type="checkbox"]:checked + label{
 }
 #banner-section.inner-banner .breadcrumb-area ol li,
 #banner-section.inner-banner .breadcrumb-area ol li a{
-    font-size: 24px;
+    font-size: 24px !important;
     line-height: 34px;
     font-weight: 400;
     color: $body-color;
@@ -2101,7 +2149,7 @@ input[type="checkbox"]:checked + label{
 }
 #affiliate-program.game-2 .section-header h5 span{
     color: #00FEDF;
-    font-size: inherit;
+    font-size: inherit !important;
     font-weight: inherit;
     font-family: inherit;
 }
@@ -2286,12 +2334,12 @@ input[type="checkbox"]:checked + label{
 }
 #tournaments-games .tab-content .single-item .grid-style .bet{
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 16px !important;
     line-height: 22px;
 }
 #tournaments-games .tab-content .single-item .grid-style .bet span{
     color: #00FEDF;
-    font-size: inherit;
+    font-size: inherit !important;
     line-height: inherit;
 }
 #tournaments-games .tab-content .single-item .list-right{
@@ -2311,7 +2359,7 @@ input[type="checkbox"]:checked + label{
 }
 #tournaments-games .tab-content .single-item.list .list-right .draw-counter .time-parameter span{
     font-weight: bold;
-    font-size: 13px;
+    font-size: 13px !important;
     line-height: 18px;
     color: #03D6F9;
     margin: 0 4px;
@@ -2325,7 +2373,7 @@ input[type="checkbox"]:checked + label{
 #tournaments-games .tab-content .single-item.list .list-right .end-on span,
 #tournaments-games .tab-content .single-item .grid-style .end-on span{
     color: #00FEDF;
-    font-size: inherit;
+    font-size: inherit !important;
     line-height: inherit;
 }
 #tournaments-games .tab-content .single-item.list{
@@ -2366,7 +2414,7 @@ input[type="checkbox"]:checked + label{
 }
 #banner-section.tourn-details .bottom-area .bet-details h6,
 #banner-section.tourn-details .bottom-area .prize-area h6{
-    font-size: 13px;
+    font-size: 13px !important;
     line-height: 18px;
     text-transform: uppercase;
 }
@@ -2385,7 +2433,7 @@ input[type="checkbox"]:checked + label{
 #banner-section.tourn-details .bottom-area .bet-details h5 span{
     color: $body-color;
     text-transform: uppercase;
-    font-size: inherit;
+    font-size: inherit !important;
     font-family: inherit;
     font-weight: 700;
 }
@@ -2398,7 +2446,7 @@ input[type="checkbox"]:checked + label{
 }
 #banner-section.tourn-details .bottom-area .draw-counter .time-parameter span{
     font-weight: bold;
-    font-size: 13px;
+    font-size: 13px !important;
     line-height: 18px;
     text-transform: uppercase;
     color: #00FEDF;
@@ -2515,7 +2563,7 @@ input[type="checkbox"]:checked + label{
 }
 #tournaments-prize .modal-content .cmn-btn {
     margin-top: 30px;
-    font-size: 13px;
+    font-size: 13px !important;
     line-height: 18px;
 }
 #tournaments-prize .modal-header{
@@ -2540,7 +2588,7 @@ input[type="checkbox"]:checked + label{
 #tournaments-prize tbody tr td,
 #tournaments-prize tbody tr th{
     color: $body-color;
-    font-size: 13px;
+    font-size: 13px !important;
     line-height: 18px;
     font-weight: bold;
     text-align: center;
@@ -2588,7 +2636,7 @@ input[type="checkbox"]:checked + label{
 #leaderboard-prize tbody tr td,
 #leaderboard-prize tbody tr th{
     color: $body-color;
-    font-size: 13px;
+    font-size: 13px !important;
     line-height: 18px;
     font-weight: bold;
     text-align: center;
@@ -2665,7 +2713,7 @@ input[type="checkbox"]:checked + label{
 }
 #story-behind-gainio .btn-area a{
     border-radius: 10px;
-    font-size: 13px;
+    font-size: 13px !important;
     line-height: 18px;
     padding: 12px 18px;
     margin: 0 15px;
@@ -2720,7 +2768,7 @@ input[type="checkbox"]:checked + label{
 }
 #team-member .single-item .bottom-area h5{
     text-transform: uppercase;
-    margin: 24px 0 30px;
+    margin: 24px 0 8px 0;
     text-align: center;
 }
 #team-member .social-area a{
@@ -2764,7 +2812,7 @@ input[type="checkbox"]:checked + label{
     background: #4E01CE;
     box-shadow: 0px 4px 0px #4707b3;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 13px !important;
     line-height: 18px;
     text-transform: uppercase;
     color: $body-color;
@@ -2802,7 +2850,7 @@ input[type="checkbox"]:checked + label{
     text-decoration: none;
     color: inherit;
     font-weight: inherit;
-    font-size: inherit;
+    font-size: inherit !important;
     text-transform: uppercase;
 }
 #faq-page.faq .card-header .btn-link::before {
@@ -2869,7 +2917,7 @@ input[type="checkbox"]:checked + label{
         padding: 40px 12px;
         font-weight: 800;
         font-family: var(--body-font);
-        font-size: 18px;
+        font-size: 18px !important;
         text-transform: capitalize;
     }
     #leading-brand .bg-right {
@@ -2919,28 +2967,28 @@ input[type="checkbox"]:checked + label{
 
 @media (max-width: 991px) {
     h1, h1>a {
-        font-size: 54px;
-        line-height: 64px;
+        font-size: 54px !important;
+        line-height: 64px !important;
     }
     h2, h2>a {
-        font-size: 40px;
-        line-height: 47px;
+        font-size: 40px !important;
+        line-height: 47px !important;
     }
     h3, h3>a {
-        font-size: 30px;
-        line-height: 36px;
+        font-size: 30px !important;
+        line-height: 36px !important;
     }
     h4, h4>a {
-        font-size: 24px;
-        line-height: 28px;
+        font-size: 24px !important;
+        line-height: 28px !important;
     }
     h5, h5>a {
-        font-size: 18px;
-        line-height: 22px;
+        font-size: 18px !important;
+        line-height: 22px !important;
     }
     h6, h6>a, a, p, span, li, .cmn-btn, table thead tr th{
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 14px !important;
+        line-height: 20px !important;
     }
     .section-header {
         margin-bottom: 30px;
@@ -3008,12 +3056,12 @@ input[type="checkbox"]:checked + label{
         width: 40%;
     }
     #footer-section .subscribe input {
-        font-size: 14px;
+        font-size: 14px !important;
         padding: 10px 14px;
     }
     #footer-section .footer-bottom .left-area p {
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 14px !important;
+        line-height: 20px !important;
     }
     #latest-activites-section.games .ani-div .obj-1 {
         display: none;
@@ -3324,7 +3372,7 @@ input[type="checkbox"]:checked + label{
         margin-bottom: 55px;
     }
     #banner-section.inner-banner .breadcrumb-area ol li, #banner-section.inner-banner .breadcrumb-area ol li a {
-        font-size: 18px;
+        font-size: 18px !important;
     }
     #faq-page.faq .nav-tabs .nav-item .cmn-btn {
         padding: 10px 13px;
@@ -3358,28 +3406,28 @@ input[type="checkbox"]:checked + label{
 
 @media (max-width: 575px) {
     h1, h1>a {
-        font-size: 40px;
-        line-height: 46px;
+        font-size: 40px !important;
+        line-height: 46px !important;
     }
     h2, h2>a {
-        font-size: 30px;
-        line-height: 36px;
+        font-size: 30px !important;
+        line-height: 36px !important;
     }
     h3, h3>a {
-        font-size: 24px;
-        line-height: 28px;
+        font-size: 24px !important;
+        line-height: 28px !important;
     }
     h4, h4>a {
-        font-size: 18px;
-        line-height: 22px;
+        font-size: 18px !important;
+        line-height: 22px !important;
     }
     h5, h5>a {
-        font-size: 14px;
-        line-height: 18px;
+        font-size: 14px !important;
+        line-height: 18px !important;
     }
     h6, h6>a, a, p, span, li, .cmn-btn, table thead tr th{
-        font-size: 14px;
-        line-height: 18px;
+        font-size: 14px !important;
+        line-height: 18px !important;
     }
     #banner-section {
         padding-top: 130px;
@@ -3455,8 +3503,8 @@ input[type="checkbox"]:checked + label{
         top: -30%;
     }
     #footer-section .section-header p {
-        font-size: 16px;
-        line-height: 20px;
+        font-size: 16px !important;
+        line-height: 20px !important;
     }
     #header-section .header-area {
         margin-left: 0;
@@ -3464,7 +3512,7 @@ input[type="checkbox"]:checked + label{
     }
     #banner-section.inner-banner .breadcrumb-area ol li,
     #banner-section.inner-banner .breadcrumb-area ol li a {
-        font-size: 16px;
+        font-size: 16px !important;
     }
     #tournament-section .slick-initialized .slick-prev {
         right: 0;
@@ -3474,6 +3522,17 @@ input[type="checkbox"]:checked + label{
     }
     #tournaments-prize .cmn-btn {
         margin-top: 10px;
+    }
+
+    .footer-top {
+
+    	background-image: none !important;
+    	background-color: #310E9E;
+    }
+
+    .footer-image {
+
+    	display: none;
     }
 }
 
@@ -3522,8 +3581,8 @@ input[type="checkbox"]:checked + label{
         margin-bottom: 30px;
     }
     #counter-section .single-item span {
-        font-size: 20px;
-        line-height: 28px;
+        font-size: 20px !important;
+        line-height: 28px !important;
         margin: 5px 0 2px;
     }
     #jackpot-section .right-area .couter-area {
@@ -3578,8 +3637,8 @@ input[type="checkbox"]:checked + label{
         padding: 15px 10px;
     }
     #footer-section .section-header p {
-        font-size: 14px;
-        line-height: 18px;
+        font-size: 14px !important;
+        line-height: 18px !important;
     }
     #footer-section .footer-bottom .left-area p {
         margin: 35px 12px 0;
