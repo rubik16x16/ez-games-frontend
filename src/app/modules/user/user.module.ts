@@ -17,6 +17,7 @@ import { ShowComponent } from './pages/tournaments/show/show.component';
 import { OurCompanyComponent } from './pages/our-company/our-company.component';
 import { OurNftComponent } from './pages/our-nft/our-nft.component';
 import { MockTournamentsComponent } from './pages/mock-tournaments/mock-tournaments.component';
+import { TestComponent } from './pages/test/test.component';
 
 @NgModule({
 	declarations: [
@@ -31,7 +32,8 @@ import { MockTournamentsComponent } from './pages/mock-tournaments/mock-tourname
 	  ShowComponent,
    OurCompanyComponent,
    OurNftComponent,
-   MockTournamentsComponent
+   MockTournamentsComponent,
+   TestComponent
 	],
 	imports: [
 		CommonModule,

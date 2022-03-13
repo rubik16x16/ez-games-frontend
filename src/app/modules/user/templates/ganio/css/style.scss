@@ -29,36 +29,6 @@ $body-bg: #00003E;
 	font-weight: 400;
 }
 
-.my-carousel {
-
-    // background: yellow;
-    width: 100%;
-    position: relative;
-    // overflow: hidden;
-    height: 171px;
-}
-
-.my-carousel .frame{
-
-	position: absolute;
-	// background: red;
-	left: 0px;
-	transition: left 1.5s;
-}
-
-.my-carousel .item{
-
-  float: left;
-  border-radius: 25px;
-  overflow: hidden;
-}
-
-.my-carousel .item img{
-
-	width: 100%;
-	padding: 0 10px;
-}
-
 #tournaments-games .tab-content .single-item{
 
 	background: #4e01ce;
@@ -1721,7 +1691,8 @@ input[type="checkbox"]:checked + label{
 
 /* Home Page Second  */
 #banner-section.index-2 {
-    background-image: unset;
+    background-image: url(/assets/home/images/jungle.png);
+    background-size: cover;
 }
 #banner-section.index-2 .banner-content{
     position: relative;
@@ -1820,7 +1791,7 @@ input[type="checkbox"]:checked + label{
 
 /* Jackpot Section */
 #jackpot-section{
-    background-image: url(/assets/home/images/jackpot-bg.png);
+    // background-image: url(/assets/home/images/jackpot-bg.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }

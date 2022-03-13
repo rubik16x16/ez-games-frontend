@@ -1,13 +1,11 @@
-import { Component, OnInit, AfterViewInit, ElementRef, ViewChild  } from '@angular/core';
-require('slick-carousel');
-require('jquery');
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 @Component({
-	selector: 'app-index',
-	templateUrl: './index.component.html',
-	styleUrls: ['./index.component.scss']
+	selector: 'app-test',
+	templateUrl: './test.component.html',
+	styleUrls: ['./test.component.scss']
 })
-export class IndexComponent implements OnInit, AfterViewInit {
+export class TestComponent implements OnInit, AfterViewInit {
 
 	@ViewChild('slider') slider: ElementRef;
 
@@ -22,8 +20,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
 		let slider = this.slider.nativeElement;
 		let slides = slider.querySelector('.slides');
 
+		console.log('test');
 		let interval = window.setInterval(() => {
 
+			console.log((slides.scrollLeftMax - slider.offsetWidth), slides.scrollLeft);
 			if(slides.scrollLeft > (slides.scrollLeftMax - slider.offsetWidth)){
 
 				slides.scrollLeft = 0;

@@ -10,6 +10,7 @@ import { GanioComponent } from './templates/ganio/ganio.component';
 import { OurCompanyComponent } from './pages/our-company/our-company.component';
 import { OurNftComponent } from './pages/our-nft/our-nft.component';
 import { MockTournamentsComponent } from './pages/mock-tournaments/mock-tournaments.component';
+import { TestComponent } from './pages/test/test.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,10 @@ const routes: Routes = [
 			{
 				path: 'our-nft',
 				component: OurNftComponent
+			},
+			{
+				path: 'test',
+				component: TestComponent
 			}
     ]
   }

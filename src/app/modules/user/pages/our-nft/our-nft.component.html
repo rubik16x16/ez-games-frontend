@@ -1,10 +1,9 @@
 <!-- banner-section start -->
-<section id="banner-section" class="index-2 home-2">
+<section id="banner-section" class="index-2 home-2" style="padding-top: 60px; margin-bottom: 0">
 	<div class="banner-content pt-120">
 		<div class="container">
-			<img src="assets/home/images/banner-illus.png" class="banner-side" alt="image">
 			<div class="row">
-				<div class="col-lg-8 col-md-9 pb-120">
+				<div class="col-md-6 pb-120">
 					<div class="main-content pb-120">
 						<div class="top-area">
 							<h1>Battle, Win,Earn Live esports Contests</h1>
@@ -16,55 +15,56 @@
 						</div>
 					</div>
 				</div>
+				<div class="col-md-6">
+					<div class="nft-card" fxLayout="column">
+						<div class="card-header" fxFlex="30">
+							<img src="assets/home/images/level-up-left.png" alt="">
+						</div>
+						<div fxFlex="70" class="card-content">
+							<h3>Features:</h3>
+							<ul>
+								<li>feature 1</li>
+								<li>feature 2</li>
+								<li>feature 3</li>
+								<li>feature 4</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 				<div class="col-lg-12">
 					<div class="bottom-item">
 						<div class="container">
-							<div class="bottom-content">
-								<div class="row justify-content-center">
-									<div class="col-lg-5">
-										<div class="left-area">
-											<h4>WINNERS</h4>
-											<div class="banner-carousel">
-												<a href="#" class="single-item">
-													<img src="assets/home/images/winners-1.png" alt="image">
-													<span>$100</span>
-												</a>
-												<a href="#" class="single-item">
-													<img src="assets/home/images/winners-2.png" alt="image">
-													<span>$100</span>
-												</a>
-												<a href="#" class="single-item">
-													<img src="assets/home/images/winners-3.png" alt="image">
-													<span>$100</span>
-												</a>
-												<a href="#" class="single-item">
-													<img src="assets/home/images/winners-4.png" alt="image">
-													<span>$100</span>
-												</a>
-												<a href="#" class="single-item">
-													<img src="assets/home/images/winners-2.png" alt="image">
-													<span>$100</span>
-												</a>
-												<a href="#" class="single-item">
-													<img src="assets/home/images/winners-3.png" alt="image">
-													<span>$100</span>
-												</a>
-											</div>
-											<a href="winners.html" class="cmn-btn-second">View All Winner</a>
-										</div>
+							<div class="slider" #slider>
+								<button type="button" class="cmn-btn-alt cmn-btn next-btn" (click)="scrollNext()">
+									<img src="assets/home/images/double-right.png" alt="image">
+								</button>
+								<button type="button" class="cmn-btn-alt cmn-btn prev-btn" (click)="scrollPrev()">
+									<img src="assets/home/images/double-left.png" alt="image">
+								</button>
+								<div class="slides" id="slides" fxLayout="row">
+									<div>
+										<img src="assets/home/images/James.png" alt="">
 									</div>
-									<div class="col-lg-5 text-center">
-										<div class="right-area">
-											<h4>Tournament</h4>
-											<h4 class="couter-area">
-											<span>$</span>
-											<span>2</span>
-											<span>8</span>
-											<span>3</span>
-											<span>1</span>
-											</h4>
-											<a href="tournaments-details.html" class="cmn-btn-second">Join Now!</a>
-										</div>
+									<div>
+										<img src="assets/home/images/Jetsil-Tovar.png" alt="">
+									</div>
+									<div>
+										<img src="assets/home/images/Jonathan-Bustos.png" alt="">
+									</div>
+									<div>
+										<img src="assets/home/images/Anthony.png" alt="">
+									</div>
+									<div>
+										<img src="assets/home/images/Katherine-Habib.png" alt="">
+									</div>
+									<div>
+										<img src="assets/home/images/Raphael-Ruiz.png" alt="">
+									</div>
+									<div>
+										<img src="assets/home/images/Sebastian-Salas.png" alt="">
+									</div>
+									<div>
+										<img src="assets/home/images/James.png" alt="">
 									</div>
 								</div>
 							</div>
@@ -78,10 +78,9 @@
 <!-- banner-section end -->
 <!-- Jackpot In start -->
 <section id="jackpot-section">
-	<div class="overlay pt-120 pb-120">
+	<div class="overlay pb-120" style="padding-top: 300px">
 		<div class="container">
 			<div class="row justify-content-center">
-				<h1>Hola mundo</h1>
 				<div class="col-lg-8 text-center">
 					<div class="right-area">
 						<h3>TOTAL JACKPOT AMOUNT</h3>
@@ -96,11 +95,6 @@
 						<span>1</span>
 						</h1>
 						<a href="javascript:void(0)" class="cmn-btn-second">Get Start Now!</a>
-					</div>
-				</div>
-				<div class="col-lg-12 pt-120 jackpot-area">
-					<div class="section-header">
-						<h3>Jackpot</h3>
 					</div>
 				</div>
 			</div>
@@ -356,7 +350,7 @@
 <!-- Counter In end -->
 <!-- faq start -->
 <section id="faq-section" class="index-2">
-<div class="overlay pb-120">
+<div class="overlay" style="padding-bottom: 360px;">
 	<div class="container">
 		<div class="row justify-content-center text-center">
 			<div class="col-lg-8">
@@ -433,29 +427,21 @@
 </div>
 </section>
 <!-- faq end -->
-<!-- Footer Section start -->
-<footer id="footer-section">
+<footer id="footer-section" style="margin-top: 0">
 	<div class="overlay">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="footer-top pt-120" style="padding-bottom: 20px;">
-						<div class="side-contant">
-							<div class="left">
-								<img class="bg" src="assets/home/images/footer-left-bg.png" alt="image">
-								<img class="top" src="assets/home/images/footer-left-top.png" alt="image">
-							</div>
-							<div class="right">
-								<img src="assets/home/images/footer-right.png" alt="image">
-							</div>
-						</div>
+					<div class="footer-top pt-120" style="padding-top: 40px; padding-bottom: 40px; background-image: url('assets/home/images/background.png'); position: relative; overflow: hidden;">
+						<img class="footer-image" src="assets/home/images/footer-left-top.png" alt="" style="position: absolute; bottom: 0; left: 0; height: 90%;">
+						<img class="footer-image" src="assets/home/images/footer-right-top.png" alt="" style="position: absolute; bottom: 0; right: 0; height: 90%;">
 						<div class="row justify-content-center">
 							<div class="col-lg-6 col-md-6 col-sm-10">
 								<div class="section-header text-center">
-									<h4 class="title">Want gaming &amp; esports news straight to your inbox?</h4>
-									<p>To Get Exclusive Benefits</p>
+									<h2 class="title" style="color: #42F8FF">CONTACT US</h2>
+									<p>Fell free to send us a message about an issue or simply comment/suggest something!</p>
 								</div>
-								<form action="#">
+								<form action="#" style="color: white; font-weight: 800;">
 									<div class="row" style="font-family: 'Chakra Petch', sans-serif;">
 										<div class="col-md-6">
 											<div class="form-group">
@@ -467,7 +453,6 @@
 											<div class="form-group">
 												<label for="Name">Last Name <span style="color: red">*</span></label>
 												<input type="text" class="form-control ganio-input">
-												<span>second</span>
 											</div>
 										</div>
 										<div class="col-md-6">
@@ -484,7 +469,7 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<label for="Name">Message/Comment <span style="color: red">*</span></label>
+										<label for="Name">Message/Content <span style="color: red">*</span></label>
 										<textarea class="form-control ganio-input" cols="30" rows="3"></textarea>
 									</div>
 									<button class="cmn-btn">Submit</button>
@@ -495,19 +480,16 @@
 				</div>
 			</div>
 			<div class="bottom-area pt-120">
-				<div class="row d-flex header-area">
-					<div class="col-lg-8 col-md-8 d-flex justify-content-md-between justify-content-center align-items-center">
-						<div class="logo-section">
-							<a class="site-logo site-title" href="index.html"><img src="assets/home/images/ez-logo.png" alt="site-logo"></a>
-						</div>
+				<div style="text-align: center;">
+					<div class="logo-section">
+						<a class="site-logo site-title" href="index.html"><img src="assets/home/images/ez-logo.png" alt="site-logo"></a>
 					</div>
-					<div class="col-lg-4 col-md-4 d-flex align-items-center justify-content-center justify-content-md-end">
-						<div class="social-area d-flex">
-							<a href="javascript:void(0)"><img src="assets/home/images/twitter.png" alt="image"></a>
-							<a href="javascript:void(0)"><img src="assets/home/images/facebook.png" alt="image"></a>
-							<a href="javascript:void(0)"><img src="assets/home/images/linkedin.png" alt="image"></a>
-							<a href="javascript:void(0)"><img src="assets/home/images/google.png" alt="image"></a>
-						</div>
+					<div class="social-area d-flex" style="margin-top: 20px; justify-content: center;">
+						<a href="javascript:void(0)"><img src="assets/home/images/social-bg1.png" alt="image"></a>
+						<a href="javascript:void(0)"><img src="assets/home/images/social-bg2.png" alt="image"></a>
+						<a href="javascript:void(0)"><img src="assets/home/images/social-bg3.png" alt="image"></a>
+						<a href="javascript:void(0)"><img src="assets/home/images/social-bg4.png" alt="image"></a>
+						<a href="javascript:void(0)"><img src="assets/home/images/social-bg5.png" alt="image"></a>
 					</div>
 				</div>
 			</div>
