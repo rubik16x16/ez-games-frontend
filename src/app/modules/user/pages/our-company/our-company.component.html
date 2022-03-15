@@ -56,8 +56,8 @@
 					<h2 class="title">THE EZ TEAM'S MISSION</h2>
 					<p>EZ Battles aims to bring groundbreaking gaming tournaments to industry. Trustworthy, reliable competitive events that will bring gamers a path to make income doing what they love the most. Daily updates and fresh interfaces will bring the best user experience in the industry, and that’s our company’s objective.</p>
 					<div class="btn-area d-flex justify-content-center">
-						<a href="javascript:void(0)" class="cmn-btn cmn-btn-alt">Join our team</a>
-						<a href="javascript:void(0)" class="cmn-btn-second">Read More</a>
+						<button (click)="goTo('footer-section')" class="cmn-btn cmn-btn-alt">Join our team</button>
+						<a routerLink="/our-nft" class="cmn-btn">OUR NFT</a>
 					</div>
 				</div>
 			</div>
@@ -97,7 +97,7 @@
 									</div>
 								</div>
 								<div class="text-area">
-									<h5>EASY USER ACCESS</h5>
+									<h5>LIVE SCORING TECHNOLOGY</h5>
 								</div>
 							</div>
 						</div>
@@ -163,19 +163,15 @@
 				</div>
 			</div>
 			<div class="bottom-area pt-120">
-				<div class="row d-flex header-area">
-					<div class="col-lg-8 col-md-8 d-flex justify-content-md-between justify-content-center align-items-center">
-						<div class="logo-section">
-							<a class="site-logo site-title" href="index.html"><img src="assets/home/images/logo.png" alt="site-logo"></a>
-						</div>
+				<div style="text-align: center;">
+					<div class="logo-section">
+						<a class="site-logo site-title" href="index.html"><img src="assets/home/images/ez-logo.png" alt="site-logo"></a>
 					</div>
-					<div class="col-lg-4 col-md-4 d-flex align-items-center justify-content-center justify-content-md-end">
-						<div class="social-area d-flex">
-							<a href="javascript:void(0)"><img src="assets/home/images/twitter.png" alt="image"></a>
-							<a href="javascript:void(0)"><img src="assets/home/images/facebook.png" alt="image"></a>
-							<a href="javascript:void(0)"><img src="assets/home/images/linkedin.png" alt="image"></a>
-							<a href="javascript:void(0)"><img src="assets/home/images/google.png" alt="image"></a>
-						</div>
+					<div class="social-area d-flex" style="margin-top: 20px; justify-content: center;">
+						<a href="https://twitter.com/ezbattles"><img src="assets/home/images/social-bg1.png" alt="image"></a>
+						<a href="https://www.instagram.com/ezbattles/"><img src="assets/home/images/social-bg2.png" alt="image"></a>
+						<a href="https://discord.gg/GmyGB6RKUZ"><img src="assets/home/images/social-bg3.png" alt="image"></a>
+						<a href="https://www.facebook.com/ezbattlesusa"><img src="assets/home/images/social-bg4.png" alt="image"></a>
 					</div>
 				</div>
 			</div>

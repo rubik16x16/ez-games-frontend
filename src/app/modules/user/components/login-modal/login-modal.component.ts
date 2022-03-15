@@ -16,7 +16,7 @@ export class LoginModalComponent implements OnInit {
 	});
 
   constructor(
-		public dialogRef: MatDialogRef<LoginModalComponent>,
+		public dialogRef: MatDialogRef<LoginModalComponent>
 	) { }
 
   ngOnInit(): void {

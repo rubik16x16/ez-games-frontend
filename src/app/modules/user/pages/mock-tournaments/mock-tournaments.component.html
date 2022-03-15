@@ -1,5 +1,5 @@
 <!-- inner banner start -->
-<section id="banner-section" class="inner-banner games tournaments">
+<!-- <section id="banner-section" class="inner-banner games tournaments">
 	<div class="banner-content d-flex align-items-center">
 		<div class="container">
 			<img src="assets/home/images/tour-left-banner.png" class="banner-left" alt="image">
@@ -9,94 +9,30 @@
 					<img src="assets/home/images/tour-right-illu.png" class="banner-right-illu" alt="image">
 					<div class="text-area">
 						<h1>Tournaments</h1>
-						<div class="breadcrumb-area">
-							<nav aria-label="breadcrumb">
-								<ol class="breadcrumb d-flex">
-									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Tournaments</li>
-								</ol>
-							</nav>
-						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 <!-- banner-section end -->
 <!-- Tournaments Games In start -->
 <section id="tournaments-games">
-	<div class="overlay pt-120" style="padding-bottom: 320px">
+	<div class="overlay wrapper" style="padding-bottom: 320px">
 		<div class="container wow fadeInUp">
 			<div class="row justify-content-center">
 				<div class="col-lg-8 col-md-9 col-sm-8">
 					<div class="section-header text-center">
-						<h2 class="title">Tournaments <span>games</span></h2>
-						<p>Play in multi-player tournaments or head to head for cash prizes.</p>
+						<h2 class="title">Tournaments <span>BETA</span></h2>
+						<p>Sign up for a tournament below and compete for cash prizes and credits</p>
 					</div>
 				</div>
 			</div>
-			<div class="menu-bar">
-				<div class="row justify-content-between">
-					<div class="col-lg-5 col-md-5">
-						<form action="#">
-							<div class="input-area d-flex">
-								<div class="icon d-flex align-items-center"><img src="assets/home/images/search-icon.png"
-								alt="image"></div>
-								<input type="text" placeholder="What’s your game?">
-							</div>
-						</form>
-					</div>
-					<div class="col-lg-7 col-md-7 d-flex justify-content-center justify-content-md-end">
-						<ul class="nav nav-tabs" id="myTab" role="tablist">
-							<li class="nav-item">
-								<a class="cmn-btn-alt cmn-btn active" id="all-tab" data-toggle="tab" href="#all"
-								role="tab" aria-controls="all" aria-selected="true">All</a>
-							</li>
-							<li class="nav-item">
-								<a class="cmn-btn-alt cmn-btn" id="today-tab" data-toggle="tab" href="#today"
-								role="tab" aria-controls="today" aria-selected="false">Today</a>
-							</li>
-							<li class="nav-item">
-								<a class="cmn-btn-alt cmn-btn" id="thisweek-tab" data-toggle="tab" href="#thisweek"
-								role="tab" aria-controls="thisweek" aria-selected="false">This Week</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
+			<button (click)="openFilters()" type="button" class="cmn-btn-alt cmn-btn next-btn filters">
+				Filter<img src="assets/home/images/double-right.png" alt="image">
+			</button>
 			<div class="tab-content" id="myTabContent">
 				<div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
-					<div class="row mb-cus">
-						<div class="col-lg-3 col-md-3 col-sm-4">
-							<select>
-								<option>Upcoming</option>
-								<option>Upcoming 2</option>
-								<option>Upcoming 3</option>
-								<option>Upcoming 4</option>
-							</select>
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-4">
-							<select>
-								<option>Select Team Size</option>
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-							</select>
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-4">
-							<select>
-								<option>Select Entry Fee</option>
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-							</select>
-						</div>
-						<div class="col-lg-3 col-md-2 d-flex align-items-center justify-content-end md-none">
-							<i class="fas fa-th grid-btn active"></i>
-							<i class="fas fa-list list-btn"></i>
-						</div>
-					</div>
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="all-items">
@@ -104,12 +40,57 @@
 									<div class="content-area">
 										<img src="assets/home/images/tournaments-games-1.png" alt="image">
 										<div class="grid-style">
-											<h5 class="head-area">Tournament 1</h5>
+											<h5 class="head-area">BR SOLOS</h5>
 											<div class="prize d-flex justify-content-center">
 												<img src="assets/home/images/prize-icon.png" alt="image">
-												<h5>€6,000</h5>
+												<h5>$6,000</h5>
 											</div>
-											<p class="bet">Min. bet <span>€0.20</span></p>
+											<p class="bet">Entry/Player <span>$0.20</span></p>
+											<button type="button" class="cmn-btn-second">Register</button>
+											<p class="end-on">Will end on: <span>08-07-2022</span></p>
+										</div>
+									</div>
+								</div>
+								<div class="single-item">
+									<div class="content-area">
+										<img src="assets/home/images/tournaments-games-2.png" alt="image">
+										<div class="grid-style">
+											<h5 class="head-area">BR DUOS</h5>
+											<div class="prize d-flex justify-content-center">
+												<img src="assets/home/images/prize-icon.png" alt="image">
+												<h5>$6,000</h5>
+											</div>
+											<p class="bet">Entry/Player <span>$0.20</span></p>
+											<button type="button" class="cmn-btn-second">Register</button>
+											<p class="end-on">Will end on: <span>08-07-2022</span></p>
+										</div>
+									</div>
+								</div>
+								<div class="single-item">
+									<div class="content-area">
+										<img src="assets/home/images/tournaments-games-3.png" alt="image">
+										<div class="grid-style">
+											<h5 class="head-area">BR TRIOS</h5>
+											<div class="prize d-flex justify-content-center">
+												<img src="assets/home/images/prize-icon.png" alt="image">
+												<h5>$6,000</h5>
+											</div>
+											<p class="bet">Entry/Player <span>$0.20</span></p>
+											<button type="button" class="cmn-btn-second">Register</button>
+											<p class="end-on">Will end on: <span>08-07-2022</span></p>
+										</div>
+									</div>
+								</div>
+								<div class="single-item">
+									<div class="content-area">
+										<img src="assets/home/images/tournaments-games-4.png" alt="image">
+										<div class="grid-style">
+											<h5 class="head-area">BR QUADS</h5>
+											<div class="prize d-flex justify-content-center">
+												<img src="assets/home/images/prize-icon.png" alt="image">
+												<h5>$6,000</h5>
+											</div>
+											<p class="bet">Entry/Player <span>$0.20</span></p>
 											<button type="button" class="cmn-btn-second">Register</button>
 											<p class="end-on">Will end on: <span>08-07-2022</span></p>
 										</div>
@@ -119,12 +100,12 @@
 									<div class="content-area">
 										<img src="assets/home/images/tournaments-games-1.png" alt="image">
 										<div class="grid-style">
-											<h5 class="head-area">Tournament 2</h5>
+											<h5 class="head-area">BR SOLOS</h5>
 											<div class="prize d-flex justify-content-center">
 												<img src="assets/home/images/prize-icon.png" alt="image">
-												<h5>€6,000</h5>
+												<h5>$6,000</h5>
 											</div>
-											<p class="bet">Min. bet <span>€0.20</span></p>
+											<p class="bet">Entry/Player <span>$0.20</span></p>
 											<button type="button" class="cmn-btn-second">Register</button>
 											<p class="end-on">Will end on: <span>08-07-2022</span></p>
 										</div>
@@ -132,38 +113,18 @@
 								</div>
 								<div class="single-item">
 									<div class="content-area">
-										<img src="assets/home/images/tournaments-games-1.png" alt="image">
+										<img src="assets/home/images/tournaments-games-2.png" alt="image">
 										<div class="grid-style">
-											<h5 class="head-area">Tournament 3</h5>
+											<h5 class="head-area">BR DUOS</h5>
 											<div class="prize d-flex justify-content-center">
 												<img src="assets/home/images/prize-icon.png" alt="image">
-												<h5>€6,000</h5>
+												<h5>$6,000</h5>
 											</div>
-											<p class="bet">Min. bet <span>€0.20</span></p>
+											<p class="bet">Entry/Player <span>$0.20</span></p>
 											<button type="button" class="cmn-btn-second">Register</button>
 											<p class="end-on">Will end on: <span>08-07-2022</span></p>
 										</div>
 									</div>
-								</div>
-								<div class="single-item">
-									<div class="content-area">
-										<img src="assets/home/images/tournaments-games-1.png" alt="image">
-										<div class="grid-style">
-											<h5 class="head-area">Tournament 4</h5>
-											<div class="prize d-flex justify-content-center">
-												<img src="assets/home/images/prize-icon.png" alt="image">
-												<h5>€6,000</h5>
-											</div>
-											<p class="bet">Min. bet <span>€0.20</span></p>
-											<button type="button" class="cmn-btn-second">Register</button>
-											<p class="end-on">Will end on: <span>08-07-2022</span></p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-12 d-flex justify-content-center">
-									<a href="javascript:void(0)" class="cmn-btn-second">View More</a>
 								</div>
 							</div>
 						</div>
@@ -186,9 +147,9 @@
 							<div class="col-lg-6 col-md-6 col-sm-10">
 								<div class="section-header text-center">
 									<h2 class="title" style="color: #42F8FF">CONTACT US</h2>
-									<p>Fell free to send us a message about an issue or simply comment/suggest something!</p>
+									<p>Feel free to send us a message about an issue or simply comment/suggest something!</p>
 								</div>
-								<form action="#" style="color: white; font-weight: 800;">
+								<form action="#" style="color: white;">
 									<div class="row" style="font-family: 'Chakra Petch', sans-serif;">
 										<div class="col-md-6">
 											<div class="form-group">
@@ -232,11 +193,10 @@
 						<a class="site-logo site-title" href="index.html"><img src="assets/home/images/ez-logo.png" alt="site-logo"></a>
 					</div>
 					<div class="social-area d-flex" style="margin-top: 20px; justify-content: center;">
-						<a href="javascript:void(0)"><img src="assets/home/images/social-bg1.png" alt="image"></a>
-						<a href="javascript:void(0)"><img src="assets/home/images/social-bg2.png" alt="image"></a>
-						<a href="javascript:void(0)"><img src="assets/home/images/social-bg3.png" alt="image"></a>
-						<a href="javascript:void(0)"><img src="assets/home/images/social-bg4.png" alt="image"></a>
-						<a href="javascript:void(0)"><img src="assets/home/images/social-bg5.png" alt="image"></a>
+						<a href="https://twitter.com/ezbattles"><img src="assets/home/images/social-bg1.png" alt="image"></a>
+						<a href="https://www.instagram.com/ezbattles/"><img src="assets/home/images/social-bg2.png" alt="image"></a>
+						<a href="https://discord.gg/GmyGB6RKUZ"><img src="assets/home/images/social-bg3.png" alt="image"></a>
+						<a href="https://www.facebook.com/ezbattlesusa"><img src="assets/home/images/social-bg4.png" alt="image"></a>
 					</div>
 				</div>
 			</div>

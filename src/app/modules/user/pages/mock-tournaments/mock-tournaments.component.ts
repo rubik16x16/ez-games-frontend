@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FiltersComponent } from './filters/filters.component';
 
 @Component({
   selector: 'app-mock-tournaments',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MockTournamentsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  	public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
   }
 
+  openFilters(): void {
+
+  	const dialogRef = this.dialog.open(FiltersComponent, {
+      width: '600px'
+    });
+
+		dialogRef.afterClosed().subscribe(result => {
+
+    });
+  }
 }

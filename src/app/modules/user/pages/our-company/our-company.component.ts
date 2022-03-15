@@ -12,4 +12,11 @@ export class OurCompanyComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goTo(section: string){
+
+		var element = document.querySelector(`#${section}`);
+		element!.scrollIntoView({
+			behavior: 'smooth'
+		});
+	}
 }

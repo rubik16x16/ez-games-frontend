@@ -106,4 +106,12 @@ export class OurNftComponent implements OnInit, AfterViewInit {
 		const balance = await provider.getBalance(address);
 		console.log(ethers.utils.formatEther(balance));
   }
+
+  goTo(section: string){
+
+		var element = document.querySelector(`#${section}`);
+		element!.scrollIntoView({
+			behavior: 'smooth'
+		});
+	}
 }

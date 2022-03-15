@@ -4,6 +4,11 @@
 	background-size: cover;
 }
 
+#level-up-section .overlay {
+
+	padding-top: 300px;
+}
+
 .nft-card {
 
 	background: #4E01CE;
@@ -134,6 +139,12 @@
 	#banner-section.index-2 {
 
 		background-image: none;
+		padding-bottom: 80px;
+	}
+
+	#level-up-section .overlay {
+
+		padding-top: 140px;
 	}
 
 	.slider {
@@ -150,7 +161,7 @@
 
 		.slides div {
 
-			width: 100%;
+			width: 50%;
 		}
 	}
 

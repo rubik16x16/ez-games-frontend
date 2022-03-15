@@ -1,0 +1,43 @@
+.filters {
+
+	margin: 20px 0 25px 0;
+}
+
+#tournaments-games{
+
+	padding-top: 190px;
+}
+
+@media (max-width: 575px) {
+
+	.filters {
+
+		width: 100%;
+	}
+
+	#banner-section.games {
+
+		padding-top: 95px;
+		overflow: hidden;
+	}
+
+	#tournaments-games .wrapper {
+
+		padding-top: 0 !important;
+	}
+
+	#tournaments-games{
+
+		padding-top: 100px;
+	}
+
+	.section-header {
+
+		margin-bottom: 0;
+	}
+
+	.filters {
+
+		margin: 8px 0 25px 0;
+	}
+}

@@ -28,26 +28,41 @@ export class GanioComponent implements OnInit {
 		}
 
 		let navbarElements = document.querySelectorAll<HTMLElement>('.navbar li a');
+		let navbarBtn = document.querySelector<HTMLElement>('.navbar-toggler');
 
 		for(let navbarElement of navbarElements){
 
 			navbarElement.addEventListener('click', e => {
 
 				e.preventDefault();
+
 				let element = navbarElement.parentElement;
+
 				if(element.classList.contains('show')){
+
 					element.classList.remove('show');
 				}else{
 
-					let parent = element.parentElement;
-					let siblings = [...parent.children].filter(c => c != element);
 
-					element.classList.add('show');
+					let submenu = element.querySelector<HTMLElement>('.sub-menu');
 
-					for(let sibling of siblings){
+					if(submenu){
 
-						sibling.classList.remove('show');
+						console.log(submenu);
+						let parent = element.parentElement;
+						let siblings = [...parent.children].filter(c => c != element);
+
+						element.classList.add('show');
+
+						for(let sibling of siblings){
+
+							sibling.classList.remove('show');
+						}
+					}else{
+
+						navbarBtn.click();
 					}
+
 				}
 			});
 		}

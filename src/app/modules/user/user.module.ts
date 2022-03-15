@@ -19,6 +19,7 @@ import { OurCompanyComponent } from './pages/our-company/our-company.component';
 import { OurNftComponent } from './pages/our-nft/our-nft.component';
 import { MockTournamentsComponent } from './pages/mock-tournaments/mock-tournaments.component';
 import { TestComponent } from './pages/test/test.component';
+import { FiltersComponent } from './pages/mock-tournaments/filters/filters.component';
 
 @NgModule({
 	declarations: [
@@ -34,7 +35,8 @@ import { TestComponent } from './pages/test/test.component';
 		OurCompanyComponent,
 		OurNftComponent,
 		MockTournamentsComponent,
-		TestComponent
+		TestComponent,
+  FiltersComponent
 	],
 	imports: [
 		CommonModule,

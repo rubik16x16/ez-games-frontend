@@ -2272,9 +2272,16 @@ input[type="checkbox"]:checked + label{
     top: 10%;
 }
 #tournaments-games .tab-content .single-item .content-area{
-    display: grid;
-    justify-content: center;
+    // display: grid;
+    // justify-content: center;
 }
+
+#tournaments-games .tab-content .single-item .content-area > img {
+
+	width: 100%;
+	margin-bottom: 15px;
+}
+
 #tournaments-games .tab-content .single-item.list .grid-style{
     text-align: start;
     margin: 0 30px;
