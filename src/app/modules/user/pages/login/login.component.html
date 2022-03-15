@@ -11,6 +11,7 @@
 					<mat-label>Password</mat-label>
 					<input formControlName="password" matInput type="password">
 				</mat-form-field>
+				<re-captcha (resolved)="resolved($event)" [siteKey]="RECAPTCHA_SITE_KEY"></re-captcha>
 			</mat-card-content>
 			<mat-card-actions>
 				<button type="submit" mat-button>Login</button>

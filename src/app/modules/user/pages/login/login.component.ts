@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,8 @@ export class LoginComponent implements OnInit {
 		email: new FormControl(''),
 		password: new FormControl('')
 	});
+
+	readonly RECAPTCHA_SITE_KEY = environment.recaptcha_site_key;
 
   constructor(
   	private authService: AuthService
@@ -40,4 +43,8 @@ export class LoginComponent implements OnInit {
 			console.log(res);
 		});
 	}
+
+	resolved(captchaResponse: string) {
+    console.log(`Resolved captcha with response: ${captchaResponse}`);
+  }
 }

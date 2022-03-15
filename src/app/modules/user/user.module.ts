@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { RecaptchaModule } from "ng-recaptcha";
 import { UserRoutingModule } from './user-routing.module';
-import { IndexComponent } from './pages/index/index.component';
 import { MaterialModule } from 'src/app/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { LoginComponent } from './pages/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { IndexComponent } from './pages/index/index.component';
+import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { TeamsComponent } from './pages/teams/teams.component';
 import { GanioComponent } from './templates/ganio/ganio.component';
@@ -29,11 +30,11 @@ import { TestComponent } from './pages/test/test.component';
 		TournamentsComponent,
 		LoginModalComponent,
 		ProfileComponent,
-	  ShowComponent,
-   OurCompanyComponent,
-   OurNftComponent,
-   MockTournamentsComponent,
-   TestComponent
+		ShowComponent,
+		OurCompanyComponent,
+		OurNftComponent,
+		MockTournamentsComponent,
+		TestComponent
 	],
 	imports: [
 		CommonModule,
@@ -41,6 +42,7 @@ import { TestComponent } from './pages/test/test.component';
 		MaterialModule,
 		FlexLayoutModule,
 		ReactiveFormsModule,
+		RecaptchaModule
 	]
 })
 export class UserModule { }

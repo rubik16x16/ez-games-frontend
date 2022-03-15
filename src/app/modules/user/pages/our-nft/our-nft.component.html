@@ -2,45 +2,79 @@
 <section id="banner-section" class="index-2 home-2" style="padding-top: 60px; margin-bottom: 0">
 	<div class="banner-content pt-120">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-6 pb-120">
+			<div fxLayout="column" fxLayout.gt-md="row">
+				<div fxFlex="50" class="pb-120 main-text">
 					<div class="main-content pb-120">
 						<div class="top-area">
-							<h1>Battle, Win,Earn Live esports Contests</h1>
-							<p>Play your favorite game, use the coin of your choice & chat with your friends.
-							Simple, social and most importantly entertaining!</p>
-							<button type="button" class="cmn-btn">
-							Start Playing!
-							</button>
+							<h1>Competitive gaming, aping into the metaverse</h1>
+							<p>A fresh collection of 5,555 game-ready apes, that will revolutionize competitive gaming and Web 3.0 forever.</p>
+							<a href="assets/white-paper.pdf" class="cmn-btn white-paper-btn">
+							View Whitepaper
+							</a>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6">
+				<div fxFlex="50">
 					<div class="nft-card" fxLayout="column">
 						<div class="card-header" fxFlex="30">
 							<img src="assets/home/images/level-up-left.png" alt="">
 						</div>
 						<div fxFlex="70" class="card-content">
-							<h3>Features:</h3>
-							<ul>
-								<li>feature 1</li>
-								<li>feature 2</li>
-								<li>feature 3</li>
-								<li>feature 4</li>
-							</ul>
+							<div class="mint-details">
+								<h3 style="text-align: center;">MINT DETAILS</h3>
+								<div fxLayoutAlign="space-around center">
+									<span class="mint-title text">DATE</span>
+									<span fxFlex class="divider"></span>
+									<span class="content text">31/03/2022</span>
+								</div>
+								<div fxLayoutAlign="space-around center">
+									<span class="mint-title text">SUPPLY</span>
+									<span fxFlex class="divider"></span>
+									<span class="content text">5,555</span>
+								</div>
+								<div fxLayoutAlign="space-around center">
+									<span class="mint-title text">WL PRICE</span>
+									<span fxFlex class="divider"></span>
+									<span class="content text">0.1 ETH</span>
+								</div>
+								<div fxLayoutAlign="space-around center">
+									<span class="mint-title text">PUBLIC PRICE</span>
+									<span fxFlex class="divider"></span>
+									<span class="content text">0.3 ETH</span>
+								</div>
+							</div>
+							<div class="count-down">
+								<span>{{ time.days }}</span>
+								<span>:</span>
+								<span>{{ time.hours }}</span>
+								<span>:</span>
+								<span>{{ time.minutes }}</span>
+								<span>:</span>
+								<span>{{ time.seconds }}</span>
+							</div>
+							<button style="margin-top: 20px; width: 100%; background: #42F8FF; color: black;" type="button" class="cmn-btn-alt cmn-btn next-btn" (click)="connectWallet()">
+								Connect wallet<img src="assets/home/images/double-right.png" alt="image">
+							</button>
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="row">
+				<div class="my-container">
+					<h2 style="display: inline;">EZ APE NFT'S</h2>
+					<div style="margin: 20px 0; float: right;">
+						<button style="margin-right: 20px;" type="button" class="cmn-btn-alt cmn-btn prev-btn" (click)="scrollPrev()">
+							<img src="assets/home/images/double-left.png" alt="image">
+						</button>
+						<button type="button" class="cmn-btn-alt cmn-btn next-btn" (click)="scrollNext()">
+							<img src="assets/home/images/double-right.png" alt="image">
+						</button>
+					</div>
+				</div>
 				<div class="col-lg-12">
-					<div class="bottom-item">
+					<div class="bottom-item" style="background-color: transparent">
 						<div class="container">
 							<div class="slider" #slider>
-								<button type="button" class="cmn-btn-alt cmn-btn next-btn" (click)="scrollNext()">
-									<img src="assets/home/images/double-right.png" alt="image">
-								</button>
-								<button type="button" class="cmn-btn-alt cmn-btn prev-btn" (click)="scrollPrev()">
-									<img src="assets/home/images/double-left.png" alt="image">
-								</button>
 								<div class="slides" id="slides" fxLayout="row">
 									<div>
 										<img src="assets/home/images/James.png" alt="">
@@ -76,35 +110,9 @@
 	</div>
 </section>
 <!-- banner-section end -->
-<!-- Jackpot In start -->
-<section id="jackpot-section">
-	<div class="overlay pb-120" style="padding-top: 300px">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-8 text-center">
-					<div class="right-area">
-						<h3>TOTAL JACKPOT AMOUNT</h3>
-						<h1 class="couter-area">
-						<span>€</span>
-						<span>4</span>
-						<span>9</span>
-						<span>6</span>
-						<span>1</span>
-						<span>4</span>
-						<span>9</span>
-						<span>1</span>
-						</h1>
-						<a href="javascript:void(0)" class="cmn-btn-second">Get Start Now!</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- Jackpot In end -->
 <!-- Level up In start -->
 <section id="level-up-section">
-	<div class="overlay pt-120 pb-120">
+	<div class="overlay pb-120" style="padding-top: 300px">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-6">
@@ -168,7 +176,7 @@
 					</div>
 				</div>
 				<div class="col-lg-5 col-md-5 d-flex align-items-center justify-content-end justify-cen">
-					<a href="https://discord.gg/GmyGB6RKUZ" class="cmn-btn-alt cmn-btn">Discord
+					<a href="https://discord.gg/GmyGB6RKUZ" style="margin-bottom: 20px" class="cmn-btn-alt cmn-btn">Discord
 						<img src="assets/home/images/double-right.png" alt="image">
 					</a>
 				</div>
@@ -337,8 +345,7 @@
 					<div class="col-lg-3 col-md-6 col-sm-6">
 						<div class="single-item text-center">
 							<img src="assets/home/images/counter-icon-4.png" alt="image">
-							<span class="count"><span class="counter">3/31/22</span>/<span
-						class="counter">7</span></span>
+							<span class="count"><span class="counter">3/31/22</span></span>
 						<h6>Mint Date</h6>
 					</div>
 				</div>
@@ -406,7 +413,7 @@
 					<div class="card">
 						<div class="card-header" id="headingThree">
 							<h6 class="mb-0">
-							<button class="btn btn-link collapsed" data-toggle="collapse"
+							<button style="text-align: left" class="btn btn-link collapsed" data-toggle="collapse"
 							data-target="#collapseThree" aria-expanded="false"
 							aria-controls="collapseThree">
 							What’s the connection between NFTs and cryptocurrency?
@@ -463,7 +470,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
-												<label for="Name">Discord Username<span style="color: red">*</span></label>
+												<label for="Name">Discord Username</label>
 												<input type="text" class="form-control ganio-input">
 											</div>
 										</div>
