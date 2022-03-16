@@ -20,6 +20,8 @@ import { OurNftComponent } from './pages/our-nft/our-nft.component';
 import { MockTournamentsComponent } from './pages/mock-tournaments/mock-tournaments.component';
 import { TestComponent } from './pages/test/test.component';
 import { FiltersComponent } from './pages/mock-tournaments/filters/filters.component';
+import { RegisterModalComponent } from './components/register-modal/register-modal.component';
+import { ComingSoonModalComponent } from './components/coming-soon-modal/coming-soon-modal.component';
 
 @NgModule({
 	declarations: [
@@ -36,7 +38,9 @@ import { FiltersComponent } from './pages/mock-tournaments/filters/filters.compo
 		OurNftComponent,
 		MockTournamentsComponent,
 		TestComponent,
-  FiltersComponent
+	  FiltersComponent,
+	  RegisterModalComponent,
+	  ComingSoonModalComponent
 	],
 	imports: [
 		CommonModule,

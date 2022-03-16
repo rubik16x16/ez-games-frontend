@@ -1,0 +1,23 @@
+<div class="card">
+	<div class="card-header">
+		<img src="assets/home/images/ez-logo.png" class="card-logo" alt="">
+		<h5 class="title">Get started in a minute!</h5>
+		<p class="sub-title">Already have a account? Login</p>
+	</div>
+	<div class="card-content">
+		<form [formGroup]="registerForm" (submit)="register()">
+			<div class="form-group">
+				<label for="email">Email Address</label>
+				<input type="text" class="form-control" formControlName="email" placeholder="Registered Email Address." id="email">
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input type="text" class="form-control" formControlName="password" placeholder="Password" id="password">
+			</div>
+			<div class="form-group">
+				<button type="submit" class="cmn-btn cmn-btn-alt">REGISTER NOW</button>
+			</div>
+		</form>
+	</div>
+</div>
+

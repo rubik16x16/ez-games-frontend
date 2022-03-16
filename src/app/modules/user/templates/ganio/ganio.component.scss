@@ -4,3 +4,27 @@
 @import './css/nice-select.css';
 @import './css/animate.css';
 @import './css/style.scss';
+
+.register-modal {
+
+	width: 500px;
+	border-radius: 30px;
+	overflow: hidden;
+
+	mat-dialog-container{
+
+		padding: 0;
+	}
+}
+
+.coming-soon-modal {
+
+	width: 500px;
+	border-radius: 30px;
+	overflow: hidden;
+
+	mat-dialog-container{
+
+		padding: 0;
+	}
+}

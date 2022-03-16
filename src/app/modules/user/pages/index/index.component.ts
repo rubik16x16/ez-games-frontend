@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit, ElementRef, ViewChild  } from '@angular/core';
-require('slick-carousel');
-require('jquery');
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ComingSoonModalComponent } from '../../components/coming-soon-modal/coming-soon-modal.component';
 
 @Component({
 	selector: 'app-index',
@@ -11,7 +11,9 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
 	@ViewChild('slider') slider: ElementRef;
 
-	constructor() { }
+	constructor(
+		public dialog: MatDialog,
+	) { }
 
 	ngOnInit(): void {
 
@@ -34,13 +36,14 @@ export class IndexComponent implements OnInit, AfterViewInit {
 		}, 5000);
 	}
 
-	scrollLeft(){
+	openComingSoon(): void {
 
-		let slider = this.slider.nativeElement;
-		let slides = slider.querySelector('.slides');
+		const dialogRef = this.dialog.open(ComingSoonModalComponent, {
+			panelClass: 'coming-soon-modal'
+		});
 
-		console.log(slides.scrollLeft);
-		slides.scrollLeft += slider.offsetWidth;
-		console.log(slides.scrollLeft);
+		dialogRef.afterClosed().subscribe(result => {
+
+		});
 	}
 }
