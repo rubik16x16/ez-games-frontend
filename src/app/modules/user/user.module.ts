@@ -22,6 +22,7 @@ import { TestComponent } from './pages/test/test.component';
 import { FiltersComponent } from './pages/mock-tournaments/filters/filters.component';
 import { RegisterModalComponent } from './components/register-modal/register-modal.component';
 import { ComingSoonModalComponent } from './components/coming-soon-modal/coming-soon-modal.component';
+import { CountDownComponent } from './components/count-down/count-down.component';
 
 @NgModule({
 	declarations: [
@@ -38,9 +39,10 @@ import { ComingSoonModalComponent } from './components/coming-soon-modal/coming-
 		OurNftComponent,
 		MockTournamentsComponent,
 		TestComponent,
-	  FiltersComponent,
-	  RegisterModalComponent,
-	  ComingSoonModalComponent
+		FiltersComponent,
+		RegisterModalComponent,
+		ComingSoonModalComponent,
+		CountDownComponent
 	],
 	imports: [
 		CommonModule,

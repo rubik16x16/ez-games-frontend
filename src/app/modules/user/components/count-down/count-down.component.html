@@ -1,0 +1,21 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="count-down" [class]="panelClass">
+	<div fxLayout="column" fxLayoutAlign="center center">
+		<span class="time">{{ getPrettyTime().days }}</span>
+		<span class="tag">Days</span>
+	</div>
+	<span>:</span>
+	<div fxLayout="column" fxLayoutAlign="center center">
+		<span class="time">{{ getPrettyTime().hours }}</span>
+		<span class="tag">Hours</span>
+	</div>
+	<span>:</span>
+	<div fxLayout="column" fxLayoutAlign="center center">
+		<span class="time">{{ getPrettyTime().minutes }}</span>
+		<span class="tag">Min.</span>
+	</div>
+	<span>:</span>
+	<div fxLayout="column" fxLayoutAlign="center center">
+		<span class="time">{{ getPrettyTime().seconds }}</span>
+		<span class="tag">Sec.</span>
+	</div>
+</div>
