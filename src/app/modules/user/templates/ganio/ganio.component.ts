@@ -96,15 +96,8 @@ export class GanioComponent implements OnInit {
 		dialogRef.afterClosed().subscribe(result => {
 			if(result && result.event == 'register'){
 
-				this.authService.register(result.user).subscribe(res => {
-
-					console.log(res);
-					localStorage.setItem('auth_token', res.access_token);
-					localStorage.setItem('expires_at', res.access_token);
-					localStorage.setItem('user', JSON.stringify(res.user));
-				});
+				this.user = result.user;
 			}
-
     });
 	}
 

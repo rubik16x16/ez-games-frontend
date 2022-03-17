@@ -29,15 +29,9 @@
 															<li><a (click)="goTo('footer-section')">Contact</a></li>
 													</ul>
 													<div *ngIf="!user" class="right-area header-action d-flex align-items-center">
-														<a href="https://discord.com/invite/GmyGB6RKUZ" class="cmn-btn-alt cmn-btn">JOIN DISCORD</a>
-															<!-- <button (click)="openRegister()" type="button" class="cmn-btn-alt cmn-btn" data-toggle="modal"
-																	data-target="#signUpModalLong">
-																	Register
-															</button>
-															<button type="button" (click)="openDialog()" class="cmn-btn" data-toggle="modal"
-																	data-target="#signInModalLong">
-																	Sign In
-															</button> -->
+														<!-- <a href="https://discord.com/invite/GmyGB6RKUZ" class="cmn-btn-alt cmn-btn">JOIN DISCORD</a> -->
+															<button (click)="openRegister()" type="button" class="cmn-btn-alt cmn-btn">Register</button>
+															<button type="button" (click)="openDialog()" class="cmn-btn">Sign In</button>
 													</div>
 													<div *ngIf="user" class="right-area header-action d-flex align-items-center">
 														<button mat-button [matMenuTriggerFor]="menu">{{ user.email }}</button>
