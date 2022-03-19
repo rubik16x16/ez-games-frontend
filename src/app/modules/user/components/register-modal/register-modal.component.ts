@@ -53,6 +53,7 @@ export class RegisterModalComponent implements OnInit {
 
   		this.authService.register(this.registerForm.value).subscribe(res => {
 
+  			const localStorage = window.localStorage;
 				localStorage.setItem('auth_token', res.access_token);
 				localStorage.setItem('expires_at', res.access_token);
 				localStorage.setItem('user', JSON.stringify(res.user));

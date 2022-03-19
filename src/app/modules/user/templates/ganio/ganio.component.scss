@@ -9,23 +9,31 @@
 
 	width: 500px;
 	height: 600px;
-	border-radius: 30px;
-	overflow: hidden;
 
 	mat-dialog-container{
 
 		padding: 0;
+		border-radius: 30px;
 	}
 }
 
 .coming-soon-modal {
 
 	width: 500px;
-	border-radius: 30px;
-	overflow: hidden;
+	height: 600px;
 
 	mat-dialog-container{
 
 		padding: 0;
+		border-radius: 30px;
+	}
+}
+
+.email-verification-modal {
+
+	mat-dialog-container{
+
+		padding: 0;
+		border-radius: 30px;
 	}
 }

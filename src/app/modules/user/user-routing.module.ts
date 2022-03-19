@@ -11,6 +11,7 @@ import { OurCompanyComponent } from './pages/our-company/our-company.component';
 import { OurNftComponent } from './pages/our-nft/our-nft.component';
 import { MockTournamentsComponent } from './pages/mock-tournaments/mock-tournaments.component';
 import { TestComponent } from './pages/test/test.component';
+import { EmailVerificationComponent } from './pages/email-verification/email-verification.component';
 
 const routes: Routes = [
   {
@@ -46,7 +47,11 @@ const routes: Routes = [
 				component: TestComponent
 			}
     ]
-  }
+  },
+  {
+		path: 'verify-email/:token',
+		component: EmailVerificationComponent
+	}
 ];
 
 @NgModule({

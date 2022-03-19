@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, OnInit, ViewEncapsulation, Inject } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_SCROLL_STRATEGY } from '@angular/material/dialog';
 import { LoginModalComponent } from '../../components/login-modal/login-modal.component';
 import { RegisterModalComponent } from '../../components/register-modal/register-modal.component';
+import { EmailVerificationModalComponent } from '../../components/email-verification-modal/email-verification-modal.component';
 import { AuthService } from 'src/app/services/auth.service';
 require('bootstrap');
 
@@ -17,17 +18,24 @@ export class GanioComponent implements OnInit {
 
 	constructor(
 		public dialog: MatDialog,
-		private authService: AuthService
+		private authService: AuthService,
+		@Inject(MAT_DIALOG_SCROLL_STRATEGY) public scrollStrategy: any,
 	) { }
 
 	ngOnInit(): void {
 
+		console.log(this.scrollStrategy());
 		const localStorage = window.localStorage;
 		const user = localStorage.getItem('user');
 
 		if(user){
 
 			this.user = JSON.parse(user);
+			if(!this.user.email_verified_at){
+
+				this.openEmailVerification();
+			}
+			console.log(this.user);
 		}
 
 		let navbarElements = document.querySelectorAll<HTMLElement>('.navbar li a');
@@ -72,6 +80,7 @@ export class GanioComponent implements OnInit {
 	}
 
 	openDialog(): void {
+
 		const dialogRef = this.dialog.open(LoginModalComponent, {
 			width: '450px'
 		});
@@ -97,7 +106,22 @@ export class GanioComponent implements OnInit {
 			if(result && result.event == 'register'){
 
 				this.user = result.user;
+				this.openEmailVerification();
 			}
+    });
+	}
+
+	openEmailVerification(): void {
+
+		const dialogRef = this.dialog.open(EmailVerificationModalComponent, {
+      panelClass: 'email-verification-modal',
+    });
+
+		dialogRef.afterClosed().subscribe(result => {
+			// if(result && result.event == 'register'){
+
+			// 	this.user = result.user;
+			// }
     });
 	}
 

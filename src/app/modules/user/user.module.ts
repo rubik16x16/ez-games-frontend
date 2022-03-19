@@ -23,6 +23,9 @@ import { FiltersComponent } from './pages/mock-tournaments/filters/filters.compo
 import { RegisterModalComponent } from './components/register-modal/register-modal.component';
 import { ComingSoonModalComponent } from './components/coming-soon-modal/coming-soon-modal.component';
 import { CountDownComponent } from './components/count-down/count-down.component';
+import { EmailVerificationModalComponent } from './components/email-verification-modal/email-verification-modal.component';
+import { EmailVerificationComponent } from './pages/email-verification/email-verification.component';
+import { RegisterTournamentModalComponent } from './components/register-tournament-modal/register-tournament-modal.component';
 
 @NgModule({
 	declarations: [
@@ -42,7 +45,10 @@ import { CountDownComponent } from './components/count-down/count-down.component
 		FiltersComponent,
 		RegisterModalComponent,
 		ComingSoonModalComponent,
-		CountDownComponent
+		CountDownComponent,
+  EmailVerificationModalComponent,
+  EmailVerificationComponent,
+  RegisterTournamentModalComponent
 	],
 	imports: [
 		CommonModule,

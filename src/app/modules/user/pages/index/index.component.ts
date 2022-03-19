@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, ElementRef, ViewChild  } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ComingSoonModalComponent } from '../../components/coming-soon-modal/coming-soon-modal.component';
+import { RegisterTournamentModalComponent } from '../../components/register-tournament-modal/register-tournament-modal.component';
 
 @Component({
 	selector: 'app-index',
@@ -38,7 +39,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
 	openComingSoon(): void {
 
-		const dialogRef = this.dialog.open(ComingSoonModalComponent, {
+		const dialogRef = this.dialog.open(RegisterTournamentModalComponent, {
 			panelClass: 'coming-soon-modal'
 		});
 

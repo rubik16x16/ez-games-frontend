@@ -30,4 +30,9 @@ export class AuthService {
 
 		return this.http.post(`${environment.api}/register`, user);
 	}
+
+	verifyEmail(token: string): Observable<any>{
+
+		return this.http.get(`${environment.api}/verify-email/${token}`);
+	}
 }

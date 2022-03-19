@@ -1,0 +1,39 @@
+.card {
+
+	background: #4E01CE;
+
+	.card-header {
+
+		text-align: center;
+
+		img {
+
+			margin: 40px 0;
+		}
+
+		.title {
+
+			width: 35%;
+			margin: 40px auto;
+		}
+
+		.sub-title {
+
+			text-align: center;
+		}
+	}
+
+	.card-content {
+
+		color: white;
+		border-radius: 30px;
+		padding: 30px;
+		background: #360589;
+
+		.form-group input {
+
+			border: 1px solid #47399B;
+			background: #350981;
+		}
+	}
+}
