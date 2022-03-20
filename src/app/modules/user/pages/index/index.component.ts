@@ -40,7 +40,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	openComingSoon(): void {
 
 		const dialogRef = this.dialog.open(RegisterTournamentModalComponent, {
-			panelClass: 'coming-soon-modal'
+			panelClass: 'register-tournament-modal'
 		});
 
 		dialogRef.afterClosed().subscribe(result => {

@@ -40,25 +40,29 @@
 
 .team-players-list {
 
-	background: yellow;
-	height: 100px;
+	max-height: 100px;
 	overflow: auto;
+	font-weight: bold;
 
 	li:hover {
 
-		background: red;
+		background: #4e01ce;
 		cursor: pointer;
 	}
 }
 
 .players-sub {
 
-	background: red;
 	padding: 10px;
 
 	.item {
 
 		display: inline-block;
 		margin: 10px 10px;
+
+		button {
+
+			margin-left: 5px;
+		}
 	}
 }

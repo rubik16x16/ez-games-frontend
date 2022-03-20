@@ -29,6 +29,18 @@
 	}
 }
 
+.register-tournament-modal {
+
+	width: 700px;
+	height: 600px;
+
+	mat-dialog-container{
+
+		padding: 0;
+		border-radius: 30px;
+	}
+}
+
 .email-verification-modal {
 
 	mat-dialog-container{

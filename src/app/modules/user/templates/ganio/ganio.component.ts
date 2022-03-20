@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Inject } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_SCROLL_STRATEGY } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { LoginModalComponent } from '../../components/login-modal/login-modal.component';
 import { RegisterModalComponent } from '../../components/register-modal/register-modal.component';
 import { EmailVerificationModalComponent } from '../../components/email-verification-modal/email-verification-modal.component';
@@ -18,13 +18,11 @@ export class GanioComponent implements OnInit {
 
 	constructor(
 		public dialog: MatDialog,
-		private authService: AuthService,
-		@Inject(MAT_DIALOG_SCROLL_STRATEGY) public scrollStrategy: any,
+		private authService: AuthService
 	) { }
 
 	ngOnInit(): void {
 
-		console.log(this.scrollStrategy());
 		const localStorage = window.localStorage;
 		const user = localStorage.getItem('user');
 
@@ -35,7 +33,6 @@ export class GanioComponent implements OnInit {
 
 				this.openEmailVerification();
 			}
-			console.log(this.user);
 		}
 
 		let navbarElements = document.querySelectorAll<HTMLElement>('.navbar li a');
@@ -129,6 +126,7 @@ export class GanioComponent implements OnInit {
 
 		const localStorage = window.localStorage;
 		localStorage.removeItem('user');
+		localStorage.removeItem('auth_token');
 		this.user = null;
 	}
 

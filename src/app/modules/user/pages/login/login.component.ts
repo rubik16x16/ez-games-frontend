@@ -15,8 +15,6 @@ export class LoginComponent implements OnInit {
 		password: new FormControl('')
 	});
 
-	readonly RECAPTCHA_SITE_KEY = environment.recaptcha_site_key;
-
   constructor(
   	private authService: AuthService
   ) { }
@@ -43,8 +41,4 @@ export class LoginComponent implements OnInit {
 			console.log(res);
 		});
 	}
-
-	resolved(captchaResponse: string) {
-    console.log(`Resolved captcha with response: ${captchaResponse}`);
-  }
 }
