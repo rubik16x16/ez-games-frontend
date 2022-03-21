@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Validators, FormBuilder } from '@angular/forms';
 import { User } from 'src/app/models/user';
 import { UsersService } from 'src/app/services/users.service';
 import { TeamsService } from 'src/app/services/teams.service';
+import { Tournament } from 'src/app/models/tournament';
 
 @Component({
 	selector: 'app-register-tournament-modal',
@@ -25,12 +26,14 @@ export class RegisterTournamentModalComponent implements OnInit {
 
 	usersQuery: User[];
 	searching: boolean = false;
+	tournament: Tournament = null;
 
 	get name() { return this.teamForm.get('name') }
 	get players() { return this.teamForm.get('players') }
 	get email() { return this.searchForm.get('email') }
 
 	constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
 		public dialogRef: MatDialogRef<RegisterTournamentModalComponent>,
 		private fb: FormBuilder,
 		private userService: UsersService,
@@ -39,6 +42,8 @@ export class RegisterTournamentModalComponent implements OnInit {
 
 	ngOnInit(): void {
 
+		console.log(this.data);
+		this.tournament = this.data.tournament;
 	}
 
 	searchUser(): void {
@@ -84,8 +89,7 @@ export class RegisterTournamentModalComponent implements OnInit {
 
 	save(): void {
 
-		console.log('test');
-		this.teamsService.store(1, this.teamForm.value).subscribe(res => {
+		this.teamsService.store(this.tournament.id, this.teamForm.value).subscribe(res => {
 
 			console.log(res);
 		});

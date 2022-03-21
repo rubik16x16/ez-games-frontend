@@ -8,7 +8,19 @@
 .register-modal {
 
 	width: 500px;
-	height: 600px;
+	max-height: 600px;
+
+	mat-dialog-container{
+
+		padding: 0;
+		border-radius: 30px;
+	}
+}
+
+.login-modal {
+
+	width: 500px;
+	max-height: 600px;
 
 	mat-dialog-container{
 
@@ -20,7 +32,7 @@
 .coming-soon-modal {
 
 	width: 500px;
-	height: 600px;
+	max-height: 600px;
 
 	mat-dialog-container{
 
@@ -32,7 +44,7 @@
 .register-tournament-modal {
 
 	width: 700px;
-	height: 600px;
+	max-height: 600px;
 
 	mat-dialog-container{
 

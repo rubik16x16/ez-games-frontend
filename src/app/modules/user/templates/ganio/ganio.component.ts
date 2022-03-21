@@ -1,8 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { LoginModalComponent } from '../../components/login-modal/login-modal.component';
-import { RegisterModalComponent } from '../../components/register-modal/register-modal.component';
-import { EmailVerificationModalComponent } from '../../components/email-verification-modal/email-verification-modal.component';
 import { AuthService } from 'src/app/services/auth.service';
 require('bootstrap');
 
@@ -23,17 +20,26 @@ export class GanioComponent implements OnInit {
 
 	ngOnInit(): void {
 
+		this.authService.authUser.subscribe(res => {
+
+			this.user = res;
+		});
+
 		const localStorage = window.localStorage;
 		const user = localStorage.getItem('user');
 
 		if(user){
 
-			this.user = JSON.parse(user);
-			if(!this.user.email_verified_at){
-
-				this.openEmailVerification();
-			}
+			this.authService.setAuthUser(JSON.parse(user));
 		}
+
+		// if(this.user){
+
+		// 	if(!this.user.email_verified_at){
+
+		// 		this.openEmailVerification();
+		// 	}
+		// }
 
 		let navbarElements = document.querySelectorAll<HTMLElement>('.navbar li a');
 		let navbarBtn = document.querySelector<HTMLElement>('.navbar-toggler');
@@ -76,50 +82,17 @@ export class GanioComponent implements OnInit {
 		}
 	}
 
-	openDialog(): void {
+	openLogin(): void {
 
-		const dialogRef = this.dialog.open(LoginModalComponent, {
-			width: '450px'
-		});
-
-		dialogRef.afterClosed().subscribe(result => {
-
-			if(result && result.event == 'login'){
-
-				const localStorage = window.localStorage;
-				localStorage.setItem('user', JSON.stringify(result.user));
-				this.user = result.user;
-			}
+		this.authService.openLoginModal().subscribe(res => {
 		});
 	}
 
 	openRegister(): void {
 
-		const dialogRef = this.dialog.open(RegisterModalComponent, {
-      panelClass: 'register-modal'
-    });
+		this.authService.startRegister().subscribe(res => {
 
-		dialogRef.afterClosed().subscribe(result => {
-			if(result && result.event == 'register'){
-
-				this.user = result.user;
-				this.openEmailVerification();
-			}
-    });
-	}
-
-	openEmailVerification(): void {
-
-		const dialogRef = this.dialog.open(EmailVerificationModalComponent, {
-      panelClass: 'email-verification-modal',
-    });
-
-		dialogRef.afterClosed().subscribe(result => {
-			// if(result && result.event == 'register'){
-
-			// 	this.user = result.user;
-			// }
-    });
+		});
 	}
 
 	logout(): void{
@@ -127,7 +100,7 @@ export class GanioComponent implements OnInit {
 		const localStorage = window.localStorage;
 		localStorage.removeItem('user');
 		localStorage.removeItem('auth_token');
-		this.user = null;
+		this.authService.setAuthUser(null);
 	}
 
 	goTo(section: string){

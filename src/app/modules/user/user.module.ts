@@ -46,9 +46,9 @@ import { RegisterTournamentModalComponent } from './components/register-tourname
 		RegisterModalComponent,
 		ComingSoonModalComponent,
 		CountDownComponent,
-  EmailVerificationModalComponent,
-  EmailVerificationComponent,
-  RegisterTournamentModalComponent
+		EmailVerificationModalComponent,
+		EmailVerificationComponent,
+		RegisterTournamentModalComponent
 	],
 	imports: [
 		CommonModule,

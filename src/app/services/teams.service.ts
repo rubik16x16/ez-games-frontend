@@ -14,6 +14,6 @@ export class TeamsService {
 
 	store(tournamentId: number, teamData: any): Observable<any>{
 
-		return this.http.post<any>(`${environment.api}/tournaments/1/teams`, teamData);
+		return this.http.post<any>(`${environment.api}/tournaments/${tournamentId}/teams`, teamData);
 	}
 }

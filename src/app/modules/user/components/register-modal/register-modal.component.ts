@@ -63,6 +63,8 @@ export class RegisterModalComponent implements OnInit {
 					user: res.user
 				});
 
+				this.authService.setAuthUser(res.user);
+
 			}, res => {
 
 				this.errors = res.error;

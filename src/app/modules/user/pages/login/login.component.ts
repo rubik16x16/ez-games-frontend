@@ -31,6 +31,8 @@ export class LoginComponent implements OnInit {
 			localStorage.setItem('auth_token', res.access_token);
 			localStorage.setItem('expires_at', res.access_token);
 			localStorage.setItem('user', JSON.stringify(res.user));
+
+			this.authService.setAuthUser(res.user);
 		});
 	}
 

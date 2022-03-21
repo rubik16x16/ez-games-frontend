@@ -36,3 +36,21 @@
 		}
 	}
 }
+
+// .captcha-wrapper {
+
+// 	text-align: center;
+// 	re-captcha {
+
+// 		display: inline-block;
+// 	}
+// }
+
+@media (max-width: 575px) {
+
+	.captcha-wrapper {
+
+		transform:scale(0.8);
+		transform-origin:0 0;
+	}
+}

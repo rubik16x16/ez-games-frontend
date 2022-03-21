@@ -2,7 +2,7 @@
 	<div class="card-header">
 		<img src="assets/home/images/ez-logo.png" class="card-logo" alt="">
 		<h5 class="title">Get started in a minute!</h5>
-		<p class="sub-title">Already have a account? Login</p>
+		<!-- <p class="sub-title">Already have a account? Login</p> -->
 		<ul *ngFor="let input of errors | keyvalue">
 			<li>{{ input.key }}</li>
 			<ul *ngFor="let error of $any(input).value">
@@ -29,7 +29,7 @@
 			</div>
 			<div class="form-group">
 				<label for="password">Password</label>
-				<input type="text" class="form-control" formControlName="password" placeholder="Password" id="password">
+				<input type="password" class="form-control" formControlName="password" placeholder="Password" id="password">
 				<div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert">
 				  <div *ngIf="password.errors?.['required']">
 				    password is required.
@@ -40,7 +40,9 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<re-captcha (resolved)="resolved($event)" [siteKey]="RECAPTCHA_SITE_KEY"></re-captcha>
+				<div class="captcha-wrapper">
+					<re-captcha (resolved)="resolved($event)" [siteKey]="RECAPTCHA_SITE_KEY"></re-captcha>
+				</div>
 				<div *ngIf="captchaResponse.invalid && (captchaResponse.dirty || captchaResponse.touched)" class="alert">
 				  <div *ngIf="captchaResponse.errors?.['required']">
 				    captcha is required.
