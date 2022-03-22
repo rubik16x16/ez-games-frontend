@@ -1,32 +1,37 @@
-<section style="padding-top: 167px; margin-bottom: 69px; position: relative;">
+<section style="padding-top: 167px; margin-bottom: 400px; position: relative;">
 	<div class="banner-content d-flex align-items-center">
 		<div class="container" fxLayout="row">
-			<div fxFlex style="background: yellow;">
-				<mat-card>
-					<mat-card-header>
-						<mat-card-title>Profile</mat-card-title>
-					</mat-card-header>
-					<form [formGroup]="profileForm" (submit)="save()">
-						<mat-card-content>
-							<div *ngIf="user">
-
-								<span>Current nickname: {{ user.nickname }}</span>
+			<div fxFlex>
+				<div class="card">
+					<div class="card-header">
+						<img src="assets/home/images/ez-logo.png" class="card-logo" alt="">
+					</div>
+					<div class="card-content">
+						<form [formGroup]="profileForm" autocomplete="off" (submit)="save()">
+							<span>Current nickname: {{ user?.nickname }}</span>
+							<div class="form-group">
+								<label for="nickname">Nickname</label>
+								<input type="text" class="form-control" formControlName="nickname" placeholder="Nickname" id="nickname">
+								<div *ngIf="nickname.invalid && (nickname.dirty || nickname.touched)" class="alert">
+								  <div *ngIf="nickname.errors?.['required']">
+								    nickname is required.
+								  </div>
+								  <div *ngIf="nickname.errors?.['nickname']">
+								    nickname is invalid.
+								  </div>
+								  <div *ngIf="nickname.errors?.['minlength']">
+								    nickname must be at least 4 characters long.
+								  </div>
+								</div>
 							</div>
-							<div>
-								<mat-form-field fxFlex appearance="fill">
-									<mat-label>Nickname</mat-label>
-									<input type="text" formControlName="nickname" matInput>
-								</mat-form-field>
-								<button mat-raised-button color="primary" type="button" (click)="getCodUser()">Search</button>
+							<div class="form-group">
+								<button type="submit" class="cmn-btn cmn-btn-alt">Save</button>
 							</div>
-						</mat-card-content>
-						<mat-card-actions>
-							<button type="submit" mat-button>Save</button>
-						</mat-card-actions>
-					</form>
-				</mat-card>
+						</form>
+					</div>
+				</div>
 			</div>
-			<div fxFlex style="background: red">
+			<!-- <div fxFlex style="background: red">
 				<mat-card *ngIf="codUser">
 					<mat-card-header>
 						<mat-card-title>Cod Profile: {{ profileForm.value.nickname }}</mat-card-title>
@@ -70,7 +75,91 @@
 						</mat-grid-list>
 					</mat-card-content>
 				</mat-card>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </section>
+<!-- Tournaments Game In end -->
+<footer id="footer-section" style="margin-top: 0">
+	<div class="overlay">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="footer-top pt-120" style="padding-top: 40px; padding-bottom: 40px; background-image: url('assets/home/images/background.png'); position: relative; overflow: hidden;">
+						<img class="footer-image" src="assets/home/images/footer-left-top.png" alt="" style="position: absolute; bottom: 0; left: 0; height: 90%;">
+						<img class="footer-image" src="assets/home/images/footer-right-top.png" alt="" style="position: absolute; bottom: 0; right: 0; height: 90%;">
+						<div class="row justify-content-center">
+							<div class="col-lg-6 col-md-6 col-sm-10">
+								<div class="section-header text-center">
+									<h2 class="title" style="color: #42F8FF">CONTACT US</h2>
+									<p>Feel free to send us a message about an issue or simply comment/suggest something!</p>
+								</div>
+								<form action="#" style="color: white;">
+									<div class="row" style="font-family: 'Chakra Petch', sans-serif;">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label for="Name">First Name <span style="color: red">*</span></label>
+												<input type="text" class="form-control ganio-input">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label for="Name">Last Name <span style="color: red">*</span></label>
+												<input type="text" class="form-control ganio-input">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label for="Name">Email <span style="color: red">*</span></label>
+												<input type="text" class="form-control ganio-input">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label for="Name">Discord Username</label>
+												<input type="text" class="form-control ganio-input">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="Name">Message/Content <span style="color: red">*</span></label>
+										<textarea class="form-control ganio-input" cols="30" rows="3"></textarea>
+									</div>
+									<button class="cmn-btn">Submit</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bottom-area pt-120">
+				<div style="text-align: center;">
+					<div class="logo-section">
+						<a class="site-logo site-title" href="index.html"><img src="assets/home/images/ez-logo.png" alt="site-logo"></a>
+					</div>
+					<div class="social-area d-flex" style="margin-top: 20px; justify-content: center;">
+						<a href="https://twitter.com/ezbattles"><img src="assets/home/images/social-bg1.png" alt="image"></a>
+						<a href="https://www.instagram.com/ezbattles/"><img src="assets/home/images/social-bg2.png" alt="image"></a>
+						<a href="https://discord.gg/GmyGB6RKUZ"><img src="assets/home/images/social-bg3.png" alt="image"></a>
+						<a href="https://www.facebook.com/ezbattlesusa"><img src="assets/home/images/social-bg4.png" alt="image"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<div class="container">
+			<div class="main-content">
+				<div class="row d-flex justify-content-center">
+					<div class="col-lg-8 col-md-8 col-sm-12 d-flex justify-content-start align-items-center justify-cen order-pro">
+						<div class="left-area">
+							<p>
+								COPYRIGHT © EZ BATTLES, LLC 2022 | DESIGNED BY EZ BATTLES, LLC. ALL RIGHTS RESERVED.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

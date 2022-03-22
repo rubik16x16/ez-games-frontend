@@ -31,6 +31,13 @@
 			</div>
 		</div>
 
+		<div *ngIf="tournament.entry">
+		  <ng-container *ngIf="elementsOptions?.clientSecret as clientSecret">
+		    <ngx-stripe-payment [clientSecret]="clientSecret">
+		    </ngx-stripe-payment>
+		  </ng-container>
+		</div>
+
 		<button type="submit" form="team-form" style="margin: 40px 0; width: 100%; text-align: center;" type="submit" class="cmn-btn cmn-btn-alt">Save</button>
 
 		<p style="text-align: center;">FOLLOW US ON ALL SOCIALS</p>

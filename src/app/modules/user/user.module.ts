@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RecaptchaModule } from "ng-recaptcha";
@@ -5,6 +6,7 @@ import { UserRoutingModule } from './user-routing.module';
 import { MaterialModule } from 'src/app/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxStripeModule } from 'ngx-stripe';
 
 import { IndexComponent } from './pages/index/index.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -56,7 +58,8 @@ import { RegisterTournamentModalComponent } from './components/register-tourname
 		MaterialModule,
 		FlexLayoutModule,
 		ReactiveFormsModule,
-		RecaptchaModule
+		RecaptchaModule,
+		NgxStripeModule.forRoot(environment.stripe_public_key)
 	]
 })
 export class UserModule { }

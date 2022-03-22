@@ -3,7 +3,7 @@ import { ProfileService } from 'src/app/services/profile.service';
 import { User } from 'src/app/models/user';
 import { CodUser } from 'src/app/models/cod-user';
 import { FormGroup, FormControl } from '@angular/forms';
-
+import { Validators, FormBuilder } from '@angular/forms';
 
 @Component({
 	selector: 'app-profile',
@@ -15,12 +15,16 @@ export class ProfileComponent implements OnInit {
 	user: User;
 	codUser: CodUser;
 
-	profileForm = new FormGroup({
-		nickname: new FormControl(''),
+	profileForm = this.fb.group({
+		nickname: ['', [
+			Validators.required,
+			Validators.minLength(4)
+		]],
 	});
 
 	constructor(
-		private profileService: ProfileService
+		private profileService: ProfileService,
+		private fb: FormBuilder,
 	) { }
 
 	ngOnInit(): void {
@@ -31,6 +35,8 @@ export class ProfileComponent implements OnInit {
 			console.log(this.user);
 		});
 	}
+
+	get nickname() { return this.profileForm.get('nickname') }
 
 	getCodUser(): void {
 
@@ -43,10 +49,15 @@ export class ProfileComponent implements OnInit {
 
 	save(): void {
 
-		this.profileService.updateNickname(this.profileForm.value.nickname).subscribe(res => {
+		this.profileForm.markAllAsTouched();
 
-			console.log(res);
-			this.user.nickname = this.profileForm.value.nickname;
-		});
+		if(this.profileForm.valid){
+
+			this.profileService.updateNickname(this.profileForm.value.nickname).subscribe(res => {
+
+				console.log(res);
+				this.user.nickname = this.profileForm.value.nickname;
+			});
+		}
 	}
 }

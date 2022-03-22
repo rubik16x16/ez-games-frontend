@@ -12,8 +12,11 @@ export class TeamsService {
 		private http: HttpClient
 	) { }
 
-	store(tournamentId: number, teamData: any): Observable<any>{
+	store(tournamentId: number, teamData: any, paymentId: string = ''): Observable<any>{
 
-		return this.http.post<any>(`${environment.api}/tournaments/${tournamentId}/teams`, teamData);
+		return this.http.post<any>(`${environment.api}/tournaments/${tournamentId}/teams`, {
+			...teamData,
+			paymentId
+		});
 	}
 }

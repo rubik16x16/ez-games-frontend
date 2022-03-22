@@ -1,10 +1,14 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Validators, FormBuilder } from '@angular/forms';
 import { User } from 'src/app/models/user';
 import { UsersService } from 'src/app/services/users.service';
 import { TeamsService } from 'src/app/services/teams.service';
 import { Tournament } from 'src/app/models/tournament';
+import { StripeService, StripePaymentElementComponent } from 'ngx-stripe';
+import { StripeElementsOptions, PaymentIntent } from '@stripe/stripe-js';
+import { StripePaysService } from 'src/app/services/stripe-pays.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
 	selector: 'app-register-tournament-modal',
@@ -24,6 +28,7 @@ export class RegisterTournamentModalComponent implements OnInit {
 		email: ['']
 	});
 
+	user: any = null;
 	usersQuery: User[];
 	searching: boolean = false;
 	tournament: Tournament = null;
@@ -32,18 +37,44 @@ export class RegisterTournamentModalComponent implements OnInit {
 	get players() { return this.teamForm.get('players') }
 	get email() { return this.searchForm.get('email') }
 
+	@ViewChild(StripePaymentElementComponent) paymentElement: StripePaymentElementComponent;
+
+	elementsOptions: StripeElementsOptions = {
+		locale: 'en'
+	};
+
+	paying = false;
+
 	constructor(
-    @Inject(MAT_DIALOG_DATA) public data: any,
+		@Inject(MAT_DIALOG_DATA) public data: any,
 		public dialogRef: MatDialogRef<RegisterTournamentModalComponent>,
 		private fb: FormBuilder,
+		private authService: AuthService,
 		private userService: UsersService,
-		private teamsService: TeamsService
+		private teamsService: TeamsService,
+		private stripeService: StripeService,
+		private stripePaysService: StripePaysService
 	) { }
 
 	ngOnInit(): void {
 
 		console.log(this.data);
+
+		this.authService.authUser.subscribe(res => {
+
+			this.user = res;
+		});
+
 		this.tournament = this.data.tournament;
+
+		if(this.tournament.entry){
+
+			this.stripePaysService.createPaymentIntent(this.tournament.entry).subscribe(res => {
+
+				this.elementsOptions.clientSecret = res.client_secret;
+				console.log(res);
+			});
+		}
 	}
 
 	searchUser(): void {
@@ -89,9 +120,42 @@ export class RegisterTournamentModalComponent implements OnInit {
 
 	save(): void {
 
-		this.teamsService.store(this.tournament.id, this.teamForm.value).subscribe(res => {
+		if(this.tournament.entry){
 
-			console.log(res);
-		});
+			this.paying = true;
+			this.stripeService.confirmPayment({
+				elements: this.paymentElement.elements,
+				confirmParams: {
+					payment_method_data: {
+						billing_details: {
+							name: this.user.email
+						}
+					}
+				},
+				redirect: 'if_required'
+			}).subscribe(result => {
+				this.paying = false;
+				console.log('Result', result);
+				if (result.error) {
+
+					console.log(result.error.message);
+				} else {
+
+					if (result.paymentIntent.status === 'succeeded') {
+
+						this.teamsService.store(this.tournament.id, this.teamForm.value, result.paymentIntent.id).subscribe(res => {
+
+							console.log(res);
+						});
+					}
+				}
+			});
+		}else{
+
+			this.teamsService.store(this.tournament.id, this.teamForm.value).subscribe(res => {
+
+				console.log(res);
+			});
+		}
 	}
 }
