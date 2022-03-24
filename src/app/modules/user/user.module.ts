@@ -28,6 +28,8 @@ import { CountDownComponent } from './components/count-down/count-down.component
 import { EmailVerificationModalComponent } from './components/email-verification-modal/email-verification-modal.component';
 import { EmailVerificationComponent } from './pages/email-verification/email-verification.component';
 import { RegisterTournamentModalComponent } from './components/register-tournament-modal/register-tournament-modal.component';
+import { AuthModalComponent } from './components/auth-modal/auth-modal.component';
+import { ConfirmComponent } from './components/register-tournament-modal/confirm/confirm.component';
 
 @NgModule({
 	declarations: [
@@ -50,7 +52,9 @@ import { RegisterTournamentModalComponent } from './components/register-tourname
 		CountDownComponent,
 		EmailVerificationModalComponent,
 		EmailVerificationComponent,
-		RegisterTournamentModalComponent
+		RegisterTournamentModalComponent,
+  AuthModalComponent,
+  ConfirmComponent
 	],
 	imports: [
 		CommonModule,

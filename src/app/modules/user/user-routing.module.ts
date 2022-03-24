@@ -26,10 +26,10 @@ const routes: Routes = [
 				path: 'tournaments',
 				component: MockTournamentsComponent
 			},
-			{
-				path: 'profile',
-				component: ProfileComponent
-			},
+			// {
+			// 	path: 'profile',
+			// 	component: ProfileComponent
+			// },
 			{
 				path: 'login',
 				component: LoginComponent

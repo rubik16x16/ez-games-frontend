@@ -25,7 +25,7 @@
 																	<li><a routerLink="our-nft" routerLinkActive="active">EZ Apes NFT</a></li>
 																</ul>
 															</li>
-															<li><a routerLink="tournaments" routerLinkActive="active">Tournaments</a></li>
+															<li><a href="#" (click)="goTo('tournaments-games')">Tournaments</a></li>
 															<li><a (click)="goTo('footer-section')">Contact</a></li>
 													</ul>
 													<div *ngIf="!user" class="right-area header-action d-flex align-items-center">
@@ -34,10 +34,9 @@
 															<button type="button" (click)="openLogin()" class="cmn-btn">Sign In</button>
 													</div>
 													<div *ngIf="user" class="right-area header-action d-flex align-items-center">
-														<button mat-button [matMenuTriggerFor]="menu">{{ user.email }}</button>
+														<button class="cmn-btn" style="background: #42F8FF; color: black;" [matMenuTriggerFor]="menu">{{ user.email }}</button>
 														<mat-menu #menu="matMenu">
-															<a mat-menu-item routerLink="profile" routerLinkActive="active">My profile</a>
-															<a mat-menu-item routerLink="tournaments" routerLinkActive="active">Tournaments</a>
+															<!-- <a mat-menu-item routerLink="profile" routerLinkActive="active">My profile</a> -->
 															<button mat-menu-item (click)="logout()">Logout</button>
 														</mat-menu>
 													</div>

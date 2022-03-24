@@ -12,7 +12,8 @@
 
 		.title {
 
-			width: 35%;
+			text-align: center;
+			padding: 0 20px;
 			margin: 40px auto;
 		}
 
@@ -35,6 +36,12 @@
 			background: #350981;
 		}
 	}
+}
+
+.error-list{
+
+	color: red;
+	margin-top: 5px;
 }
 
 // .captcha-wrapper {

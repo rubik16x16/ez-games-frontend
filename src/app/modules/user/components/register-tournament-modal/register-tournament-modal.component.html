@@ -1,20 +1,32 @@
 <div class="card">
-	<div class="card-header">
-		<img src="assets/home/images/ez-logo.png" class="card-logo" alt="">
-	</div>
 	<div class="card-content mat-typography">
-		<h5 style="text-align: center;">REGISTER</h5>
+		<h5 style="text-align: center;">REGISTER TEAM</h5>
+		<p style="text-align: center;">{{ tournament.name }}</p>
 
+		<ul class="error-list" *ngFor="let input of errors | keyvalue">
+			<li>{{ input.key }}</li>
+			<ul *ngFor="let error of $any(input).value">
+				<li>{{ error }}</li>
+			</ul>
+		</ul>
 		<form [formGroup]="teamForm" id="team-form" (submit)="save()">
 			<div class="form-group">
 				<label for="team-name">Team name</label>
 				<input type="text" formControlName="name" id="team-name" class="form-control">
+				<div *ngIf="name.invalid && (name.dirty || name.touched)" class="error-list">
+				  <div *ngIf="name.errors?.['required']">
+				    name is required.
+				  </div>
+				  <div *ngIf="name.errors?.['minlength']">
+				    name must be at least 4 characters long.
+				  </div>
+				</div>
 			</div>
 		</form>
 
 		<form [formGroup]="searchForm">
 			<div class="form-group">
-				<label for="team-players">Team players</label>
+				<label for="team-players">Teammate's email</label>
 				<input type="text" formControlName="email" (input)="searchUser()" id="team-players" class="form-control">
 				<div class="team-players-list">
 					<ul>
@@ -27,7 +39,9 @@
 		<div class="players-sub">
 			<div *ngFor="let player of players.value; index as i" class="item">
 				<span>{{ player.email }}</span>
-				<button class="btn btn-danger" (click)="dropPlayer(i)">X</button>
+				<button class="btn btn-danger" (click)="dropPlayer(i)">
+					<mat-icon aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
+				</button>
 			</div>
 		</div>
 
@@ -38,15 +52,7 @@
 		  </ng-container>
 		</div>
 
-		<button type="submit" form="team-form" style="margin: 40px 0; width: 100%; text-align: center;" type="submit" class="cmn-btn cmn-btn-alt">Save</button>
-
-		<p style="text-align: center;">FOLLOW US ON ALL SOCIALS</p>
-		<div fxLayout="row" fxLayoutAlign="space-evenly center">
-			<a href="https://twitter.com/ezbattles"><img src="assets/home/images/social-bg1.png" alt="image"></a>
-			<a href="https://www.instagram.com/ezbattles/"><img src="assets/home/images/social-bg2.png" alt="image"></a>
-			<a href="https://discord.gg/GmyGB6RKUZ"><img src="assets/home/images/social-bg3.png" alt="image"></a>
-			<a href="https://www.facebook.com/ezbattlesusa"><img src="assets/home/images/social-bg4.png" alt="image"></a>
-		</div>
+		<button type="submit" form="team-form" style="margin: 40px 0; width: 100%; text-align: center;" type="submit" class="cmn-btn cmn-btn-alt">Register</button>
 	</div>
 </div>
 

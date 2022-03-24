@@ -8,7 +8,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { LoginModalComponent } from 'src/app/modules/user/components/login-modal/login-modal.component'
 import { RegisterModalComponent } from 'src/app/modules/user/components/register-modal/register-modal.component';
 import { EmailVerificationModalComponent } from 'src/app/modules/user/components/email-verification-modal/email-verification-modal.component';
-
+import { AuthModalComponent } from 'src/app/modules/user/components/auth-modal/auth-modal.component';
 
 @Injectable({
   providedIn: 'root'
@@ -75,15 +75,21 @@ export class AuthService {
 
 	openLoginModal(){
 
-		return this.dialog.open(LoginModalComponent, {
-			panelClass: 'login-modal'
+		return this.dialog.open(AuthModalComponent, {
+			panelClass: 'login-modal',
+			data: {
+				view: 'login'
+			}
 		}).afterClosed();
 	}
 
 	openRegisterModal(){
 
-		return this.dialog.open(RegisterModalComponent, {
-			panelClass: 'register-modal'
+		return this.dialog.open(AuthModalComponent, {
+			panelClass: 'register-modal',
+			data: {
+				view: 'register'
+			}
 		}).afterClosed();
 	}
 

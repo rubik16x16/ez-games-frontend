@@ -163,7 +163,10 @@
 												<img src="assets/home/images/prize-icon.png" alt="image">
 												<h5>${{ tournament.reward }}/DIVISION</h5>
 											</div>
-											<p class="bet">Entry/Player <span>${{ tournament.entry }}</span></p>
+											<p class="bet">Entry/Player
+												<span *ngIf="tournament.entry; else elseBlock">${{ tournament.entry }}</span>
+												<ng-template #elseBlock><span #elseBlock>FREE</span></ng-template>
+											</p>
 											<button type="button" class="cmn-btn-second" (click)="registerTournament(i)">Register</button>
 											<p class="end-on">Will begin on: <span>{{ tournament.start }}</span></p>
 											<app-count-down [date]="tournament.start"></app-count-down>
@@ -243,7 +246,7 @@
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6 d-flex align-items-end jus-end">
 					<div class="mid-area">
-						<img src="assets/home/images/tropy.png" alt="image">
+						<img src="assets/home/images/trophy1.png" alt="image">
 					</div>
 				</div>
 				<div class="col-lg-6">

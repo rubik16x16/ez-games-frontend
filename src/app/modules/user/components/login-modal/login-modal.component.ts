@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -23,8 +22,10 @@ export class LoginModalComponent implements OnInit {
 
 	errors: any;
 
+	@Output() logedIn = new EventEmitter<any>();
+	@Output() toggleView = new EventEmitter<any>();
+
   constructor(
-		public dialogRef: MatDialogRef<LoginModalComponent>,
 		private fb: FormBuilder,
   	private authService: AuthService
 	) { }
@@ -50,9 +51,7 @@ export class LoginModalComponent implements OnInit {
 				localStorage.setItem('expires_at', res.access_token);
 				localStorage.setItem('user', JSON.stringify(res.user));
 
-				this.dialogRef.close({
-					event: 'login'
-				});
+				this.logedIn.emit();
 
 				this.authService.setAuthUser(res.user);
 			}, res => {
@@ -60,5 +59,10 @@ export class LoginModalComponent implements OnInit {
 				this.errors = res.error;
 			});
 		}
+	}
+
+	register(): void {
+
+		this.toggleView.emit();
 	}
 }

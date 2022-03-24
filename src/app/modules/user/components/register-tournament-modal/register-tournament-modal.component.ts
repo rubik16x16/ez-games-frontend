@@ -19,7 +19,8 @@ export class RegisterTournamentModalComponent implements OnInit {
 
 	teamForm = this.fb.group({
 		name: ['', [
-			Validators.required
+			Validators.required,
+			Validators.minLength(4)
 		]],
 		players: [[]]
 	});
@@ -32,6 +33,8 @@ export class RegisterTournamentModalComponent implements OnInit {
 	usersQuery: User[];
 	searching: boolean = false;
 	tournament: Tournament = null;
+
+	errors: any;
 
 	get name() { return this.teamForm.get('name') }
 	get players() { return this.teamForm.get('players') }
@@ -120,42 +123,60 @@ export class RegisterTournamentModalComponent implements OnInit {
 
 	save(): void {
 
-		if(this.tournament.entry){
+		this.teamForm.markAllAsTouched();
 
-			this.paying = true;
-			this.stripeService.confirmPayment({
-				elements: this.paymentElement.elements,
-				confirmParams: {
-					payment_method_data: {
-						billing_details: {
-							name: this.user.email
+		if(this.teamForm.valid){
+
+			if(this.tournament.entry){
+
+				this.paying = true;
+				this.stripeService.confirmPayment({
+					elements: this.paymentElement.elements,
+					confirmParams: {
+						payment_method_data: {
+							billing_details: {
+								name: this.user.email
+							}
+						}
+					},
+					redirect: 'if_required'
+				}).subscribe(result => {
+					this.paying = false;
+					console.log('Result', result);
+					if (result.error) {
+
+						console.log(result.error.message);
+					} else {
+
+						if (result.paymentIntent.status === 'succeeded') {
+
+							this.teamsService.store(this.tournament.id, this.teamForm.value, result.paymentIntent.id).subscribe(res => {
+
+								console.log(res);
+								this.dialogRef.close({
+									'event': 'register'
+								});
+							}, res => {
+
+								this.errors = res.error;
+							});
 						}
 					}
-				},
-				redirect: 'if_required'
-			}).subscribe(result => {
-				this.paying = false;
-				console.log('Result', result);
-				if (result.error) {
+				});
+			}else{
 
-					console.log(result.error.message);
-				} else {
+				this.teamsService.store(this.tournament.id, this.teamForm.value).subscribe(res => {
 
-					if (result.paymentIntent.status === 'succeeded') {
+					console.log(res);
+					this.dialogRef.close({
+						'event': 'register'
+					});
+				}, res => {
 
-						this.teamsService.store(this.tournament.id, this.teamForm.value, result.paymentIntent.id).subscribe(res => {
-
-							console.log(res);
-						});
-					}
-				}
-			});
-		}else{
-
-			this.teamsService.store(this.tournament.id, this.teamForm.value).subscribe(res => {
-
-				console.log(res);
-			});
+					this.errors = res.error;
+				});
+			}
 		}
+
 	}
 }

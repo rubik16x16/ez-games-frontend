@@ -6,6 +6,7 @@ import { TournamentsService } from 'src/app/services/tournaments.service';
 import { Tournament } from 'src/app/models/tournament';
 import { ComingSoonModalComponent } from '../../components/coming-soon-modal/coming-soon-modal.component';
 import { RegisterTournamentModalComponent } from '../../components/register-tournament-modal/register-tournament-modal.component';
+import { ConfirmComponent } from '../../components/register-tournament-modal/confirm/confirm.component';
 
 @Component({
 	selector: 'app-index',
@@ -74,7 +75,15 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
 		if(this.user){
 
-			this.openRegisterTournament(tournament).subscribe();
+			this.openRegisterTournament(tournament).subscribe(res => {
+
+				if(res && res.event == 'register'){
+
+					this.dialog.open(ConfirmComponent, {
+						panelClass: 'register-tournament-modal'
+					})
+				}
+			});
 			return;
 		}
 
