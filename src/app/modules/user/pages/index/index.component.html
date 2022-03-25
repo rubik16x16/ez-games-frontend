@@ -8,7 +8,7 @@
 						<div class="top-area justify-content-center text-center">
 							<h1>MAKE MONEY <br><span>GAMING</span></h1>
 							<p>Bringing gamers to the metaverse</p>
-							<a routerLink="tournaments" style="background: #42F8FF; color: black" class="cmn-btn">
+							<a href="#" (click)="goTo('tournaments-games', $event)" style="background: #42F8FF; color: black" class="cmn-btn">
 								VIEW TOURNAMENTS
 							</a><br>
 							<!-- <a href="https://discord.com/invite/GmyGB6RKUZ" style="margin-top: 0" class="cmn-btn">
@@ -93,7 +93,7 @@
 				<div
 					class="col-lg-3 col-md-3 col-sm-4 d-flex align-items-center justify-content-center justify-content-sm-end">
 					<div class="right-area" style="margin-bottom: 20px">
-						<a routerLink="tournaments" class="cmn-btn-alt cmn-btn">See tournaments <img src="assets/home/images/double-right.png"
+						<a href="#" (click)="goTo('tournaments-games', $event)" class="cmn-btn-alt cmn-btn">See tournaments <img src="assets/home/images/double-right.png"
 						alt="image"></a>
 					</div>
 				</div>
@@ -144,7 +144,7 @@
 					<div class="right-area" style="margin-bottom: 20px">
 						<a href="https://discord.gg/GmyGB6RKUZ" class="cmn-btn-alt cmn-btn">Discord <img
 						src="assets/home/images/double-right.png" alt="image"></a>
-						<a routerLink="tournaments" class="cmn-btn-alt cmn-btn" style="margin-left: 5px; margin-top: 10px">Tournaments <img
+						<a href="#" (click)="goTo('tournaments-games', $event)" class="cmn-btn-alt cmn-btn" style="margin-left: 5px; margin-top: 10px">Tournaments <img
 						src="assets/home/images/double-right.png" alt="image"></a>
 					</div>
 				</div>
@@ -154,22 +154,36 @@
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="all-items">
-								<div *ngFor="let tournament of tournaments; index as i" class="single-item">
+								<div class="single-item">
 									<div class="content-area">
 										<img src="assets/home/images/tournaments-games-2.png" alt="image">
 										<div class="grid-style">
-											<h5 class="head-area">{{ tournament.name }}</h5>
+											<h5 class="head-area">BR DUOS Rebirth Duos</h5>
 											<div class="prize d-flex justify-content-center">
 												<img src="assets/home/images/prize-icon.png" alt="image">
-												<h5>${{ tournament.reward }}/DIVISION</h5>
+												<h5>$30/DIVISION</h5>
 											</div>
 											<p class="bet">Entry/Player
-												<span *ngIf="tournament.entry; else elseBlock">${{ tournament.entry }}</span>
-												<ng-template #elseBlock><span #elseBlock>FREE</span></ng-template>
+												<span>FREE</span>
 											</p>
-											<button type="button" class="cmn-btn-second" (click)="registerTournament(i)">Register</button>
-											<p class="end-on">Will begin on: <span>{{ tournament.start }}</span></p>
-											<app-count-down [date]="tournament.start"></app-count-down>
+											<button type="button" class="cmn-btn-second" (click)="registerTournament(0)">Register</button>
+											<p class="end-on">Will begin on: <span>2022-03-27 12:00:00</span></p>
+											<app-count-down [date]="'2022-03-27 12:00:00'"></app-count-down>
+										</div>
+									</div>
+								</div>
+								<div class="single-item" style="background: #00fd00;">
+									<div class="content-area">
+										<img src="assets/home/images/br-special.jpeg" style="border-radius: 8px;" alt="image">
+										<div class="grid-style">
+											<h5 class="head-area" style="color: black">SPECIAL CUSTOM TRIOS</h5>
+											<a href="assets/EZ_Battles_Custom_Game_Rules.pdf" style="background: black; color: white; border: none; padding: 30px 0; border-radius: 10px; font-size: 24px;" class="cmn-btn-second">SEE RULES & PRIZES</a>
+											<p class="bet" style="color: black">Entry/Player
+												<span style="color: black">FREE</span>
+											</p>
+											<button type="button" style="background: #4a41fc; color: white; border: none" class="cmn-btn-second" (click)="registerTournament(1)">Register</button>
+											<p class="end-on" style="color: black">Will begin on: <span style="color: black">2022-03-27 15:00:00 EST</span></p>
+											<app-count-down panelClass="special-1-countdown" [date]="'2022-03-27 15:00:00-05:00'"></app-count-down>
 										</div>
 									</div>
 								</div>
@@ -239,7 +253,7 @@
 				<div class="col-lg-3 col-md-6 col-sm-6 d-grid align-items-center">
 					<div class="section-header">
 						<h2 class="title">Live Results, <span>Fast Payouts</span></h2>
-						<a routerLink="tournaments" class="cmn-btn-alt cmn-btn">
+						<a href="#" (click)="goTo('tournaments-games', $event)" class="cmn-btn-alt cmn-btn">
 						Start Playing!
 						</a>
 					</div>

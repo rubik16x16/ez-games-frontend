@@ -17,7 +17,18 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
 	@ViewChild('slider') slider: ElementRef;
 
-	tournaments: Tournament[] = [];
+	tournaments: any[] = [
+		{
+			id: 1,
+			name: 'BR DUOS Rebirth Duos',
+			entry: null
+		},
+		{
+			id: 1,
+			name: 'SPECIAL CUSTOM TRIOS',
+			entry: null
+		}
+	];
 	user: any;
 
 	constructor(
@@ -28,18 +39,15 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
 	ngOnInit(): void {
 
-		this.tournamentsService.list().subscribe(res => {
+		// this.tournamentsService.list().subscribe(res => {
 
-			this.tournaments = res;
-			console.log(res);
-		});
+		// 	this.tournaments = res;
+		// });
 
 		this.authService.authUser.subscribe(res => {
 
 			this.user = res;
 		});
-
-		console.log(this.user);
 	}
 
 	ngAfterViewInit(): void {
@@ -95,5 +103,14 @@ export class IndexComponent implements OnInit, AfterViewInit {
 			}
 		});
 		return;
+	}
+
+	goTo(section: string, e: any){
+
+		e.preventDefault();
+		var element = document.querySelector(`#${section}`);
+		element!.scrollIntoView({
+			behavior: 'smooth'
+		});
 	}
 }

@@ -25,9 +25,9 @@ export class RegisterModalComponent implements OnInit {
 			Validators.minLength(4),
 			Validators.required
 		]],
-		captchaResponse: ['', [
-			Validators.required
-		]]
+		// captchaResponse: ['', [
+		// 	Validators.required
+		// ]]
 	});
 
 	readonly RECAPTCHA_SITE_KEY = environment.recaptcha_site_key;
@@ -57,7 +57,7 @@ export class RegisterModalComponent implements OnInit {
 
   	this.registerForm.markAllAsTouched();
 
-  	if(this.registerForm.valid && this.captchaResponse){
+  	if(this.registerForm.valid){
 
   		this.authService.register(this.registerForm.value).subscribe(res => {
 
