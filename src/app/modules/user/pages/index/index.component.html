@@ -168,7 +168,6 @@
 											</p>
 											<button type="button" class="cmn-btn-second" (click)="registerTournament(0)">Register</button>
 											<p class="end-on">Will begin on: <span>2022-03-27 12:00:00</span></p>
-											<app-count-down [date]="'2022-03-27 12:00:00'"></app-count-down>
 										</div>
 									</div>
 								</div>
@@ -182,8 +181,8 @@
 												<span style="color: black">FREE</span>
 											</p>
 											<button type="button" style="background: #4a41fc; color: white; border: none" class="cmn-btn-second" (click)="registerTournament(1)">Register</button>
+											<a routerLink="tournaments/2/results" style="background: #4a41fc; color: white; border: none; margin: 10px 0" class="cmn-btn-second">Results</a>
 											<p class="end-on" style="color: black">Will begin on: <span style="color: black">2022-03-27 15:00:00 EST</span></p>
-											<app-count-down panelClass="special-1-countdown" [date]="'2022-03-27 15:00:00-05:00'"></app-count-down>
 										</div>
 									</div>
 								</div>

@@ -12,6 +12,7 @@ import { OurNftComponent } from './pages/our-nft/our-nft.component';
 import { MockTournamentsComponent } from './pages/mock-tournaments/mock-tournaments.component';
 import { TestComponent } from './pages/test/test.component';
 import { EmailVerificationComponent } from './pages/email-verification/email-verification.component';
+import { TournamentResultsComponent } from './pages/tournament-results/tournament-results.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
 			{
 				path: 'tournaments',
 				component: MockTournamentsComponent
+			},
+			{
+				path: 'tournaments/:id/results',
+				component: TournamentResultsComponent
 			},
 			// {
 			// 	path: 'profile',

@@ -30,6 +30,7 @@ import { EmailVerificationComponent } from './pages/email-verification/email-ver
 import { RegisterTournamentModalComponent } from './components/register-tournament-modal/register-tournament-modal.component';
 import { AuthModalComponent } from './components/auth-modal/auth-modal.component';
 import { ConfirmComponent } from './components/register-tournament-modal/confirm/confirm.component';
+import { TournamentResultsComponent } from './pages/tournament-results/tournament-results.component';
 
 @NgModule({
 	declarations: [
@@ -54,7 +55,8 @@ import { ConfirmComponent } from './components/register-tournament-modal/confirm
 		EmailVerificationComponent,
 		RegisterTournamentModalComponent,
   AuthModalComponent,
-  ConfirmComponent
+  ConfirmComponent,
+  TournamentResultsComponent
 	],
 	imports: [
 		CommonModule,
