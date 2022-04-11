@@ -84,6 +84,6 @@ export class RegisterModalComponent implements OnInit {
 
   login(): void {
 
-  	this.toggleView.emit();
+  	this.toggleView.emit('login');
   }
 }

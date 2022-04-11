@@ -40,13 +40,21 @@
 
 .team-players-list {
 
-	max-height: 100px;
+	margin-top: 10px;
+	background: #4E01CE;
+	max-height: 200px;
 	overflow: auto;
 	font-weight: bold;
+	font-size: 14px;
+	border-radius: 15px;
+
+	li {
+
+		padding: 10px 15px;
+	}
 
 	li:hover {
 
-		background: #4e01ce;
 		cursor: pointer;
 	}
 }
@@ -69,13 +77,13 @@
 
 	.item {
 
-		display: inline-block;
 		margin-top: 10px;
 		margin-right: 10px;
 
 		button {
 
 			margin-left: 5px;
+			float: right;
 		}
 
 		span {

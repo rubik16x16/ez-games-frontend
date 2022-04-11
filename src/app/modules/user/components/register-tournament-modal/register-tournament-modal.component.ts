@@ -121,6 +121,13 @@ export class RegisterTournamentModalComponent implements OnInit {
 		this.players.setValue(newPlayers);
 	}
 
+	addNewPlayer(){
+
+		let player = {id: null, email: this.email.value};
+		let newPlayers = [...this.players.value, player];
+		this.players.setValue(newPlayers);
+	}
+
 	save(): void {
 
 		this.teamForm.markAllAsTouched();

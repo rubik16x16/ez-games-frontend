@@ -8,5 +8,7 @@ export interface Tournament{
 	entry: number,
 	reward: number,
 	type: number,
-	teams: Team[]
+	teams: Team[],
+	image: string,
+	num_players: number
 }

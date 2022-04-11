@@ -7,6 +7,7 @@ import { Tournament } from 'src/app/models/tournament';
 import { ComingSoonModalComponent } from '../../components/coming-soon-modal/coming-soon-modal.component';
 import { RegisterTournamentModalComponent } from '../../components/register-tournament-modal/register-tournament-modal.component';
 import { ConfirmComponent } from '../../components/register-tournament-modal/confirm/confirm.component';
+import { environment } from 'src/environments/environment';
 
 @Component({
 	selector: 'app-index',
@@ -17,18 +18,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
 	@ViewChild('slider') slider: ElementRef;
 
-	tournaments: any[] = [
-		{
-			id: 1,
-			name: 'BR DUOS Rebirth Duos',
-			entry: null
-		},
-		{
-			id: 1,
-			name: 'SPECIAL CUSTOM TRIOS',
-			entry: null
-		}
-	];
+	tournaments: any[] = [];
 	user: any;
 
 	constructor(
@@ -39,10 +29,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
 	ngOnInit(): void {
 
-		// this.tournamentsService.list().subscribe(res => {
+		this.tournamentsService.list().subscribe(res => {
 
-		// 	this.tournaments = res;
-		// });
+			this.tournaments = res;
+		});
 
 		this.authService.authUser.subscribe(res => {
 
@@ -75,6 +65,13 @@ export class IndexComponent implements OnInit, AfterViewInit {
 				tournament
 			}
 		}).afterClosed();
+	}
+
+	register(): void {
+
+		this.authService.startRegister().subscribe(res => {
+
+		});
 	}
 
 	registerTournament(index: number): void {
@@ -112,5 +109,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
 		element!.scrollIntoView({
 			behavior: 'smooth'
 		});
+	}
+
+	imgTournament(tournament: Tournament): string {
+
+		return `${environment.storage}/${tournament.image}`;
 	}
 }

@@ -57,17 +57,22 @@ export class AuthService {
 
 			this.openRegisterModal().subscribe(res => {
 
-				if(res && res.event == 'register'){
+				if(res){
 
-					this.openEmailVerificationModal().subscribe(res => {
+					switch(res.event){
 
-						observer.next('register');
-						observer.complete();
-					});
-				}else{
+						case 'register':
+							this.openEmailVerificationModal().subscribe(res => {
 
-					observer.next('closed');
-					observer.complete();
+								observer.next(res.event);
+								observer.complete();
+							});
+						break;
+						case 'login':
+							observer.next(res.event);
+							observer.complete();
+						break;
+					}
 				}
 			});
 		});

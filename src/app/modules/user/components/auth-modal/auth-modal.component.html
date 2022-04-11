@@ -1,7 +1,11 @@
-<div *ngIf="currentView == 'login'; then thenBlock else elseBlock"></div>
-<ng-template #thenBlock>
-	<app-login-modal (logedIn)="logedIn($event)" (toggleView)="toggleView()"></app-login-modal>
-</ng-template>
-<ng-template #elseBlock>
-	<app-register-modal (registered)="registered($event)" (toggleView)="toggleView()"></app-register-modal>
-</ng-template>
+<div *ngIf="currentView == 'login'">
+	<app-login-modal (logedIn)="logedIn($event)" (toggleView)="toggleView($event)"></app-login-modal>
+</div>
+
+<div *ngIf="currentView == 'register'">
+	<app-register-modal (registered)="registered($event)" (toggleView)="toggleView($event)"></app-register-modal>
+</div>
+
+<div *ngIf="currentView == 'forgot-password'">
+	<app-forgot-password-modal></app-forgot-password-modal>
+</div>

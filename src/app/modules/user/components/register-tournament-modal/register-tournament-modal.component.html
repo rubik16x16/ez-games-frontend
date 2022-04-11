@@ -27,7 +27,10 @@
 		<form [formGroup]="searchForm">
 			<div class="form-group">
 				<label for="team-players">Teammate's email</label>
-				<input type="text" formControlName="email" (input)="searchUser()" id="team-players" class="form-control">
+				<div fxLayout="row">
+					<input type="text" formControlName="email" (input)="searchUser()" id="team-players" class="form-control">
+					<button class="btn btn-success" (click)="addNewPlayer()" type="button">+</button>
+				</div>
 				<div class="team-players-list">
 					<ul>
 						<li *ngFor="let user of usersQuery; index as i" (click)="addPlayer(i)">{{ user.email }}</li>

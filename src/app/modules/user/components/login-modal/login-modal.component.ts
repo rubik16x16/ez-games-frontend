@@ -63,6 +63,11 @@ export class LoginModalComponent implements OnInit {
 
 	register(): void {
 
-		this.toggleView.emit();
+		this.toggleView.emit('register');
+	}
+
+	forgotPassword(): void {
+
+		this.toggleView.emit('forgot-password');
 	}
 }

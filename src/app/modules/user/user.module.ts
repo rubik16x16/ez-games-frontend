@@ -21,7 +21,7 @@ import { OurCompanyComponent } from './pages/our-company/our-company.component';
 import { OurNftComponent } from './pages/our-nft/our-nft.component';
 import { MockTournamentsComponent } from './pages/mock-tournaments/mock-tournaments.component';
 import { TestComponent } from './pages/test/test.component';
-import { FiltersComponent } from './pages/mock-tournaments/filters/filters.component';
+import { FiltersComponent } from './pages/tournaments/filters/filters.component';
 import { RegisterModalComponent } from './components/register-modal/register-modal.component';
 import { ComingSoonModalComponent } from './components/coming-soon-modal/coming-soon-modal.component';
 import { CountDownComponent } from './components/count-down/count-down.component';
@@ -31,6 +31,7 @@ import { RegisterTournamentModalComponent } from './components/register-tourname
 import { AuthModalComponent } from './components/auth-modal/auth-modal.component';
 import { ConfirmComponent } from './components/register-tournament-modal/confirm/confirm.component';
 import { TournamentResultsComponent } from './pages/tournament-results/tournament-results.component';
+import { ForgotPasswordModalComponent } from './components/forgot-password-modal/forgot-password-modal.component';
 
 @NgModule({
 	declarations: [
@@ -56,7 +57,8 @@ import { TournamentResultsComponent } from './pages/tournament-results/tournamen
 		RegisterTournamentModalComponent,
   AuthModalComponent,
   ConfirmComponent,
-  TournamentResultsComponent
+  TournamentResultsComponent,
+  ForgotPasswordModalComponent
 	],
 	imports: [
 		CommonModule,

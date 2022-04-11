@@ -37,15 +37,17 @@ export class AuthModalComponent implements OnInit {
   	});
   }
 
-  toggleView(): void{
+  toggleView(view): void{
 
-  	if(this.currentView == 'login'){
+  	this.currentView = view;
 
-  		this.currentView = 'register';
-  		return;
-  	}
+  	// if(this.currentView == 'login'){
 
-  	this.currentView = 'login';
-  	return;
+  	// 	this.currentView = 'register';
+  	// 	return;
+  	// }
+
+  	// this.currentView = 'login';
+  	// return;
   }
 }

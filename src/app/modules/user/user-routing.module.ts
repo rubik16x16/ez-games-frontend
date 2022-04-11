@@ -25,7 +25,7 @@ const routes: Routes = [
       },
 			{
 				path: 'tournaments',
-				component: MockTournamentsComponent
+				component: TournamentsComponent
 			},
 			{
 				path: 'tournaments/:id/results',
