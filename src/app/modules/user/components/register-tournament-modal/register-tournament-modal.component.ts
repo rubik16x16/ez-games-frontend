@@ -84,8 +84,6 @@ export class RegisterTournamentModalComponent implements OnInit {
 
 		if(!this.searching){
 
-			console.log('search');
-
 			this.searching = true;
 
 			setTimeout(() => {
@@ -97,11 +95,10 @@ export class RegisterTournamentModalComponent implements OnInit {
 					return;
 				}
 
-				this.userService.search(this.email.value).subscribe(res => {
+				this.userService.search(this.email.value, this.players.value).subscribe(res => {
 
 					this.usersQuery = res;
 					this.searching = false;
-					console.log(res);
 				});
 			}, 500);
 		}
@@ -109,9 +106,21 @@ export class RegisterTournamentModalComponent implements OnInit {
 
 	addPlayer(index: number): void {
 
+		if(this.players.value.length >= this.tournament.num_players -1){
+
+			this.errors = {
+				...this.errors,
+				players: [`Max players: ${this.tournament.num_players}`]
+			}
+
+			return;
+		}
+
 		let player = this.usersQuery[index];
 		let newPlayers = [...this.players.value, player];
 		this.players.setValue(newPlayers);
+		this.usersQuery.splice(index, 1);
+		return;
 	}
 
 	dropPlayer(index: number): void {

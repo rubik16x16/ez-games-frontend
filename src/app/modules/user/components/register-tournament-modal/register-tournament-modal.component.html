@@ -9,6 +9,7 @@
 				<li>{{ error }}</li>
 			</ul>
 		</ul>
+
 		<form [formGroup]="teamForm" id="team-form" (submit)="save()">
 			<div class="form-group">
 				<label for="team-name">Team name</label>
@@ -24,7 +25,7 @@
 			</div>
 		</form>
 
-		<form [formGroup]="searchForm">
+		<form [formGroup]="searchForm" *ngIf="tournament.num_players > 1">
 			<div class="form-group">
 				<label for="team-players">Teammate's email</label>
 				<div fxLayout="row">

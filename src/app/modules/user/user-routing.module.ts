@@ -13,6 +13,7 @@ import { MockTournamentsComponent } from './pages/mock-tournaments/mock-tourname
 import { TestComponent } from './pages/test/test.component';
 import { EmailVerificationComponent } from './pages/email-verification/email-verification.component';
 import { TournamentResultsComponent } from './pages/tournament-results/tournament-results.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
 			{
 				path: 'our-nft',
 				component: OurNftComponent
+			},
+			{
+				path: 'forgot-password/:token',
+				component: ForgotPasswordComponent
 			},
 			{
 				path: 'test',

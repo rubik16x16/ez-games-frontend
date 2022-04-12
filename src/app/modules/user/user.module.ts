@@ -32,6 +32,8 @@ import { AuthModalComponent } from './components/auth-modal/auth-modal.component
 import { ConfirmComponent } from './components/register-tournament-modal/confirm/confirm.component';
 import { TournamentResultsComponent } from './pages/tournament-results/tournament-results.component';
 import { ForgotPasswordModalComponent } from './components/forgot-password-modal/forgot-password-modal.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { ConfirmedComponent } from './pages/forgot-password/confirmed/confirmed.component';
 
 @NgModule({
 	declarations: [
@@ -58,7 +60,9 @@ import { ForgotPasswordModalComponent } from './components/forgot-password-modal
   AuthModalComponent,
   ConfirmComponent,
   TournamentResultsComponent,
-  ForgotPasswordModalComponent
+  ForgotPasswordModalComponent,
+  ForgotPasswordComponent,
+  ConfirmedComponent
 	],
 	imports: [
 		CommonModule,

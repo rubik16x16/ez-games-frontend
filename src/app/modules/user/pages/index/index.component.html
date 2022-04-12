@@ -166,8 +166,8 @@
 														</div>
 														<p class="bet">Min. bet <span>€0.20</span></p>
 														<button type="button" class="cmn-btn-second" (click)="registerTournament(i)">View Tournament</button>
-														<p class="end-on">Will start on: <span>{{ tournament.start }}</span></p>
 														<p class="end-on">Will end on: <span>{{ tournament.end }}</span></p>
+														<app-count-down [date]="tournament.end + '+04:30'"></app-count-down>
 												</div>
 										</div>
 								</div>

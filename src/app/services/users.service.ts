@@ -13,11 +13,20 @@ export class UsersService {
 		private http: HttpClient
 	) { }
 
-	search(email: string): Observable<User[]> {
+	search(email: string, playersSelected): Observable<User[]> {
+
+		let playersSelectedIds = playersSelected.filter(item => {
+
+			return item.id != null;
+		}).map(item => {
+
+			return item.id
+		});
 
 		return this.http.get<User[]>(`${environment.api}/users/search`, {
 			params: {
-				email
+				email,
+				playersSelected: playersSelectedIds.join('-')
 			}
 		});
 	}
