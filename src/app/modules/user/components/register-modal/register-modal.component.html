@@ -16,13 +16,13 @@
 				<input type="text" class="form-control" formControlName="email" placeholder="Registered Email Address." id="email">
 				<div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-list">
 				  <div *ngIf="email.errors?.['required']">
-				    email is required.
+				    Email is required.
 				  </div>
 				  <div *ngIf="email.errors?.['email']">
-				    email is invalid.
+				    Email is invalid.
 				  </div>
 				  <div *ngIf="email.errors?.['minlength']">
-				    email must be at least 4 characters long.
+				    Email must be at least 4 characters long.
 				  </div>
 				</div>
 			</div>
@@ -31,10 +31,10 @@
 				<input type="text" class="form-control" formControlName="nickname" placeholder="Activision ID" id="nickname">
 				<div *ngIf="nickname.invalid && (nickname.dirty || nickname.touched)" class="error-list">
 				  <div *ngIf="nickname.errors?.['required']">
-				    Activision Id is required.
+				    Activision ID is required.
 				  </div>
 				  <div *ngIf="nickname.errors?.['minlength']">
-				    Activision Id must be at least 4 characters long.
+				    Activision ID must be at least 4 characters long.
 				  </div>
 				</div>
 			</div>
@@ -43,10 +43,10 @@
 				<input type="password" class="form-control" formControlName="password" placeholder="Password" id="password">
 				<div *ngIf="password.invalid && (password.dirty || password.touched)" class="error-list">
 				  <div *ngIf="password.errors?.['required']">
-				    password is required.
+				    Password is required.
 				  </div>
 				  <div *ngIf="password.errors?.['minlength']">
-				    password must be at least 4 characters long.
+				    Password must be at least 4 characters long.
 				  </div>
 				</div>
 			</div>

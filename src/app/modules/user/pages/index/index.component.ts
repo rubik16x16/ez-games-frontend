@@ -8,6 +8,7 @@ import { ComingSoonModalComponent } from '../../components/coming-soon-modal/com
 import { RegisterTournamentModalComponent } from '../../components/register-tournament-modal/register-tournament-modal.component';
 import { ConfirmComponent } from '../../components/register-tournament-modal/confirm/confirm.component';
 import { environment } from 'src/environments/environment';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
 	selector: 'app-index',
@@ -24,10 +25,20 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	constructor(
 		public dialog: MatDialog,
 		private authService: AuthService,
-		private tournamentsService: TournamentsService
+		private tournamentsService: TournamentsService,
+		private route: ActivatedRoute
 	) { }
 
 	ngOnInit(): void {
+
+		let register = this.route.snapshot.queryParamMap.get('register');
+
+		if(register){
+
+			this.authService.startRegister().subscribe(res => {
+
+			});
+		}
 
 		this.tournamentsService.list().subscribe(res => {
 
