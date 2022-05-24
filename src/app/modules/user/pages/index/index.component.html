@@ -167,11 +167,11 @@
 							<div class="row all-tournaments">
 								<div class="col-md-6 col-lg-4 tournament-wrapper" *ngFor="let tournament of tournaments; let i = index">
 									<div class="tournament-card">
-										<img src="assets/home/images/Tournament-Cards-1.png" alt="">
+										<img [src]="imgTournament(tournament)" alt="">
 										<div class="info-wrapper">
 											<div class="info-bg"></div>
 											<div class="info">
-												<h2 class="entry">$100</h2>
+												<h2 class="entry">${{ tournament.entry }}</h2>
 												<span class="entry-for">/DIVISION</span><br>
 												<button class="btn-view-prizes"><span>VIEW PRIZES</span></button>
 												<p class="text">

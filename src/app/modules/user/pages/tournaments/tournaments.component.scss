@@ -41,3 +41,108 @@
 		margin: 8px 0 25px 0;
 	}
 }
+
+.tournament-card {
+
+	position: relative;
+	box-shadow: 5px 5px 7px -2px #000000;
+	border-radius: 35px;
+	overflow: hidden;
+	text-align: center;
+	display: inline-block;
+	margin-bottom: 20px;
+
+
+	.info-wrapper {
+
+		position: absolute;
+		bottom: 0;
+	}
+
+	.info-bg {
+
+		background-color: #12145f;
+		height: 100%;
+		width: 100%;
+		left: 0;
+		position: absolute;
+		bottom: 0;
+		opacity: 0.5;
+		border-radius: 35px;
+		border: 3px solid #252890;
+	}
+
+	.info {
+
+		width: 100%;
+		padding: 10px 20px;
+		position: relative;
+	}
+
+	.entry {
+
+		color: #3ff3f7;
+		margin-bottom: 0;
+		line-height: 45px !important;
+		margin-top: 10px;
+	}
+
+	.entry-for {
+
+		font-weight: bold;
+	}
+
+	.btn-view-prizes {
+
+		background: #3ff3f7;
+		border-radius: 12px;
+		padding: 0 20px;
+		border-bottom: 4px solid black;
+
+		span {
+
+			color: #12145f;
+			font-weight: bold;
+			font-size: 16px;
+			box-shadow: 0px 0px 15px 1px #3ff3f7;
+		}
+	}
+
+	.text {
+
+		font-size: 14px;
+	}
+
+	.hight-light {
+
+		color: #3ff3f7;
+		font-size: 13px;
+	}
+
+	.register {
+
+		background: #3ff3f7;
+		border-radius: 20px;
+		padding: 10px;
+		border-bottom: 6px solid black;
+
+		span {
+
+			font-size: 30px;
+			font-weight: 1000;
+			color: #12145f;
+			box-shadow: 0px 0px 17px 9px #3ff3f7;
+		}
+	}
+
+	.register-ends {
+
+		font-size: 12px;
+	}
+
+	.register-begins {
+
+		font-size: 14px;
+		font-weight: bold;
+	}
+}
