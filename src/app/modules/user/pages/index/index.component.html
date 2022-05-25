@@ -19,7 +19,7 @@
 							<h1>MAKE MONEY <br><span>GAMING</span></h1>
 							<p>Bringing gamers to the metaverse</p>
 							<button class="cmn-btn-alt cmn-btn" (click)="register()">REGISTER NOW</button><br>
-							<a href="#" (click)="goTo('tournaments-games', $event)" style="background: #42F8FF; color: black" class="cmn-btn">
+							<a routerLink="tournaments" style="background: #42F8FF; color: black" class="cmn-btn">
 								VIEW TOURNAMENTS
 							</a><br>
 							<!-- <a href="https://discord.com/invite/GmyGB6RKUZ" style="margin-top: 0" class="cmn-btn">
@@ -179,7 +179,7 @@
 													START TIME <span class="hight-light">3PM EST</span> | SCORING BEST 2 GAMES <br>
 													TEAMS/DIVISION <span class="hight-light"></span>
 												</p>
-												<button class="register"><span>REGISTER NOW</span></button>
+												<button class="register" (click)="registerTournament(i)"><span>REGISTER NOW</span></button>
 												<span class="register-ends">REGISTRATION ENDS IN 00:36:11</span>
 												<span class="register-begins"><span class="hight-light">BEGIN</span> ON 04 | 10 | 22</span>
 											</div>
