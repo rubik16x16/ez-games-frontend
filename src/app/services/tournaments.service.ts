@@ -33,8 +33,8 @@ export class TournamentsService {
 		return this.http.delete<any>(`${environment.api}/tournaments/${tournament.id}`);
 	}
 
-	getMatchesData(): Observable<any>{
+	getMatchesData(id: number): Observable<any>{
 
-		return this.http.get<any>(`${environment.api}/tournaments/get-data`);
+		return this.http.get<any>(`${environment.api}/tournaments/${id}/get-data`);
 	}
 }
