@@ -107,7 +107,15 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
 			if(res == 'register'){
 
-				this.openRegisterTournament(tournament).subscribe();
+				this.openRegisterTournament(tournament).subscribe(res => {
+
+					if(res && res.event == 'register'){
+
+						this.dialog.open(ConfirmComponent, {
+							panelClass: 'register-tournament-modal'
+						})
+					}
+				});
 			}
 		});
 		return;

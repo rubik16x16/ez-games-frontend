@@ -62,7 +62,7 @@ export class AuthService {
 					switch(res.event){
 
 						case 'register':
-							this.openEmailVerificationModal().subscribe(res => {
+							this.openEmailVerificationModal().subscribe(res2 => {
 
 								observer.next(res.event);
 								observer.complete();

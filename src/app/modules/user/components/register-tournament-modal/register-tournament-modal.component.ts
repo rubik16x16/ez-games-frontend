@@ -158,17 +158,14 @@ export class RegisterTournamentModalComponent implements OnInit {
 					redirect: 'if_required'
 				}).subscribe(result => {
 					this.paying = false;
-					console.log('Result', result);
 					if (result.error) {
 
-						console.log(result.error.message);
 					} else {
 
 						if (result.paymentIntent.status === 'succeeded') {
 
 							this.teamsService.store(this.tournament.id, this.teamForm.value, result.paymentIntent.id).subscribe(res => {
 
-								console.log(res);
 								this.dialogRef.close({
 									'event': 'register'
 								});
@@ -183,7 +180,6 @@ export class RegisterTournamentModalComponent implements OnInit {
 
 				this.teamsService.store(this.tournament.id, this.teamForm.value).subscribe(res => {
 
-					console.log(res);
 					this.dialogRef.close({
 						'event': 'register'
 					});
