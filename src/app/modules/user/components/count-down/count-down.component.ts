@@ -38,7 +38,25 @@ export class CountDownComponent implements OnInit {
 	updateTime(): void {
 
 		const now = new Date();
-		const finishDate = new Date(this.date);
+		const d = new Date(this.date);
+
+		const finishDate = new Date(d.getFullYear().toLocaleString('en-US', {
+			minimumIntegerDigits: 2,
+			useGrouping: false
+		})  + "-" + (d.getMonth()+1).toLocaleString('en-US', {
+			minimumIntegerDigits: 2,
+			useGrouping: false
+		}) + "-" + d.getDate() + " " + d.getHours().toLocaleString('en-US', {
+			minimumIntegerDigits: 2,
+			useGrouping: false
+		}) + ":" + d.getMinutes().toLocaleString('en-US', {
+			minimumIntegerDigits: 2,
+			useGrouping: false
+		}) + ":" + d.getSeconds().toLocaleString('en-US', {
+			minimumIntegerDigits: 2,
+			useGrouping: false
+		}) + '-04:00');
+
 		const diff = finishDate.getTime() - now.getTime();
 
 		const days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -68,9 +86,9 @@ export class CountDownComponent implements OnInit {
 		for(let item in prettyTime){
 
 			prettyTime[item] = prettyTime[item].toLocaleString('en-US', {
-		    minimumIntegerDigits: 2,
-		    useGrouping: false
-		  });
+				minimumIntegerDigits: 2,
+				useGrouping: false
+			});
 		}
 
 		return prettyTime;

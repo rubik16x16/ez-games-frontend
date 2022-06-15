@@ -171,17 +171,24 @@
 										<div class="info-wrapper">
 											<div class="info-bg"></div>
 											<div class="info">
-												<h2 class="entry">${{ tournament.entry }}</h2>
-												<span class="entry-for">/DIVISION</span><br>
-												<button class="btn-view-prizes"><span>VIEW PRIZES</span></button>
+												<div class="entry-wrapper" *ngIf="tournament.entry > 0; then thenBLock else elseBlock"></div>
+												<ng-template #thenBLock>
+													<h2 class="entry">${{ tournament.entry }}</h2>
+													<span class="entry-for">/DIVISION</span><br>
+												</ng-template>
+												<ng-template #elseBlock>
+													<h2 class="entry">FREE</h2>
+												</ng-template>
+												<h5>PRIZE: $25</h5>
+												<a [routerLink]="'tournaments/' + tournament.id + '/results'" class="btn-view-prizes"><span>RESULTS</span></a>
 												<p class="text">
 													MODE <span class="hight-light">DUOS</span> | LENGTH 1H:30M <br>
-													START TIME <span class="hight-light">3PM EST</span> | SCORING BEST 2 GAMES <br>
+													START TIME <span class="hight-light">{{ tournament.hours + tournament.ampm }} EST</span> | SCORING BEST 2 GAMES <br>
 													TEAMS/DIVISION <span class="hight-light"></span>
 												</p>
 												<button class="register" (click)="registerTournament(i)"><span>REGISTER NOW</span></button>
-												<span class="register-ends">REGISTRATION ENDS IN 00:36:11</span>
-												<span class="register-begins"><span class="hight-light">BEGIN</span> ON 04 | 10 | 22</span>
+												<span class="register-ends">REGISTRATION ENDS IN <app-count-down [date]="tournament.start.toString()"></app-count-down></span>
+												<span class="register-begins"><span class="hight-light">BEGIN</span> ON {{ tournament.start.getDate() }} | {{ tournament.start.getMonth() + 1 }} | {{ tournament.start.getFullYear() }}</span>
 											</div>
 										</div>
 									</div>
@@ -499,10 +506,10 @@
 							<img src="assets/home/images/James.png" alt="image">
 						</div>
 						<div class="bottom-area">
-							<h5>James Oswald</h5>
-							<p style="text-align: center;">Tournament Director</p>
+							<h5>Hlanga Vena</h5>
+							<p style="text-align: center;">Marketing</p>
 							<div class="social-area d-flex">
-								<a href="https://twitter.com/SwiiNFTS"><img src="assets/home/images/social-bg1.png" alt="image"></a>
+								<a href="https://twitter.com/hlanga_vena"><img src="assets/home/images/social-bg1.png" alt="image"></a>
 							</div>
 						</div>
 					</div>
@@ -545,11 +552,10 @@
 							<img src="assets/home/images/Jonathan-Bustos.png" alt="image">
 						</div>
 						<div class="bottom-area">
-							<h5>Jonathan Bustos</h5>
-							<p style="text-align: center;">Operations Manager</p>
+							<h5>Jay burges</h5>
+							<p style="text-align: center;">Marketing</p>
 							<div class="social-area d-flex">
-								<a href="https://twitter.com/jalexisbutos"><img src="assets/home/images/social-bg1.png" alt="image"></a>
-								<a href="https://www.instagram.com/ezbattles_alexis/"><img src="assets/home/images/social-bg2.png" alt="image"></a>
+								<a href="https://twitter.com/jaysonngmi"><img src="assets/home/images/social-bg1.png" alt="image"></a>
 							</div>
 						</div>
 					</div>
@@ -560,12 +566,10 @@
 							<img src="assets/home/images/Katherine-Habib.png" alt="image">
 						</div>
 						<div class="bottom-area">
-							<h5>Katherine</h5>
-							<p style="text-align: center;">Social Media Specialist</p>
+							<h5>Alejandro Rojas</h5>
+							<p style="text-align: center;">Project Manager</p>
 							<div class="social-area d-flex">
-								<a href="https://twitter.com/Kath_marketer"><img src="assets/home/images/social-bg1.png" alt="image"></a>
-								<a href="https://www.facebook.com/katherine.habib.7"><img src="assets/home/images/social-bg4.png" alt="image"></a>
-								<a href="https://www.instagram.com/kath.marketer/"><img src="assets/home/images/social-bg2.png" alt="image"></a>
+								<a href="https://www.instagram.com/trillrojas/"><img src="assets/home/images/social-bg2.png" alt="image"></a>
 							</div>
 						</div>
 					</div>
