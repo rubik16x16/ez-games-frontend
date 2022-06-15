@@ -1,0 +1,46 @@
+.card {
+
+	background: #4E01CE;
+	overflow: auto;
+
+	.card-header {
+
+		img {
+
+			height: 32px;
+		}
+
+		.title {
+
+			text-align: center;
+			padding: 0 10px;
+			margin: 40px auto;
+		}
+
+		.sub-title {
+
+			text-align: center;
+		}
+	}
+
+	.card-content {
+
+		color: white;
+		border-radius: 30px;
+		padding: 30px;
+		background: #360589;
+
+		.form-group input {
+
+			border: 1px solid #47399B;
+			background: #350981;
+		}
+	}
+}
+
+.error-list{
+
+	color: red;
+	margin-top: 5px;
+	font-family: 'Chakra Petch', sans-serif;
+}

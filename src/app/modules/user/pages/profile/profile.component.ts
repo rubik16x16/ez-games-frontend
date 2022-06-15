@@ -16,10 +16,11 @@ export class ProfileComponent implements OnInit {
 	codUser: CodUser;
 
 	profileForm = this.fb.group({
-		nickname: ['', [
+		nickname: [{value: '', disabled: true}, [
 			Validators.required,
 			Validators.minLength(4)
 		]],
+		email: [{value: '', disabled: true}, []]
 	});
 
 	constructor(
@@ -33,6 +34,7 @@ export class ProfileComponent implements OnInit {
 
 			this.user = res;
 			console.log(this.user);
+			this.profileForm.patchValue(res);
 		});
 	}
 

@@ -14,6 +14,8 @@ import { TestComponent } from './pages/test/test.component';
 import { EmailVerificationComponent } from './pages/email-verification/email-verification.component';
 import { TournamentResultsComponent } from './pages/tournament-results/tournament-results.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { MyTournamentsComponent } from './pages/my-tournaments/my-tournaments.component';
+import { ShowComponent as ShowMyTournament } from './pages/my-tournaments/show/show.component';
 
 const routes: Routes = [
   {
@@ -32,10 +34,10 @@ const routes: Routes = [
 				path: 'tournaments/:id/results',
 				component: TournamentResultsComponent
 			},
-			// {
-			// 	path: 'profile',
-			// 	component: ProfileComponent
-			// },
+			{
+				path: 'profile',
+				component: ProfileComponent
+			},
 			{
 				path: 'login',
 				component: LoginComponent
@@ -55,6 +57,14 @@ const routes: Routes = [
 			{
 				path: 'test',
 				component: TestComponent
+			},
+			{
+				path: 'my-tournaments',
+				component: MyTournamentsComponent
+			},
+			{
+				path: 'my-tournaments/:id',
+				component: ShowMyTournament
 			}
     ]
   },

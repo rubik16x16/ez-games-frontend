@@ -34,6 +34,8 @@ import { TournamentResultsComponent } from './pages/tournament-results/tournamen
 import { ForgotPasswordModalComponent } from './components/forgot-password-modal/forgot-password-modal.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { ConfirmedComponent } from './pages/forgot-password/confirmed/confirmed.component';
+import { MyTournamentsComponent } from './pages/my-tournaments/my-tournaments.component';
+import { ShowComponent as ShowMyTournamentComponent } from './pages/my-tournaments/show/show.component';
 
 @NgModule({
 	declarations: [
@@ -57,12 +59,14 @@ import { ConfirmedComponent } from './pages/forgot-password/confirmed/confirmed.
 		EmailVerificationModalComponent,
 		EmailVerificationComponent,
 		RegisterTournamentModalComponent,
-  AuthModalComponent,
-  ConfirmComponent,
-  TournamentResultsComponent,
-  ForgotPasswordModalComponent,
-  ForgotPasswordComponent,
-  ConfirmedComponent
+	  AuthModalComponent,
+	  ConfirmComponent,
+	  TournamentResultsComponent,
+	  ForgotPasswordModalComponent,
+	  ForgotPasswordComponent,
+	  ConfirmedComponent,
+	  MyTournamentsComponent,
+	  ShowMyTournamentComponent
 	],
 	imports: [
 		CommonModule,

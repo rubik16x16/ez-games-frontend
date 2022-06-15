@@ -36,7 +36,8 @@
 													<div *ngIf="user" class="right-area header-action d-flex align-items-center">
 														<button class="cmn-btn" style="background: #42F8FF; color: black;" [matMenuTriggerFor]="menu">{{ user.email }}</button>
 														<mat-menu #menu="matMenu">
-															<!-- <a mat-menu-item routerLink="profile" routerLinkActive="active">My profile</a> -->
+															<a mat-menu-item routerLink="my-tournaments" routerLinkActive="active">My tournaments</a>
+															<a mat-menu-item routerLink="profile" routerLinkActive="active">My profile</a>
 															<button mat-menu-item (click)="logout()">Logout</button>
 														</mat-menu>
 													</div>
