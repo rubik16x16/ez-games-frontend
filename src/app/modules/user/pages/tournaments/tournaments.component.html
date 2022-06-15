@@ -16,21 +16,33 @@
 				<div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
 					<div class="row">
 						<div class="col-lg-12">
-							<div class="all-items">
-								<div class="single-item" *ngFor="let tournament of tournaments; let i = index">
-									<div class="content-area">
-											<img [src]="imgTournament(tournament)" alt="image">
-											<div class="grid-style">
-													<h5 class="head-area">{{ tournament.name }}</h5>
-													<div class="prize d-flex justify-content-center">
-															<img src="assets/home/images/prize-icon.png" alt="image">
-															<h5>€6,000</h5>
-													</div>
-													<p class="bet">Min. bet <span>€0.20</span></p>
-													<button type="button" class="cmn-btn-second" (click)="registerTournament(i)">View Tournament</button>
-													<p class="end-on">Will end on: <span>{{ tournament.end }}</span></p>
-													<app-count-down [date]="tournament.end + '+04:30'"></app-count-down>
+							<div class="row all-tournaments">
+								<div class="col-md-6 col-lg-4 tournament-wrapper" *ngFor="let tournament of tournaments; let i = index">
+									<div class="tournament-card">
+										<img [src]="imgTournament(tournament)" alt="">
+										<div class="info-wrapper">
+											<div class="info-bg"></div>
+											<div class="info">
+												<div class="entry-wrapper" *ngIf="tournament.entry > 0; then thenBLock else elseBlock"></div>
+												<ng-template #thenBLock>
+													<h2 class="entry">${{ tournament.entry }}</h2>
+													<span class="entry-for">/DIVISION</span><br>
+												</ng-template>
+												<ng-template #elseBlock>
+													<h2 class="entry">FREE</h2>
+												</ng-template>
+												<h5>PRIZE: $25</h5>
+												<a [routerLink]="'tournaments/' + tournament.id + '/results'" class="btn-view-prizes"><span>RESULTS</span></a>
+												<p class="text">
+													MODE <span class="hight-light">DUOS</span> | LENGTH 1H:30M <br>
+													START TIME <span class="hight-light">{{ tournament.hours + tournament.ampm }} EST</span> | SCORING BEST 2 GAMES <br>
+													TEAMS/DIVISION <span class="hight-light"></span>
+												</p>
+												<button class="register" (click)="registerTournament(i)"><span>REGISTER NOW</span></button>
+												<span class="register-ends">REGISTRATION ENDS IN <app-count-down [date]="tournament.start.toString()"></app-count-down></span>
+												<span class="register-begins"><span class="hight-light">BEGIN</span> ON {{ tournament.start.getDate() }} | {{ tournament.start.getMonth() + 1 }} | {{ tournament.start.getFullYear() }}</span>
 											</div>
+										</div>
 									</div>
 								</div>
 							</div>

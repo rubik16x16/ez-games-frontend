@@ -2,14 +2,24 @@
 <section id="banner-section">
 	<div class="banner-content d-flex align-items-center">
 		<div class="container">
+			<!-- <div class="coming-soon">
+				<div class="title">
+					<h2>Coming soon</h2>
+					<app-count-down date="2022-08-23" panelClass="mint-count-down"></app-count-down>
+				</div>
+				<video class="front-video" [muted]="'muted'" autoplay loop>
+					<source src="assets/test-video.mp4" type="video/mp4">
+				</video>
+			</div> -->
 			<div class="row justify-content-center">
 				<div class="col-lg-10">
 					<div class="main-content">
+						<h1></h1>
 						<div class="top-area justify-content-center text-center">
 							<h1>MAKE MONEY <br><span>GAMING</span></h1>
 							<p>Bringing gamers to the metaverse</p>
 							<button class="cmn-btn-alt cmn-btn" (click)="register()">REGISTER NOW</button><br>
-							<a href="#" (click)="goTo('tournaments-games', $event)" style="background: #42F8FF; color: black" class="cmn-btn">
+							<a routerLink="tournaments" style="background: #42F8FF; color: black" class="cmn-btn">
 								VIEW TOURNAMENTS
 							</a><br>
 							<!-- <a href="https://discord.com/invite/GmyGB6RKUZ" style="margin-top: 0" class="cmn-btn">
@@ -154,22 +164,34 @@
 				<div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
 					<div class="row">
 						<div class="col-lg-12">
-							<div class="all-items">
-								<div class="single-item" *ngFor="let tournament of tournaments; let i = index">
-										<div class="content-area">
-												<img [src]="imgTournament(tournament)" alt="image">
-												<div class="grid-style">
-														<h5 class="head-area">{{ tournament.name }}</h5>
-														<div class="prize d-flex justify-content-center">
-																<img src="assets/home/images/prize-icon.png" alt="image">
-																<h5>€6,000</h5>
-														</div>
-														<p class="bet">Min. bet <span>€0.20</span></p>
-														<button type="button" class="cmn-btn-second" (click)="registerTournament(i)">View Tournament</button>
-														<p class="end-on">Will end on: <span>{{ tournament.end }}</span></p>
-														<app-count-down [date]="tournament.end + '+04:30'"></app-count-down>
-												</div>
+							<div class="row all-tournaments">
+								<div class="col-md-6 col-lg-4 tournament-wrapper" *ngFor="let tournament of tournaments; let i = index">
+									<div class="tournament-card">
+										<img [src]="imgTournament(tournament)" alt="">
+										<div class="info-wrapper">
+											<div class="info-bg"></div>
+											<div class="info">
+												<div class="entry-wrapper" *ngIf="tournament.entry > 0; then thenBLock else elseBlock"></div>
+												<ng-template #thenBLock>
+													<h2 class="entry">${{ tournament.entry }}</h2>
+													<span class="entry-for">/DIVISION</span><br>
+												</ng-template>
+												<ng-template #elseBlock>
+													<h2 class="entry">FREE</h2>
+												</ng-template>
+												<h5>PRIZE: $25</h5>
+												<a [routerLink]="'tournaments/' + tournament.id + '/results'" class="btn-view-prizes"><span>RESULTS</span></a>
+												<p class="text">
+													MODE <span class="hight-light">DUOS</span> | LENGTH 1H:30M <br>
+													START TIME <span class="hight-light">{{ tournament.hours + tournament.ampm }} EST</span> | SCORING BEST 2 GAMES <br>
+													TEAMS/DIVISION <span class="hight-light"></span>
+												</p>
+												<button class="register" (click)="registerTournament(i)"><span>REGISTER NOW</span></button>
+												<span class="register-ends">REGISTRATION ENDS IN <app-count-down [date]="tournament.start.toString()"></app-count-down></span>
+												<span class="register-begins"><span class="hight-light">BEGIN</span> ON {{ tournament.start.getDate() }} | {{ tournament.start.getMonth() + 1 }} | {{ tournament.start.getFullYear() }}</span>
+											</div>
 										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -484,10 +506,10 @@
 							<img src="assets/home/images/James.png" alt="image">
 						</div>
 						<div class="bottom-area">
-							<h5>James Oswald</h5>
-							<p style="text-align: center;">Tournament Director</p>
+							<h5>Hlanga Vena</h5>
+							<p style="text-align: center;">Marketing</p>
 							<div class="social-area d-flex">
-								<a href="https://twitter.com/SwiiNFTS"><img src="assets/home/images/social-bg1.png" alt="image"></a>
+								<a href="https://twitter.com/hlanga_vena"><img src="assets/home/images/social-bg1.png" alt="image"></a>
 							</div>
 						</div>
 					</div>
@@ -530,11 +552,10 @@
 							<img src="assets/home/images/Jonathan-Bustos.png" alt="image">
 						</div>
 						<div class="bottom-area">
-							<h5>Jonathan Bustos</h5>
-							<p style="text-align: center;">Operations Manager</p>
+							<h5>Jay burges</h5>
+							<p style="text-align: center;">Marketing</p>
 							<div class="social-area d-flex">
-								<a href="https://twitter.com/jalexisbutos"><img src="assets/home/images/social-bg1.png" alt="image"></a>
-								<a href="https://www.instagram.com/ezbattles_alexis/"><img src="assets/home/images/social-bg2.png" alt="image"></a>
+								<a href="https://twitter.com/jaysonngmi"><img src="assets/home/images/social-bg1.png" alt="image"></a>
 							</div>
 						</div>
 					</div>
@@ -546,9 +567,8 @@
 						</div>
 						<div class="bottom-area">
 							<h5>Alejandro Rojas</h5>
-							<p style="text-align: center;">Project manager</p>
+							<p style="text-align: center;">Project Manager</p>
 							<div class="social-area d-flex">
-								<a href="https://twitter.com/Rojaasale_"><img src="assets/home/images/social-bg1.png" alt="image"></a>
 								<a href="https://www.instagram.com/trillrojas/"><img src="assets/home/images/social-bg2.png" alt="image"></a>
 							</div>
 						</div>
