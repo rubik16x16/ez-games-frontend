@@ -8,17 +8,18 @@
 					</div>
 				</div>
 			</div>
-			<div class="row mb-cus">
-				<div class="col-md-6" *ngFor="let tournament of myTournaments; index as i">
+			<div class="row mb-cus" *ngIf="myTournaments">
+				<div class="col-md-6" *ngFor="let team of myTournaments; index as i">
 					<div class="tournament-card">
 						<span>Tue, April 12|10:30PM EDT</span>
-						<span class="count-down">Closing in: 2h:59m:50s</span>
-						<span class="tournament-title">Free flex start duos</span>
+						<span class="count-down">Closing in: 2h:59m:50s</span><br>
+						<span>Team:{{ team.name }}</span><br>
+						<span>Tournament: {{ team.tournament.name }}</span><br>
 						<div class="players">
 							<div class="player"></div>
 							<div class="player"></div>
 						</div>
-						<a routerLink="/my-tournaments/{{tournament.id}}" class="btn btn-primary">view details</a>
+						<a routerLink="/my-tournaments/{{team.id}}" class="btn btn-primary">view details</a>
 					</div>
 				</div>
 				<div class="col-md-6"></div>
