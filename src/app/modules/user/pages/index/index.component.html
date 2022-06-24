@@ -179,16 +179,16 @@
 												<ng-template #elseBlock>
 													<h2 class="entry">FREE</h2>
 												</ng-template>
-												<h5>PRIZE: $30</h5>
+												<h5>PRIZE: ${{ tournament.reward }}</h5>
 												<a [routerLink]="'/tournaments/' + tournament.id + '/results'" class="btn-view-prizes"><span>RESULTS</span></a>
 												<p class="text">
-													MODE <span class="hight-light">TRIOS</span> | LENGTH 1H:30M <br>
+													MODE <span class="hight-light">{{ tournament.type.toUpperCase() }}</span> | LENGTH 1H:00M <br>
 													START TIME <span class="hight-light">{{ tournament.hours + tournament.ampm }} EST</span> | SCORING BEST 2 GAMES <br>
 													TEAMS/DIVISION <span class="hight-light"></span>
 												</p>
 												<button class="register" (click)="registerTournament(i)"><span>REGISTER NOW</span></button>
-												<span class="register-ends">REGISTRATION ENDS IN <app-count-down [date]="tournament.start.toString()"></app-count-down></span>
-												<span class="register-begins"><span class="hight-light">BEGIN</span> ON {{ tournament.start.getDate() }} | {{ tournament.start.getMonth() + 1 }} | {{ tournament.start.getFullYear() }}</span>
+												<span class="register-ends">START AT {{ tournament.hours + tournament.ampm }} EST</span><br>
+												<span class="register-begins"><span class="hight-light">BEGIN</span> ON {{ tournament.start.getMonth() + 1 }} | {{ tournament.start.getDate() }} | {{ tournament.start.getFullYear() }}</span>
 											</div>
 										</div>
 									</div>

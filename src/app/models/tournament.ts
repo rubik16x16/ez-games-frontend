@@ -8,7 +8,7 @@ export class Tournament{
 	_end: Date;
 	entry: number;
 	reward: number;
-	type: number;
+	type: string;
 	teams: Team[];
 	image: string;
 	num_players: number;
