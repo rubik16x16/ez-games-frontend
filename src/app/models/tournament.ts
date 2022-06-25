@@ -21,7 +21,7 @@ export class Tournament{
 
 	set start(start: string | Date) {
 
-		this._start = new Date(start);
+		this._start = new Date(start + '-04:00');
 	}
 
 	get start(): Date {
@@ -31,7 +31,7 @@ export class Tournament{
 
 	set end(end:string | Date) {
 
-		this._end = new Date(end);
+		this._end = new Date(end + '-04:00');
 	}
 
 	get end(): Date {
